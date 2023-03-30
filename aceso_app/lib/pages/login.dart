@@ -1,5 +1,6 @@
 import 'package:aceso_app/background.dart';
 import 'package:aceso_app/pages/home.dart';
+import 'package:aceso_app/pages/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:aceso_app/constants.dart';
 
@@ -27,15 +28,13 @@ class WelcomeLogin extends StatelessWidget {
               children: <Widget>[
                 Column(
                   children: [
-                    SizedBox(
-                      //height: 45;
-                      width: 265,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
                       child: buildEmail(),
                     ),
-                    SizedBox(height: 12),
-                    SizedBox(
-                      //height: 45,
-                      width: 265,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30.0, vertical: 10.0),
                       child: buildPassW(),
                     ),
                   ],
@@ -46,40 +45,41 @@ class WelcomeLogin extends StatelessWidget {
           //ลงทะเบียนและลืมรหัสผ่าน
           Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 12.0),
-            child: SizedBox(
-              height: 45,
-              width: 265,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      'ลงทะเบียน',
-                      style: TextStyle(
-                        color: APrimaryColor,
-                        fontWeight: FontWeight.bold,
-                      ),
+                const EdgeInsets.symmetric(horizontal: 35.0, vertical: 10.0),
+            child: Row(
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                    );
+                  },
+                  child: Text(
+                    'ลงทะเบียน',
+                    style: TextStyle(
+                      color: APrimaryColor,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Expanded(
-                    child: Text(
-                      'ลืมรหัสผ่าน?',
-                      style: TextStyle(
-                        color: APrimaryColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.right,
+                ),
+                Expanded(
+                  child: Text(
+                    'ลืมรหัสผ่าน?',
+                    style: TextStyle(
+                      color: APrimaryColor,
+                      fontWeight: FontWeight.bold,
                     ),
+                    textAlign: TextAlign.right,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           SizedBox(height: 50),
           //ปุ่มเข้าสู่ระบบ
-          SizedBox(
-            height: 45,
-            width: 265,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
