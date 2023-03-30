@@ -1,84 +1,138 @@
+import 'package:aceso_app/background.dart';
+import 'package:aceso_app/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:aceso_app/constants.dart';
 
 class WelcomeLogin extends StatelessWidget {
-  const WelcomeLogin({super.key});
+  WelcomeLogin({super.key});
 
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
+    return Background(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Container(
-            child: Image(
-              image: AssetImage('assets/img1.png'),
-            ),
+          //appname
+          Image(
+            height: 80,
+            width: 180,
+            image: AssetImage('assets/appname.png'),
           ),
-          Container(
+          SizedBox(height: 25),
+          //formLogin
+          Form(
+            key: _formKey,
             child: Column(
               children: <Widget>[
-                //appname
-                Image(
-                  image: AssetImage('assets/appname.png'),
-                  height: 100,
-                  width: 200,
-                ),
-                SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                  ),
-                  child: buildEmail(),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 40.0, vertical: 16.0),
-                  child: buildPassW(),
-                ),
-                SizedBox(height: 50),
-                ElevatedButton(
-                  onPressed: () {},
-                  // style: ElevatedButton.styleFrom(
-                  //   backgroundColor: APrimaryColor,
-                  // ),
-                  child: Text('เข้าสู่ระบบ'),
+                Column(
+                  children: [
+                    SizedBox(
+                      //height: 45;
+                      width: 265,
+                      child: buildEmail(),
+                    ),
+                    SizedBox(height: 12),
+                    SizedBox(
+                      //height: 45,
+                      width: 265,
+                      child: buildPassW(),
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
-          Container(
-            child: Image(
-              image: AssetImage('assets/img2.png'),
+          //ลงทะเบียนและลืมรหัสผ่าน
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 12.0),
+            child: SizedBox(
+              height: 45,
+              width: 265,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(
+                      'ลงทะเบียน',
+                      style: TextStyle(
+                        color: APrimaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      'ลืมรหัสผ่าน?',
+                      style: TextStyle(
+                        color: APrimaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 50),
+          //ปุ่มเข้าสู่ระบบ
+          SizedBox(
+            height: 45,
+            width: 265,
+            child: ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return HomePage();
+                    }),
+                  );
+                }
+              },
+              child: Text('เข้าสู่ระบบ'),
             ),
           ),
         ],
       ),
     );
   }
+
+  ////////// Widget สำหรับกรอกอีเมล
+  Widget buildEmail() => TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'กรุณากรอกอีเมลก่อน';
+          }
+          return null;
+        },
+        keyboardType: TextInputType.emailAddress,
+        textInputAction: TextInputAction.next,
+        cursorColor: APrimaryColor,
+        decoration: InputDecoration(
+          hintText: "อีเมล",
+          hintStyle: TextStyle(
+            color: APrimaryLightColor,
+          ),
+        ),
+      );
+  ////////// Widget สำหรับกรอกรหัสผ่าน
+  Widget buildPassW() => TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'กรุณากรอกรหัสผ่านก่อน';
+          }
+          return null;
+        },
+        keyboardType: TextInputType.emailAddress,
+        textInputAction: TextInputAction.next,
+        cursorColor: APrimaryColor,
+        decoration: InputDecoration(
+          hintText: "รหัสผ่าน",
+          hintStyle: TextStyle(
+            color: APrimaryLightColor,
+          ),
+        ),
+      );
 }
-
-Widget buildEmail() => TextField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-        ),
-        hintText: "อีเมล",
-      ),
-      keyboardType: TextInputType.emailAddress,
-      textInputAction: TextInputAction.next,
-      cursorColor: APrimaryColor,
-    );
-
-Widget buildPassW() => TextField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-        ),
-        hintText: "รหัสผ่าน",
-      ),
-      keyboardType: TextInputType.emailAddress,
-      textInputAction: TextInputAction.next,
-      cursorColor: APrimaryColor,
-    );

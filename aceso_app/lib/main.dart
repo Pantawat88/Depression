@@ -16,17 +16,26 @@ class MyApp extends StatelessWidget {
         primaryColor: APrimaryColor,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              primary: APrimaryColor,
+              backgroundColor: APrimaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8))),
         ),
-        // inputDecorationTheme: const InputDecorationTheme(
-        //   border: OutlineInputBorder(
-        //     borderRadius: BorderRadius.all(Radius.circular(30)),
-        //   ),
-        // )
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: APrimaryColor),
+              borderRadius: BorderRadius.circular(12.0)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: APrimaryLightColor, width: 2),
+              borderRadius: BorderRadius.circular(12.0)),
+          errorBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.red),
+              borderRadius: BorderRadius.circular(12.0)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.orange),
+              borderRadius: BorderRadius.circular(12.0)),
+        ),
       ),
-      home: const WelcomeLogin(),
+      home: WelcomeLogin(),
     );
   }
 }
