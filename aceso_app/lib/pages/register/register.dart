@@ -1,5 +1,6 @@
 import 'package:aceso_app/background.dart';
 import 'package:aceso_app/pages/register/verify_account.dart';
+import 'package:aceso_app/pages/widget/widget_Textfromfield.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -36,24 +37,9 @@ class RegisterPage extends StatelessWidget {
             SizedBox(height: 40),
             Form(
               key: _formKey,
-              child: TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'อีเมลไม่ถูกต้อง';
-                  }
-                  return null;
-                },
-                keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
-                cursorColor: APrimaryColor,
-                decoration: InputDecoration(
-                  hintText: "อีเมล",
-                  hintStyle: TextStyle(
-                    color: APrimaryLightColor,
-                  ),
-                ),
-              ),
+              child: TFFemail(),
             ),
+            SizedBox(height: 50),
             ElevatedButton(
               child: Text('ยืนยัน'),
               onPressed: () {

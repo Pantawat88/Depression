@@ -1,6 +1,7 @@
 import 'package:aceso_app/background.dart';
 import 'package:aceso_app/pages/home.dart';
 import 'package:aceso_app/pages/register/register.dart';
+import 'package:aceso_app/pages/widget/widget_Textfromfield.dart';
 import 'package:flutter/material.dart';
 import 'package:aceso_app/constants.dart';
 
@@ -30,12 +31,12 @@ class WelcomeLogin extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                      child: buildEmail(),
+                      child: const TFFemail(),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 50.0, vertical: 10.0),
-                      child: buildPassW(),
+                      child: const TFFpassword(),
                     ),
                   ],
                 ),
@@ -98,41 +99,4 @@ class WelcomeLogin extends StatelessWidget {
       ),
     );
   }
-
-  ////////// Widget สำหรับกรอกอีเมล
-  Widget buildEmail() => TextFormField(
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'กรุณากรอกอีเมลก่อน';
-          }
-          return null;
-        },
-        keyboardType: TextInputType.emailAddress,
-        textInputAction: TextInputAction.next,
-        cursorColor: APrimaryColor,
-        decoration: InputDecoration(
-          hintText: "อีเมล",
-          hintStyle: TextStyle(
-            color: APrimaryLightColor,
-          ),
-        ),
-      );
-  ////////// Widget สำหรับกรอกรหัสผ่าน
-  Widget buildPassW() => TextFormField(
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'กรุณากรอกรหัสผ่านก่อน';
-          }
-          return null;
-        },
-        keyboardType: TextInputType.emailAddress,
-        textInputAction: TextInputAction.next,
-        cursorColor: APrimaryColor,
-        decoration: InputDecoration(
-          hintText: "รหัสผ่าน",
-          hintStyle: TextStyle(
-            color: APrimaryLightColor,
-          ),
-        ),
-      );
 }
