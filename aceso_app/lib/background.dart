@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Background extends StatelessWidget {
+class BackgroundForLogin extends StatelessWidget {
   final Widget child;
-  final String topImage, bottomImage;
-  const Background({
+  const BackgroundForLogin({
     Key? key,
     required this.child,
     this.topImage = "assets/bg_top.png",
     this.bottomImage = "assets/bg_bottom.png",
   }) : super(key: key);
 
+  final String topImage, bottomImage;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         child: Stack(
           children: <Widget>[
@@ -34,6 +36,35 @@ class Background extends StatelessWidget {
             SafeArea(child: child),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Background extends StatelessWidget {
+  final Widget child;
+  const Background({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter, // ทิศทางจากบนลงล่าง
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xffDCE0FF),
+              Color(0xffffffff),
+            ],
+            stops: [0.0, 0.1], // แบ่งแยกระดับสี
+          ),
+        ),
+        child: child,
       ),
     );
   }

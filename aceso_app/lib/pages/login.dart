@@ -10,7 +10,7 @@ class WelcomeLogin extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Background(
+    return BackgroundForLogin(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -29,12 +29,12 @@ class WelcomeLogin extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
                       child: buildEmail(),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 30.0, vertical: 10.0),
+                          horizontal: 50.0, vertical: 10.0),
                       child: buildPassW(),
                     ),
                   ],
@@ -45,7 +45,7 @@ class WelcomeLogin extends StatelessWidget {
           //ลงทะเบียนและลืมรหัสผ่าน
           Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 35.0, vertical: 10.0),
+                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 5.0),
             child: Row(
               children: <Widget>[
                 GestureDetector(
@@ -79,7 +79,7 @@ class WelcomeLogin extends StatelessWidget {
           SizedBox(height: 50),
           //ปุ่มเข้าสู่ระบบ
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {

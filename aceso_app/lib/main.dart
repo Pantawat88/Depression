@@ -35,7 +35,9 @@ class MyApp extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.0)),
         ),
       ),
-      home: WelcomeLogin(),
+      home: Scaffold(
+        body: WelcomeLogin(),
+      ),
     );
   }
 }
