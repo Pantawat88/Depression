@@ -6,7 +6,6 @@ class ButtonOperation extends StatelessWidget {
   final String BTname;
 
   const ButtonOperation({Key? key, required this.BTname}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,7 +15,6 @@ class ButtonOperation extends StatelessWidget {
         child: Text(
           BTname,
           style: tButton,
-          textAlign: TextAlign.center,
         ),
       ),
     );

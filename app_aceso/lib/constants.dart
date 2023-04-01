@@ -23,6 +23,12 @@ const TextStyle text = TextStyle(
   color: APrimaryColor,
 );
 
+const TextStyle textsmall = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 15.0,
+  color: APrimaryColor,
+);
+
 ////ฟ้อนสำหรับ ข้อความธรรมดาสีอ่อน
 const TextStyle textLight = TextStyle(
   fontFamily: 'Prompt',
@@ -49,7 +55,6 @@ const TextStyle tminiLight = TextStyle(
 const TextStyle tButton = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 18.0,
-  fontWeight: FontWeight.w500,
 );
 
 ////ฟ้อนสำหรับ hinttext

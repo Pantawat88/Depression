@@ -1,5 +1,6 @@
 import 'package:app_aceso/pages/login.dart';
 import 'package:app_aceso/pages/register/personal_information.dart';
+import 'package:app_aceso/pages/widget/widget_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../background.dart';
@@ -13,7 +14,7 @@ class Agreement extends StatefulWidget {
 }
 
 class _AgreementState extends State<Agreement> {
-  bool _isChecked = false;
+  bool _isChecked = false; //เก็บค่า Checkbox ไว้เช็คตอนกดไม่กด
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +39,10 @@ class _AgreementState extends State<Agreement> {
                 },
               ),
             ),
-            SizedBox(height: 20),
+
             Text(
               'นโยบายความเป็นส่วนตัว',
+                style: tHeading,
             ),
             SizedBox(height: 20),
             SizedBox(
@@ -50,9 +52,9 @@ class _AgreementState extends State<Agreement> {
                 child: Column(
                   children: [
                     Text(
-                        "นโยบายความเป็นส่วนตัวสำหรับลูกค้า\nบริษัท อเซโซ จำกัด ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณ โดยนโยบายความเป็นส่วนตัวฉบับนี้ได้อธิบายแนวปฏิบัติเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล รวมถึงสิทธิต่าง ๆ ของเจ้าของข้อมูลส่วนบุคคล ตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล"),
-                    SizedBox(height: 20),
-                    Text('การเก็บรวบรวมข้อมูลส่วนบุคคล\n'
+                        "นโยบายความเป็นส่วนตัวสำหรับลูกค้า\nบริษัท อเซโซ จำกัด ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณ โดยนโยบายความเป็นส่วนตัวฉบับนี้ได้อธิบายแนวปฏิบัติเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล รวมถึงสิทธิต่าง ๆ ของเจ้าของข้อมูลส่วนบุคคล ตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล",
+                        style: textsmall),
+                    Text('1 ) การเก็บรวบรวมข้อมูลส่วนบุคคล\n'
                         'เราจะเก็บรวบรวมข้อมูลส่วนบุคคลที่ได้รับโดยตรงจากคุณผ่านช่องทาง ดังต่อไปนี้\n\n'
                         '- การสมัครสมาชิก\n'
                         '- อีเมล\n'
@@ -65,7 +67,8 @@ class _AgreementState extends State<Agreement> {
                         'ข้อมูลอื่น ๆ เช่น รูปภาพ ภาพเคลื่อนไหว และข้อมูลอื่นใดที่ถือว่าเป็นข้อมูลส่วนบุคคลตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล\n\n'
                         'เราจะเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลอ่อนไหว ดังต่อไปนี้ เมื่อเราได้รับความยินยอมโดยชัดแจ้งจากคุณ เว้นแต่กฎหมายกำหนดให้ทำได้\n\n'
                         '- เชื้อชาติ\n'
-                        '- ข้อมูลอื่นใดที่กระทบต่อข้อมูลส่วนบุคคลของคุณตามที่คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลประกาศกำหนด'),
+                        '- ข้อมูลอื่นใดที่กระทบต่อข้อมูลส่วนบุคคลของคุณตามที่คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลประกาศกำหนด',
+                        style: textsmall),
                   ],
                 ),
               ),
@@ -83,7 +86,9 @@ class _AgreementState extends State<Agreement> {
               title: const Text("ฉันยอมรับนโยบายความเป็นส่วนตัวนี้"),
             ),
             ElevatedButton(
-              child: Text('ถัดไป'),
+              child: ButtonOperation(BTname: 'ถัดไป',
+
+              ),
               onPressed: () {
                 Navigator.push(
                   context,
