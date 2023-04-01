@@ -15,7 +15,7 @@ class RegisterPage extends StatelessWidget {
     return Background(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: defaultPadding, vertical: 45.0),
+            horizontal: defaultPadding, vertical: 40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -29,19 +29,27 @@ class RegisterPage extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             Text(
               'ลงทะเบียน',
+              style: tHeading,
             ),
-            Text('กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้ลงทะเบียน'),
-            SizedBox(height: 40),
+            SizedBox(height: 10),
+            Text(
+              'กรอกอีเมลของสถาบัน kmitl เท่านั้น  เพื่อใช้ลงทะเบียน',
+              style: textLight,
+            ),
+            SizedBox(height: 30),
             Form(
               key: _formKey,
               child: const TFFemail(),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             ElevatedButton(
-              child: Text('ยืนยัน'),
+              child: Text(
+                'ยืนยัน',
+                style: tButton,
+              ),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(
