@@ -4,6 +4,7 @@ import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import '../widget/widget_button.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
@@ -15,7 +16,7 @@ class RegisterPage extends StatelessWidget {
     return Background(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: defaultPadding, vertical: 45.0),
+            horizontal: defaultPadding, vertical: 40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -29,19 +30,24 @@ class RegisterPage extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             Text(
               'ลงทะเบียน',
+              style: tHeading,
             ),
-            Text('กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้ลงทะเบียน'),
-            SizedBox(height: 40),
+            SizedBox(height: 10),
+            Text(
+              'กรอกอีเมลของสถาบัน kmitl เท่านั้น  เพื่อใช้ลงทะเบียน',
+              style: textLight,
+            ),
+            SizedBox(height: 30),
             Form(
               key: _formKey,
               child: const TFFemail(),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             ElevatedButton(
-              child: Text('ยืนยัน'),
+              child: ButtonOperation(BTname: 'ยืนยัน'),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(

@@ -2,6 +2,7 @@ import 'package:app_aceso/background.dart';
 import 'package:app_aceso/pages/home.dart';
 import 'package:app_aceso/pages/register/register.dart';
 import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
+import 'package:app_aceso/pages/widget/widget_button.dart';
 import 'package:flutter/material.dart';
 import 'package:app_aceso/constants.dart';
 
@@ -21,7 +22,7 @@ class WelcomeLogin extends StatelessWidget {
             width: 180,
             image: AssetImage('assets/appname.png'),
           ),
-          SizedBox(height: 25),
+          SizedBox(height: 40),
           //formLogin
           Form(
             key: _formKey,
@@ -71,7 +72,7 @@ class WelcomeLogin extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 40),
           //ปุ่มเข้าสู่ระบบ
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -86,9 +87,8 @@ class WelcomeLogin extends StatelessWidget {
                   );
                 }
               },
-              child: Text(
-                'เข้าสู่ระบบ',
-                style: tButton,
+              child: const ButtonOperation(
+                BTname: 'เข้าสู่ระบบ',
               ),
             ),
           ),
