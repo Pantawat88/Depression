@@ -58,19 +58,13 @@ class WelcomeLogin extends StatelessWidget {
                   },
                   child: Text(
                     'ลงทะเบียน',
-                    style: TextStyle(
-                      color: APrimaryColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: tmini,
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'ลืมรหัสผ่าน?',
-                    style: TextStyle(
-                      color: APrimaryColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: tmini,
                     textAlign: TextAlign.right,
                   ),
                 ),
@@ -92,7 +86,10 @@ class WelcomeLogin extends StatelessWidget {
                   );
                 }
               },
-              child: Text('เข้าสู่ระบบ'),
+              child: Text(
+                'เข้าสู่ระบบ',
+                style: tButton,
+              ),
             ),
           ),
         ],

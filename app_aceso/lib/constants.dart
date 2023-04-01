@@ -8,12 +8,23 @@ const double defaultPadding = 35.0;
 const Iclear = Icon(Icons.clear_rounded, size: 40);
 const Iback = Icon(Icons.arrow_back_ios_rounded, size: 25);
 
-const THeading = TextStyle(fontFamily: 'Prompt', fontSize: 20);
+const TextStyle tHeading = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 16.0,
+  fontWeight: FontWeight.bold,
+  fontStyle: FontStyle.normal,
+  color: APrimaryColor,
+);
 
-// const TextStyle promptTextStyle = TextStyle(
-//   fontFamily: 'Prompt',
-//   fontSize: 16.0,
-//   fontWeight: FontWeight.normal,
-//   fontStyle: FontStyle.normal,
-//   color: Colors.black,
-// );
+const TextStyle tmini = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 16.0,
+  fontWeight: FontWeight.w500,
+  color: APrimaryColor,
+);
+
+const TextStyle tButton = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 18.0,
+  fontWeight: FontWeight.w600,
+);
