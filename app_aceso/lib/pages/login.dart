@@ -2,6 +2,7 @@ import 'package:app_aceso/background.dart';
 import 'package:app_aceso/pages/home.dart';
 import 'package:app_aceso/pages/register/register.dart';
 import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
+import 'package:app_aceso/pages/widget/widget_button.dart';
 import 'package:flutter/material.dart';
 import 'package:app_aceso/constants.dart';
 
@@ -86,9 +87,8 @@ class WelcomeLogin extends StatelessWidget {
                   );
                 }
               },
-              child: Text(
-                'เข้าสู่ระบบ',
-                style: tButton,
+              child: const ButtonOperation(
+                BTname: 'เข้าสู่ระบบ',
               ),
             ),
           ),

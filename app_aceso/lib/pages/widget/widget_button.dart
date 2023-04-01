@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 
-class BTbox extends StatelessWidget {
-  final Function function;
+import '../../constants.dart';
 
-  const BTbox({Key? key, required this.function}) : super(key: key);
+class ButtonOperation extends StatelessWidget {
+  final String BTname;
+
+  const ButtonOperation({Key? key, required this.BTname}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SizedBox(
+      width: double.maxFinite,
+      height: 50,
+      child: Center(
+        child: Text(
+          BTname,
+          style: tButton,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
   }
 }
