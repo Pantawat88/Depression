@@ -42,9 +42,11 @@ class TFFpassword extends StatelessWidget {
       textInputAction: TextInputAction.next,
       cursorColor: APrimaryColor,
       style: tKey,
+      obscureText: true,
       decoration: InputDecoration(
           hintText: "รหัสผ่าน",
           hintStyle: tTextformfield,
+
           contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
