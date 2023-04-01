@@ -52,9 +52,16 @@ const TextStyle tButton = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
-////ฟ้อนสำหรับ text ที่ให้ผู้ใช้กรอก
+////ฟ้อนสำหรับ hinttext
 const TextStyle tTextformfield = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 18.0,
   color: APrimaryLightColor,
+);
+
+////ฟ้อนสำหรับ text ที่ให้ผู้ใช้กรอก
+const TextStyle tKey = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 18.0,
+  color: APrimaryColor,
 );

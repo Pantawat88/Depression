@@ -4,6 +4,7 @@ import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import '../widget/widget_button.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
@@ -46,10 +47,7 @@ class RegisterPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              child: Text(
-                'ยืนยัน',
-                style: tButton,
-              ),
+              child: ButtonOperation(BTname: 'ยืนยัน'),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(

@@ -22,7 +22,7 @@ class WelcomeLogin extends StatelessWidget {
             width: 180,
             image: AssetImage('assets/appname.png'),
           ),
-          SizedBox(height: 25),
+          SizedBox(height: 40),
           //formLogin
           Form(
             key: _formKey,
@@ -72,7 +72,7 @@ class WelcomeLogin extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 40),
           //ปุ่มเข้าสู่ระบบ
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
