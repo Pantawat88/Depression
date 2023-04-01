@@ -30,10 +30,11 @@ const TextStyle textLight = TextStyle(
   color: APrimaryLightColor,
 );
 
-////ฟ้อนสำหรับ ข้อความขนาดเล็กสีเข้ม
+////ฟ้อนสำหรับ ข้อความขนาดเล็กสีเข้มตัวหนา
 const TextStyle tmini = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 15.0,
+  fontWeight: FontWeight.bold,
   color: APrimaryColor,
 );
 
@@ -41,7 +42,6 @@ const TextStyle tmini = TextStyle(
 const TextStyle tminiLight = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 15.0,
-  fontWeight: FontWeight.w500,
   color: APrimaryLightColor,
 );
 
@@ -50,4 +50,11 @@ const TextStyle tButton = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 18.0,
   fontWeight: FontWeight.w500,
+);
+
+////ฟ้อนสำหรับ text ที่ให้ผู้ใช้กรอก
+const TextStyle tTextformfield = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 18.0,
+  color: APrimaryLightColor,
 );

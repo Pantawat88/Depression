@@ -20,9 +20,7 @@ class TFFemail extends StatelessWidget {
       decoration: InputDecoration(
         border: null,
         hintText: 'อีเมล',
-        hintStyle: TextStyle(
-          color: APrimaryLightColor,
-        ),
+        hintStyle: tTextformfield,
       ),
     );
   }
@@ -45,9 +43,7 @@ class TFFpassword extends StatelessWidget {
       cursorColor: APrimaryColor,
       decoration: InputDecoration(
         hintText: "รหัสผ่าน",
-        hintStyle: TextStyle(
-          color: APrimaryLightColor,
-        ),
+        hintStyle: tTextformfield,
       ),
     );
   }
