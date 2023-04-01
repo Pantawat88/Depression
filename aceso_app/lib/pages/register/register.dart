@@ -37,7 +37,7 @@ class RegisterPage extends StatelessWidget {
             SizedBox(height: 40),
             Form(
               key: _formKey,
-              child: TFFemail(),
+              child: const TFFemail(),
             ),
             SizedBox(height: 50),
             ElevatedButton(

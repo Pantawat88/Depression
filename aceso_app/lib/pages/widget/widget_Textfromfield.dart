@@ -18,6 +18,7 @@ class TFFemail extends StatelessWidget {
       textInputAction: TextInputAction.next,
       cursorColor: APrimaryColor,
       decoration: InputDecoration(
+        border: null,
         hintText: 'อีเมล',
         hintStyle: TextStyle(
           color: APrimaryLightColor,

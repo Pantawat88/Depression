@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
               borderSide: BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
           focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.orange),
+              borderSide: BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
         ),
       ),
