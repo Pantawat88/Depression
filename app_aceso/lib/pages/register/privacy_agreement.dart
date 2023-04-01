@@ -45,6 +45,10 @@ class _AgreementState extends State<Agreement> {
             SizedBox(height: 40),
             Text('ฉันยอมรับนโยบายความเป็นส่วนตัวนี้'),
             SizedBox(height: 50),
+            ListTile(
+                leading: Checkbox(value: false, onChanged: (value) {},),
+                title: const Text("ฉันยอมรับนโยบายความเป็นส่วนตัว"),
+            ),
             ElevatedButton(
               child: Text('ถัดไป'),
               onPressed: () {
