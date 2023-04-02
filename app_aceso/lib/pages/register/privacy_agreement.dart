@@ -56,7 +56,7 @@ class _AgreementState extends State<Agreement> {
                         "นโยบายความเป็นส่วนตัวสำหรับลูกค้า\nบริษัท อเซโซ จำกัด ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณ โดยนโยบายความเป็นส่วนตัวฉบับนี้ได้อธิบายแนวปฏิบัติเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล รวมถึงสิทธิต่าง ๆ ของเจ้าของข้อมูลส่วนบุคคล ตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล",
                         style: TextStyle(
                           fontFamily: 'Prompt',
-                          fontSize: 15.0,
+                          fontSize: 12.0,
                           color: Color(0xff464646),
                         ),
                       ),
@@ -77,7 +77,7 @@ class _AgreementState extends State<Agreement> {
                         '- ข้อมูลอื่นใดที่กระทบต่อข้อมูลส่วนบุคคลของคุณตามที่คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลประกาศกำหนด',
                         style: TextStyle(
                           fontFamily: 'Prompt',
-                          fontSize: 15.0,
+                          fontSize: 12.0,
                           color: Color(0xff464646),
                         ),
                       ),
@@ -100,7 +100,7 @@ class _AgreementState extends State<Agreement> {
                 ),
                 title: const Text(
                   "ฉันยอมรับนโยบายความเป็นส่วนตัวนี้",
-                  style: textsmall,
+                  style: textnormal,
                 ),
               ),
             ),

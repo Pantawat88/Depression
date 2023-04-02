@@ -16,48 +16,52 @@ class RegisterPage extends StatelessWidget {
     return Background(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: defaultPadding, vertical: 40.0),
+            horizontal: defaultPadding, vertical: 45.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Align(
-              alignment: Alignment.centerRight,
-              child: IconButton(
-                icon: Iclear,
-                color: APrimaryColor,
+            Column(
+              children: [
+                IconButton(
+                  icon: Iclear,
+                  color: APrimaryColor,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                SizedBox(height: 15),
+                Text(
+                  'ลงทะเบียน',
+                  style: textHeading,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้สำหรับลงทะเบียน',
+                  style: textnormalLight,
+                ),
+                SizedBox(height: 25),
+                Form(
+                  key: _formKey,
+                  child: const TFFemail(),
+                ),
+              ],
+            ),
+            Container(
+              child: ElevatedButton(
+                child: ButtonOperation(
+                  BTname: 'ยืนยัน',
+                ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => VerifyAccount()),
+                    );
+                  }
                 },
               ),
             ),
-            SizedBox(height: 15),
-            Text(
-              'ลงทะเบียน',
-              style: textHeading,
-            ),
-            SizedBox(height: 10),
-            Text(
-              'กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้สำหรับลงทะเบียน',
-              style: textnormalLight,
-            ),
-            SizedBox(height: 30),
-            Form(
-              key: _formKey,
-              child: const TFFemail(),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              child: ButtonOperation(BTname: 'ยืนยัน'),
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => VerifyAccount()),
-                  );
-                }
-              },
-            )
           ],
         ),
       ),

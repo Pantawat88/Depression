@@ -16,14 +16,14 @@ const TextStyle textHeading = TextStyle(
   color: APrimaryColor,
 );
 ////ฟ้อนสำหรับ ข้อความธรรมดา
-const TextStyle textnormalbold = TextStyle(
+const TextStyle textnormal = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 16.0,
   color: APrimaryColor,
 );
 
 ////ฟ้อนสำหรับ ข้อความธรรมดาสีเข้ม
-const TextStyle textnormal = TextStyle(
+const TextStyle textnormalbold = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 16.0,
   fontWeight: FontWeight.bold,

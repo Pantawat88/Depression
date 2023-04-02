@@ -19,16 +19,14 @@ class _AgreementState extends State<PersonalInformation> {
         padding: const EdgeInsets.symmetric(
             horizontal: defaultPadding, vertical: 45.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                icon: Iback,
-                color: APrimaryColor,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
+            IconButton(
+              icon: Iback,
+              color: APrimaryColor,
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
             SizedBox(height: 20),
             Text(

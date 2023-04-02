@@ -19,8 +19,8 @@ class TFFemail extends StatelessWidget {
       cursorColor: APrimaryColor,
       style: textKey,
       decoration: InputDecoration(
-          hintText: 'อีเมล',
-          hintStyle: textformfield,
+          labelText: 'อีเมล',
+          labelStyle: textformfield,
           contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
@@ -44,8 +44,8 @@ class TFFpassword extends StatelessWidget {
       style: textKey,
       obscureText: true,
       decoration: InputDecoration(
-          hintText: "รหัสผ่าน",
-          hintStyle: textformfield,
+          labelText: "รหัสผ่าน",
+          labelStyle: textformfield,
           contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }

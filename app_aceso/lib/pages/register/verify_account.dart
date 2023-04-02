@@ -1,6 +1,7 @@
 import 'package:app_aceso/background.dart';
 import 'package:app_aceso/pages/register/privacy_agreement.dart';
 import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
+import 'package:app_aceso/pages/widget/widget_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -17,42 +18,64 @@ class VerifyAccount extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
             horizontal: defaultPadding, vertical: 45.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                icon: Iback,
-                color: APrimaryColor,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                IconButton(
+                  icon: Iback,
+                  color: APrimaryColor,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                SizedBox(height: 15.0),
+                Text(
+                  'กรอกรหัสยืนยัน',
+                  style: textHeading,
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'เราได้ส่งรหัส 6 หลัก ไปยังอีเมล : 63015xxx(ตัวแปร)',
+                  style: textnormalLight,
+                ),
+                SizedBox(height: 25.0),
+                Form(
+                  key: _formKey,
+                  child: const TFFpassword(),
+                ),
+                SizedBox(height: 25.0),
+                Row(
+                  children: [
+                    Text(
+                      'ยังไม่ได้รับรหัสยืนยัน? ',
+                      style: textsmallLight,
+                    ),
+                    Text(
+                      ' ส่งรหัสใหม่',
+                      style: TextStyle(
+                          fontFamily: 'Prompt',
+                          fontSize: 14,
+                          color: Color(0xffF5B277)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Container(
+              child: ElevatedButton(
+                child: ButtonOperation(BTname: 'ยืนยัน'),
                 onPressed: () {
-                  Navigator.pop(context);
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Agreement()),
+                    );
+                  }
                 },
               ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'กรอกรหัสยืนยัน',
-            ),
-            Text('เราได้ส่งรหัส 6 หลัก ไปยังอีเมล : 63015xxx(ตัวแปร)'),
-            SizedBox(height: 40),
-            Form(
-              key: _formKey,
-              child: const TFFpassword(),
-            ),
-            SizedBox(height: 20),
-            Text('ยังไม่ได้รับรหัสยืนยัน? ส่งรหัสใหม่'),
-            SizedBox(height: 50),
-            ElevatedButton(
-              child: Text('ยืนยัน'),
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => Agreement()),
-                  );
-                }
-              },
             ),
           ],
         ),
