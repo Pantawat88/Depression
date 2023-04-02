@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                             horizontal: 50.0, vertical: 50.0),
                         child: Row(
                           children: [
-                            Text('ขอให้วันนี้เป็นวันที่ดีสำหรับเธอนะ'),
+                            Text('ขอให้วันนี้เป็นวันที่ดีสำหรับเธอนะ',style: textsmall,),
                             Spacer(),
                             //Text('hello'),
                             //ElevatedButton(onPressed: (){}, child: const Icon(Icons.question_mark_outlined)),
