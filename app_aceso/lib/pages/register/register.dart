@@ -37,7 +37,7 @@ class RegisterPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'กรอกอีเมลของสถาบัน kmitl เท่านั้น  เพื่อใช้ลงทะเบียน',
+              'กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้สำหรับลงทะเบียน',
               style: textnormalLight,
             ),
             SizedBox(height: 30),

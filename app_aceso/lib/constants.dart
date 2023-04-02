@@ -11,21 +11,21 @@ const Iback = Icon(Icons.arrow_back_ios_rounded, size: 25); //<
 ////ฟ้อนสำหรับ หัวข้อเรื่องตัวหนา
 const TextStyle textHeading = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 22.0,
+  fontSize: 20.0,
   fontWeight: FontWeight.bold,
   color: APrimaryColor,
 );
 ////ฟ้อนสำหรับ ข้อความธรรมดา
 const TextStyle textnormalbold = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 18.0,
+  fontSize: 16.0,
   color: APrimaryColor,
 );
 
 ////ฟ้อนสำหรับ ข้อความธรรมดาสีเข้ม
 const TextStyle textnormal = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 18.0,
+  fontSize: 16.0,
   fontWeight: FontWeight.bold,
   color: APrimaryColor,
 );
@@ -33,20 +33,20 @@ const TextStyle textnormal = TextStyle(
 ////ฟ้อนสำหรับ ข้อความธรรมดาสีอ่อน
 const TextStyle textnormalLight = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 18.0,
+  fontSize: 16,
   color: APrimaryLightColor,
 );
 
 const TextStyle textsmall = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 15.0,
+  fontSize: 14.0,
   color: APrimaryColor,
 );
 
 ////ฟ้อนสำหรับ ข้อความขนาดเล็กสีเข้มตัวหนา
 const TextStyle textsmallbold = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 15.0,
+  fontSize: 14.0,
   fontWeight: FontWeight.bold,
   color: APrimaryColor,
 );
@@ -54,26 +54,26 @@ const TextStyle textsmallbold = TextStyle(
 ////ฟ้อนสำหรับ ข้อความขนาดเล็กสีอ่อน
 const TextStyle textsmallLight = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 15.0,
+  fontSize: 14.0,
   color: APrimaryLightColor,
 );
 
 ////ฟ้อนสำหรับ ปุ่ม
 const TextStyle textButton = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 18.0,
+  fontSize: 16.0,
 );
 
 ////ฟ้อนสำหรับ hinttext
 const TextStyle textformfield = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 18.0,
+  fontSize: 16.0,
   color: APrimaryLightColor,
 );
 
 ////ฟ้อนสำหรับ text ที่ให้ผู้ใช้กรอก
 const TextStyle textKey = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 18.0,
+  fontSize: 16.0,
   color: APrimaryColor,
 );
