@@ -39,22 +39,29 @@ class _AgreementState extends State<Agreement> {
                 },
               ),
             ),
-
             Text(
               'นโยบายความเป็นส่วนตัว',
-                style: tHeading,
+              style: tHeading,
             ),
             SizedBox(height: 20),
             SizedBox(
               width: 450,
-              height: 515,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Text(
+              height: 450,
+              child: Container(
+                color: Color(0xffF8F8FE).withOpacity(0.8),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
                         "นโยบายความเป็นส่วนตัวสำหรับลูกค้า\nบริษัท อเซโซ จำกัด ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณ โดยนโยบายความเป็นส่วนตัวฉบับนี้ได้อธิบายแนวปฏิบัติเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล รวมถึงสิทธิต่าง ๆ ของเจ้าของข้อมูลส่วนบุคคล ตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล",
-                        style: textsmall),
-                    Text('1 ) การเก็บรวบรวมข้อมูลส่วนบุคคล\n'
+                        style: TextStyle(
+                          fontFamily: 'Prompt',
+                          fontSize: 15.0,
+                          color: Color(0xff464646),
+                        ),
+                      ),
+                      Text(
+                        '1 ) การเก็บรวบรวมข้อมูลส่วนบุคคล\n'
                         'เราจะเก็บรวบรวมข้อมูลส่วนบุคคลที่ได้รับโดยตรงจากคุณผ่านช่องทาง ดังต่อไปนี้\n\n'
                         '- การสมัครสมาชิก\n'
                         '- อีเมล\n'
@@ -68,26 +75,38 @@ class _AgreementState extends State<Agreement> {
                         'เราจะเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลอ่อนไหว ดังต่อไปนี้ เมื่อเราได้รับความยินยอมโดยชัดแจ้งจากคุณ เว้นแต่กฎหมายกำหนดให้ทำได้\n\n'
                         '- เชื้อชาติ\n'
                         '- ข้อมูลอื่นใดที่กระทบต่อข้อมูลส่วนบุคคลของคุณตามที่คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลประกาศกำหนด',
-                        style: textsmall),
-                  ],
+                        style: TextStyle(
+                          fontFamily: 'Prompt',
+                          fontSize: 15.0,
+                          color: Color(0xff464646),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: 50),
-            ListTile(
-              leading: Checkbox(
-                value: _isChecked,
-                onChanged: (value) {
-                  setState(() {
-                    _isChecked = value!;
-                  });
-                },
+            SizedBox(height: 20),
+            Expanded(
+              child: ListTile(
+                contentPadding: EdgeInsets.zero,
+                leading: Checkbox(
+                  value: _isChecked,
+                  onChanged: (value) {
+                    setState(() {
+                      _isChecked = value!;
+                    });
+                  },
+                ),
+                title: const Text(
+                  "ฉันยอมรับนโยบายความเป็นส่วนตัวนี้",
+                  style: textsmall,
+                ),
               ),
-              title: const Text("ฉันยอมรับนโยบายความเป็นส่วนตัวนี้"),
             ),
             ElevatedButton(
-              child: ButtonOperation(BTname: 'ถัดไป',
-
+              child: ButtonOperation(
+                BTname: 'ถัดไป',
               ),
               onPressed: () {
                 Navigator.push(
