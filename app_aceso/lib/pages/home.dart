@@ -34,17 +34,47 @@ class _HomePageState extends State<HomePage> {
                             horizontal: 50.0, vertical: 50.0),
                         child: Row(
                           children: [
-                            Text('hello'),
+                            Text('ขอให้วันนี้เป็นวันที่ดีสำหรับเธอนะ'),
                             Spacer(),
-                            Text('hello'),
+                            //Text('hello'),
+                            //ElevatedButton(onPressed: (){}, child: const Icon(Icons.question_mark_outlined)),
+                            GestureDetector(
+                              onTap: () {
+                                //ยังไม่ได้สั่งให้มีป็อบอัพหรือเด้งไปหน้าไหน
+                              },
+                              child: CircleAvatar(
+                                backgroundColor: Color(0xff646FD4), // กำหนดสีพื้นหลังของวงกลม
+                                radius: 20.0, // กำหนดขนาดของวงกลม
+                                child: Icon(
+                                  Icons.question_mark_outlined, // กำหนดไอคอนที่จะใช้
+                                  color: Colors.white, // กำหนดสีของไอคอน
+                                  size: 30.0, // กำหนดขนาดของไอคอน
+                                ),
+                              ),
+                            ),
+                          ], // children of Row
+                        ),
+                      ),
+                      SizedBox(
+                        child: Image(
+                          image: AssetImage('assets/mato1.gif'),
+                          width: 250,
+                          height: 250,
+                        ),
+                      ),
+                      SizedBox(
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Text("อารม์ประจำวัน"),
+
+                              ],
+                            )
                           ],
                         ),
                       ),
-                      Image(
-                        image: AssetImage('assets/mato1.gif'),
-                        width: 250,
-                        height: 250,
-                      ),
+
                     ],
                   ),
                 ),
