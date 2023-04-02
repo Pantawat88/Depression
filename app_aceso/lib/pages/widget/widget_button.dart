@@ -14,7 +14,7 @@ class ButtonOperation extends StatelessWidget {
       child: Center(
         child: Text(
           BTname,
-          style: tButton,
+          style: textButton,
         ),
       ),
     );

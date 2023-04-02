@@ -41,7 +41,7 @@ class _AgreementState extends State<Agreement> {
             ),
             Text(
               'นโยบายความเป็นส่วนตัว',
-              style: tHeading,
+              style: textHeading,
             ),
             SizedBox(height: 20),
             SizedBox(

@@ -17,10 +17,10 @@ class TFFemail extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       cursorColor: APrimaryColor,
-      style: tKey,
+      style: textKey,
       decoration: InputDecoration(
           hintText: 'อีเมล',
-          hintStyle: tTextformfield,
+          hintStyle: textformfield,
           contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
@@ -41,11 +41,11 @@ class TFFpassword extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       cursorColor: APrimaryColor,
-      style: tKey,
+      style: textKey,
       obscureText: true,
       decoration: InputDecoration(
           hintText: "รหัสผ่าน",
-          hintStyle: tTextformfield,
+          hintStyle: textformfield,
           contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }

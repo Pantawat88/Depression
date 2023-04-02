@@ -59,13 +59,13 @@ class WelcomeLogin extends StatelessWidget {
                   },
                   child: Text(
                     'ลงทะเบียน',
-                    style: tmini,
+                    style: textsmallbold,
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'ลืมรหัสผ่าน?',
-                    style: tmini,
+                    style: textsmall,
                     textAlign: TextAlign.right,
                   ),
                 ),
