@@ -6,7 +6,10 @@ const APrimaryLightColor = Color(0xff9BA3EB);
 const double defaultPadding = 35.0;
 
 const Iclear = Icon(Icons.clear_rounded, size: 40); //X
-const Iback = Icon(Icons.arrow_back_ios_rounded, size: 25); //<
+const Iback =
+    Icon(Icons.arrow_back_ios_rounded, size: 30, color: APrimaryLightColor); //<
+const Iquestion_mark = Icon(Icons.question_mark_outlined, size: 25);
+const Ireport = Icon(Icons.report, size: 35, color: APrimaryColor);
 
 ////ฟ้อนสำหรับ หัวข้อเรื่องตัวหนา
 const TextStyle textHeading = TextStyle(
@@ -62,6 +65,7 @@ const TextStyle textsmallLight = TextStyle(
 const TextStyle textButton = TextStyle(
   fontFamily: 'Prompt',
   fontSize: 16.0,
+  color: Colors.white,
 );
 
 ////ฟ้อนสำหรับ hinttext
