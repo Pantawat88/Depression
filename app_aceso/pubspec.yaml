@@ -98,7 +98,7 @@ flutter:
       fonts:
         - asset: fonts/Prompt-Regular.ttf
         - asset: fonts/Prompt-Bold.ttf
-        
+        - asset: fonts/Prompt-SemiBold.ttf       
 
   #
   # For details regarding fonts from package dependencies,

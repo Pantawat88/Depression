@@ -29,17 +29,34 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 50.0, vertical: 50.0),
+                          padding: const EdgeInsets.only(
+                            left: 35,
+                            top: 50,
+                            right: 35,
+                            bottom: 10,
+                          ),
                           child: Row(
                             children: [
-                              Text(
-                                'ขอให้วันนี้เป็นวันที่ดีสำหรับเธอนะ',
-                                style: textsmall,
+                              Container(
+                                width: 280,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(18),
+                                    bottomRight: Radius.circular(18),
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    '  ขอให้วันนี้เป็นวันที่ดีสำหรับเธอนะ...',
+                                    style: textnormal,
+                                  ),
+                                ),
                               ),
                               Spacer(),
                               //Text('hello'),
@@ -49,25 +66,20 @@ class _HomePageState extends State<HomePage> {
                                   //ยังไม่ได้สั่งให้มีป็อบอัพหรือเด้งไปหน้าไหน
                                 },
                                 child: CircleAvatar(
-                                  backgroundColor: Color(
-                                      0xff646FD4), // กำหนดสีพื้นหลังของวงกลม
-                                  radius: 20.0, // กำหนดขนาดของวงกลม
-                                  child: Icon(
-                                    Icons
-                                        .question_mark_outlined, // กำหนดไอคอนที่จะใช้
-                                    color: Colors.white, // กำหนดสีของไอคอน
-                                    size: 30.0, // กำหนดขนาดของไอคอน
-                                  ),
+                                  backgroundColor:
+                                      APrimaryColor, // กำหนดสีพื้นหลังของวงกลม
+                                  radius: 18.0, // กำหนดขนาดของวงกลม
+                                  child: Iquestion_mark,
                                 ),
                               ),
                             ], // children of Row
                           ),
                         ),
-                        SizedBox(
+                        Container(
                           child: Image(
                             image: AssetImage('assets/avatar/mato/mato1.gif'),
-                            width: 230,
-                            height: 230,
+                            width: 265,
+                            height: 265,
                           ),
                         ),
                       ],
@@ -81,25 +93,65 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Row(
                     children: [
-                      Text("อารม์ประจำวัน"),
+                      Text(
+                        "อารมณ์ประจำวัน",
+                        style: textHeading,
+                      ),
                     ],
-                  )
+                  ),
+                  //--------*-*--------*--*---- sizeboxข้างล่างแค่ใส่ test การ scroll เอาออกได้
+                  SizedBox(
+                    height: 50,
+                  ),
                 ],
               ),
             ),
             SizedBox(height: 50),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                    return initial_form();
-                  }),
-                );
-              },
-              child: Text(
-                'ทำแบบประเมิน',
-                style: textButton,
+            //--------------------ส่วนของการทำแบบประเมิน
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 260,
+              decoration: BoxDecoration(
+                color: APrimaryveryLight,
+                borderRadius: BorderRadius.circular(35),
+              ),
+              child: Column(
+                children: [
+                  Image(
+                    image: AssetImage('assets/form.png'),
+                    width: 170,
+                    height: 125,
+                  ),
+                  Text(
+                    'ประเมินความเสี่ยงโรคซึมเศร้า',
+                    style: textHeading,
+                  ),
+                  Text(
+                    'หากคุณรู้สึกเศร้า กังวล คุณสามารถทำ\nแบบทดสอบของเราเพื่อประเมินผลในเบื้องต้นได้',
+                    style: textsmallLight,
+                    textAlign: TextAlign.center,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return initial_form();
+                        }),
+                      );
+                    },
+                    child: SizedBox(
+                      width: 270,
+                      height: 40,
+                      child: Center(
+                        child: Text(
+                          'ทำแบบประเมิน',
+                          style: textButton,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

@@ -2,19 +2,34 @@ import 'package:flutter/material.dart';
 
 const APrimaryColor = Color(0xff646FD4);
 const APrimaryLightColor = Color(0xff9BA3EB);
+const APrimaryveryLight = Color(0xffE8EAFF);
 
 const double defaultPadding = 35.0;
 
-const Iclear = Icon(Icons.clear_rounded, size: 40); //X
-const Iback =
-    Icon(Icons.arrow_back_ios_rounded, size: 30, color: APrimaryLightColor); //<
-const Iquestion_mark = Icon(Icons.question_mark_outlined, size: 25);
-const Ireport = Icon(Icons.report, size: 35, color: APrimaryColor);
+const Iclear = Icon(
+  Icons.clear_rounded,
+  size: 40,
+); //X
+const Iback = Icon(
+  Icons.arrow_back_ios_rounded,
+  size: 30,
+  color: APrimaryLightColor,
+); //<
+const Iquestion_mark = Icon(
+  Icons.question_mark_outlined,
+  size: 30,
+  color: Colors.white,
+); //?
+const Ireport = Icon(
+  Icons.report,
+  size: 35,
+  color: APrimaryColor,
+); //!
 
 ////ฟ้อนสำหรับ หัวข้อเรื่องตัวหนา
 const TextStyle textHeading = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 20.0,
+  fontSize: 19.0,
   fontWeight: FontWeight.bold,
   color: APrimaryColor,
 );
