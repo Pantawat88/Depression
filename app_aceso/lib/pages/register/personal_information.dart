@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../background.dart';
 import '../../constants.dart';
+import '../widget/widget_Textfromfield.dart';
 
 class PersonalInformation extends StatefulWidget {
   const PersonalInformation({super.key});
@@ -12,32 +13,63 @@ class PersonalInformation extends StatefulWidget {
 }
 
 class _AgreementState extends State<PersonalInformation> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Background(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: defaultPadding, vertical: 45.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            IconButton(
-              icon: Iback,
-              color: APrimaryColor,
-              onPressed: () {
-                Navigator.pop(context);
-              },
+      child: Column(
+        children: <Widget>[
+          Container(
+            alignment: Alignment.topLeft,
+            margin: EdgeInsets.only(
+              top: 50,
+              left: 20,
+              right: 60,
             ),
-            SizedBox(height: 20),
-            Text(
-              'ข้อมูลส่วนตัว',
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: Iback,
+                  color: APrimaryColor,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                Expanded(
+                  child: Text(
+                    'ข้อมูลส่วนตัว',
+                    style: textHeading,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
             ),
-            Text('กรอกข้อมูลส่วนตัวของคุณ'),
-            Text('เพื่อให้เราได้รู้จักคุณมากขึ้น โดยข้อมูลนี้'),
-            Text('จะดำเนินการตามนโยบายที่กำหนดเท่านั้น'),
-            SizedBox(height: 40),
-            SizedBox(height: 50),
-            ElevatedButton(
+          ),
+          Text(
+            'กรอกข้อมูลส่วนตัวของคุณ \nเพื่อให้เราได้รู้จักคุณมากขึ้น โดยข้อมูลนี้ \nจะดำเนินการตามนโยบายที่กำหนดเท่านั้น',
+            style: textnormalLight,
+            textAlign: TextAlign.center,
+          ),
+          Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                  child: const TFFinformation(labeltext: 'ชื่อ'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 50.0, vertical: 10.0),
+                  child: const TFFinformation(labeltext: 'นามสกุล'),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: ElevatedButton(
               child: Text('ถัดไป'),
               onPressed: () {
                 Navigator.push(
@@ -47,8 +79,8 @@ class _AgreementState extends State<PersonalInformation> {
                 );
               },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

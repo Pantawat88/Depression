@@ -14,71 +14,81 @@ class VerifyAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Background(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: defaultPadding, vertical: 45.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                IconButton(
-                  icon: Iback,
-                  color: APrimaryColor,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                SizedBox(height: 15.0),
-                Text(
-                  'กรอกรหัสยืนยัน',
-                  style: textHeading,
-                ),
-                SizedBox(height: 10.0),
-                Text(
-                  'เราได้ส่งรหัส 6 หลัก ไปยังอีเมล : 63015xxx(ตัวแปร)',
-                  style: textnormalLight,
-                ),
-                SizedBox(height: 25.0),
-                Form(
-                  key: _formKey,
-                  child: const TFFpassword(),
-                ),
-                SizedBox(height: 25.0),
-                Row(
-                  children: [
-                    Text(
-                      'ยังไม่ได้รับรหัสยืนยัน? ',
-                      style: textsmallLight,
-                    ),
-                    Text(
-                      ' ส่งรหัสใหม่',
-                      style: TextStyle(
-                          fontFamily: 'Prompt',
-                          fontSize: 14,
-                          color: Color(0xffF5B277)),
-                    ),
-                  ],
-                ),
-              ],
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.topLeft,
+            margin: EdgeInsets.only(
+              top: 50,
+              left: 20,
             ),
-            Container(
-              child: ElevatedButton(
-                child: ButtonOperation(BTname: 'ยืนยัน'),
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => Agreement()),
-                    );
-                  }
-                },
+            child: IconButton(
+              icon: Iback,
+              color: APrimaryColor,
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+          Expanded(
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              margin: EdgeInsets.only(
+                  top: 10, left: defaultPadding, right: defaultPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'กรอกรหัสยืนยัน',
+                    style: textHeading,
+                  ),
+                  SizedBox(height: 10.0),
+                  Text(
+                    'เราได้ส่งรหัส 6 หลัก ไปยังอีเมล : 63015xxx(ตัวแปร)',
+                    style: textnormalLight,
+                  ),
+                  SizedBox(height: 25.0),
+                  Form(
+                    key: _formKey,
+                    child: const TFFpassword(),
+                  ),
+                  SizedBox(height: 25.0),
+                  Row(
+                    children: [
+                      Text(
+                        'ยังไม่ได้รับรหัสยืนยัน? ',
+                        style: textsmallLight,
+                      ),
+                      Text(
+                        ' ส่งรหัสใหม่',
+                        style: TextStyle(
+                            fontFamily: 'Prompt',
+                            fontSize: 14,
+                            color: Color(0xffF5B277)),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            margin: EdgeInsets.all(defaultPadding),
+            child: ElevatedButton(
+              child: ButtonOperation(BTname: 'ยืนยัน'),
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Agreement()),
+                  );
+                }
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

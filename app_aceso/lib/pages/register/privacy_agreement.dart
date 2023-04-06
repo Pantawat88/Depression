@@ -21,7 +21,7 @@ class _AgreementState extends State<Agreement> {
     return Background(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: defaultPadding, vertical: 45.0),
+            horizontal: defaultPadding, vertical: 40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -44,9 +44,7 @@ class _AgreementState extends State<Agreement> {
               style: textHeading,
             ),
             SizedBox(height: 20),
-            SizedBox(
-              width: 450,
-              height: 450,
+            Expanded(
               child: Container(
                 color: Color(0xffF8F8FE).withOpacity(0.8),
                 child: SingleChildScrollView(
@@ -87,7 +85,7 @@ class _AgreementState extends State<Agreement> {
               ),
             ),
             SizedBox(height: 20),
-            Expanded(
+            Container(
               child: ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: Checkbox(
@@ -104,17 +102,21 @@ class _AgreementState extends State<Agreement> {
                 ),
               ),
             ),
-            ElevatedButton(
-              child: ButtonOperation(
-                BTname: 'ถัดไป',
+            Container(
+              alignment: Alignment.bottomCenter,
+              child: ElevatedButton(
+                child: ButtonOperation(
+                  BTname: 'ถัดไป',
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            PersonalInformation()),
+                  );
+                },
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => PersonalInformation()),
-                );
-              },
             ),
           ],
         ),

@@ -27,23 +27,20 @@ class WelcomeLogin extends StatelessWidget {
           Form(
             key: _formKey,
             child: Column(
-              children: <Widget>[
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                      child: const TFFemail(),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50.0, vertical: 10.0),
-                      child: const TFFpassword(),
-                    ),
-                  ],
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                  child: const TFFemail(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 50.0, vertical: 10.0),
+                  child: const TFFpassword(),
                 ),
               ],
             ),
           ),
+
           //ลงทะเบียนและลืมรหัสผ่าน
           Padding(
             padding:

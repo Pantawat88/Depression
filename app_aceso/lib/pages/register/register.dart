@@ -18,33 +18,39 @@ class RegisterPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
             horizontal: defaultPadding, vertical: 45.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Column(
-              children: [
-                IconButton(
-                  icon: Iclear,
-                  color: APrimaryColor,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                SizedBox(height: 15),
-                Text(
-                  'ลงทะเบียน',
-                  style: textHeading,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้สำหรับลงทะเบียน',
-                  style: textnormalLight,
-                ),
-                SizedBox(height: 25),
-                Form(
-                  key: _formKey,
-                  child: const TFFemail(),
-                ),
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      icon: Iclear,
+                      color: APrimaryColor,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Text(
+                    'ลงทะเบียน',
+                    style: textHeading,
+                    textAlign: TextAlign.left,
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้สำหรับลงทะเบียน',
+                    style: textnormalLight,
+                  ),
+                  SizedBox(height: 25),
+                  Form(
+                    key: _formKey,
+                    child: const TFFemail(),
+                  ),
+                ],
+              ),
             ),
             Container(
               child: ElevatedButton(

@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                                   alignment: Alignment.centerLeft,
                                   child: Text(
                                     '  ขอให้วันนี้เป็นวันที่ดีสำหรับเธอนะ...',
-                                    style: textnormal,
+                                    style: textsmall,
                                   ),
                                 ),
                               ),
