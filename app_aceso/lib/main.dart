@@ -20,20 +20,6 @@ class MyApp extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8))),
         ),
-        inputDecorationTheme: InputDecorationTheme(
-          enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryColor),
-              borderRadius: BorderRadius.circular(12.0)),
-          focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryLightColor, width: 2),
-              borderRadius: BorderRadius.circular(12.0)),
-          errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
-              borderRadius: BorderRadius.circular(12.0)),
-          focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
-              borderRadius: BorderRadius.circular(12.0)),
-        ),
       ),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
