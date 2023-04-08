@@ -74,15 +74,44 @@ class TFFpassword extends StatelessWidget {
   }
 }
 
-class TFFinformation extends StatefulWidget {
+class TFFsetpassword extends StatelessWidget {
+  final String labeltext;
+  const TFFsetpassword({Key? key, required this.labeltext}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'กรุณากรอกรหัสผ่านก่อน';
+        }
+        return null;
+      },
+      textInputAction: TextInputAction.next,
+      cursorColor: APrimaryColor,
+      style: textKey,
+      obscureText: true,
+      decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(12.0)),
+          filled: true,
+          fillColor: APrimaryveryLight,
+          labelText: labeltext,
+          labelStyle: textformfield,
+          contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+    );
+  }
+}
+
+class TFFinformation extends StatelessWidget {
   final String labeltext;
   const TFFinformation({Key? key, required this.labeltext}) : super(key: key);
 
-  @override
-  State<TFFinformation> createState() => _TFFinformationState();
-}
-
-class _TFFinformationState extends State<TFFinformation> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -105,7 +134,7 @@ class _TFFinformationState extends State<TFFinformation> {
             borderRadius: BorderRadius.circular(12.0)),
         filled: true,
         fillColor: APrimaryveryLight,
-        labelText: widget.labeltext,
+        labelText: labeltext,
         labelStyle: textformfield,
         contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0),
       ),
