@@ -1,7 +1,14 @@
+import 'package:app_aceso/constants.dart';
+import 'package:app_aceso/pages/feature.dart';
+import 'package:app_aceso/pages/home.dart';
+import 'package:app_aceso/pages/profile.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+  final int currentIndex;
+  final Function(int) onTap;
+
+  NavBar({super.key, required this.currentIndex, required this.onTap});
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -10,6 +17,37 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return BottomNavigationBar(
+      selectedItemColor: APrimaryColor,
+      unselectedItemColor: Colors.grey.withOpacity(0.5),
+      showUnselectedLabels: false,
+      showSelectedLabels: false,
+      selectedFontSize: 0,
+      currentIndex: widget.currentIndex,
+      onTap: widget.onTap,
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.home,
+            size: 30,
+          ),
+          label: 'home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.category_rounded,
+            size: 30,
+          ),
+          label: 'feature',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.person_rounded,
+            size: 30,
+          ),
+          label: 'profile',
+        ),
+      ],
+    );
   }
 }

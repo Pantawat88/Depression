@@ -1,4 +1,7 @@
+import 'package:app_aceso/pages/feature.dart';
 import 'package:app_aceso/pages/forms/initial_form.dart';
+import 'package:app_aceso/pages/nav.dart';
+import 'package:app_aceso/pages/profile.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 
@@ -10,6 +13,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+
+  void _onTap(int index) {
+    if (_currentIndex != index) {
+      setState(() {
+        _currentIndex = index;
+      });
+      if (index == 1) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FeaturePage()),
+        );
+      } else if (index == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ProfilePage()),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,10 +134,13 @@ class _HomePageState extends State<HomePage> {
             //--------------------ส่วนของการทำแบบประเมิน
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 260,
+              height: 270,
               decoration: BoxDecoration(
                 color: APrimaryveryLight,
-                borderRadius: BorderRadius.circular(35),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(35),
+                  topRight: Radius.circular(35),
+                ),
               ),
               child: Column(
                 children: [
@@ -156,6 +183,10 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: NavBar(
+        currentIndex: _currentIndex,
+        onTap: _onTap,
       ),
     );
   }
