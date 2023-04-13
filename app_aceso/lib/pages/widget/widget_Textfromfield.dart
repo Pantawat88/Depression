@@ -85,6 +85,9 @@ class TFFsetpassword extends StatelessWidget {
         if (value == null || value.isEmpty) {
           return 'กรุณากรอกรหัสผ่านก่อน';
         }
+        if (value.length < 6 || value.length > 18) {
+          return 'รหัสผ่านต้องมีความยาวระหว่าง 6-18 ตัว';
+        }
         return null;
       },
       textInputAction: TextInputAction.next,
@@ -107,6 +110,7 @@ class TFFsetpassword extends StatelessWidget {
     );
   }
 }
+
 
 class TFFinformation extends StatelessWidget {
   final String labeltext;
