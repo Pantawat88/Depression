@@ -149,6 +149,7 @@ class _AgreementState extends State<Agreement> {
                       _isChecked = value!;
                     });
                   },
+                  activeColor: Color(0xFF606BCB), // กำหนดสีม่วง
                 ),
                 title: const Text(
                   "ฉันยอมรับนโยบายความเป็นส่วนตัวนี้",
@@ -162,16 +163,20 @@ class _AgreementState extends State<Agreement> {
                 child: ButtonOperation(
                   BTname: 'ถัดไป',
                 ),
-                onPressed: () {
+                onPressed: _isChecked ? () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (BuildContext context) =>
                             PersonalInformation()),
                   );
-                },
+                } : null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: _isChecked ? Color(0xFF606BCB) : Colors.grey, // เลือกสีตามเงื่อนไข
+                ),
               ),
             ),
+
           ],
         ),
       ),
