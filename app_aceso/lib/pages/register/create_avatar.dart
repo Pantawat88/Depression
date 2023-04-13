@@ -44,7 +44,36 @@ class _CreateAvatarState extends State<CreateAvatar> {
               ],
             ),
           ),
-          Container(),
+          SizedBox(height: 30),
+          Expanded(
+              child: Column(
+            children: <Widget>[
+              Container(
+                width: 270,
+                height: 270,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xff222222),
+                ),
+                child: Image(
+                  image: AssetImage('assets/avatar/mato/mato1.gif'),
+                ),
+              ),
+              Column(
+                children: [
+                  Text(
+                    'น้องมาโต้',
+                    style: textnormalbold,
+                  ),
+                  Text(
+                    'ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิต\nจิตใจ เขามักมองหาสิ่งใหม่ ๆ\nในอวกาศอยู่เสมอ',
+                    style: textnormal,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ],
+          )),
           Container(
             alignment: Alignment.bottomCenter,
             margin: EdgeInsets.all(defaultPadding),
