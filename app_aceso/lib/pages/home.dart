@@ -1,9 +1,9 @@
 import 'package:app_aceso/pages/feature.dart';
-import 'package:app_aceso/pages/forms/initial_form.dart';
 import 'package:app_aceso/pages/nav.dart';
 import 'package:app_aceso/pages/profile.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
+import 'feature/forms/initial_form.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
