@@ -1,6 +1,7 @@
 import 'package:app_aceso/pages/feature.dart';
 import 'package:app_aceso/pages/home.dart';
 import 'package:app_aceso/pages/nav.dart';
+import 'package:app_aceso/pages/profile/profilescreen.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -35,9 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('This is Profile Screen'),
-      ),
+      body: ProfileScreen(),
       bottomNavigationBar: NavBar(
         currentIndex: _currentIndex,
         onTap: _onTap,
