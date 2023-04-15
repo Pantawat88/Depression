@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:app_aceso/pages/register/set_password.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +65,7 @@ class _AgreementState extends State<PersonalInformation> {
         children: <Widget>[
           Container(
             alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 50,
               left: 20,
               right: 60,
@@ -82,7 +80,7 @@ class _AgreementState extends State<PersonalInformation> {
                     Navigator.pop(context);
                   },
                 ),
-                Expanded(
+                const Expanded(
                   child: Text(
                     'ข้อมูลส่วนตัว',
                     style: textHeading,
@@ -92,15 +90,15 @@ class _AgreementState extends State<PersonalInformation> {
               ],
             ),
           ),
-          SizedBox(height: 20),
-          Text(
+          const SizedBox(height: 20),
+          const Text(
             'กรอกข้อมูลส่วนตัวของคุณ \nเพื่อให้เราได้รู้จักคุณมากขึ้น โดยข้อมูลนี้ \nจะดำเนินการตามนโยบายที่กำหนดเท่านั้น',
             style: textnormalLight,
             textAlign: TextAlign.center,
           ),
           Expanded(
             child: Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 30,
                 left: defaultPadding,
                 right: defaultPadding,
@@ -110,23 +108,23 @@ class _AgreementState extends State<PersonalInformation> {
                 child: Column(
                   children: [
                     const TFFinformation(labeltext: 'ชื่อ'),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     const TFFinformation(labeltext: 'นามสกุล'),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     const TFFinformation(labeltext: 'ชื่อเล่น'),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 13),
+                      padding: const EdgeInsets.symmetric(horizontal: 13),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: APrimaryveryLight,
                       ),
                       child: dropdown(),
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     //---------------------------------------
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 13),
+                      padding: const EdgeInsets.symmetric(horizontal: 13),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -138,7 +136,7 @@ class _AgreementState extends State<PersonalInformation> {
                             _dateText,
                             style: textnormal,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
                             onPressed: () {
                               showCupertinoModalPopup(
@@ -180,7 +178,7 @@ class _AgreementState extends State<PersonalInformation> {
                                 },
                               );
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.calendar_month_rounded,
                               color: APrimaryColor,
                             ),
@@ -195,15 +193,15 @@ class _AgreementState extends State<PersonalInformation> {
           ),
           Container(
             alignment: Alignment.bottomCenter,
-            margin: EdgeInsets.all(defaultPadding),
+            margin: const EdgeInsets.all(defaultPadding),
             child: ElevatedButton(
-              child: ButtonOperation(BTname: 'ถัดไป'),
+              child: const ButtonOperation(BTname: 'ถัดไป'),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => SetPassword()),
+                        builder: (BuildContext context) => const SetPassword()),
                   );
                 }
               },
@@ -216,7 +214,7 @@ class _AgreementState extends State<PersonalInformation> {
 
   Widget dropdown() => DropdownButtonHideUnderline(
         child: DropdownButton(
-          hint: Text("เลือกคณะ", style: textformfield),
+          hint: const Text("เลือกคณะ", style: textformfield),
           value: dropdownValue,
           iconSize: 36,
           icon: const Icon(

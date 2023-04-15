@@ -39,17 +39,17 @@ class _AgreementState extends State<Agreement> {
                 },
               ),
             ),
-            Text(
+            const Text(
               'นโยบายความเป็นส่วนตัว',
               style: textHeading,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: Container(
-                color: Color(0xffF8F8FE).withOpacity(0.8),
+                color: const Color(0xffF8F8FE).withOpacity(0.8),
                 child: SingleChildScrollView(
                   child: Column(
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text(
                         "นโยบายความเป็นส่วนตัวสำหรับลูกค้า\nบริษัท อเซโซ จำกัด ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณ โดยนโยบายความเป็นส่วนตัวฉบับนี้ได้อธิบายแนวปฏิบัติเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล รวมถึงสิทธิต่าง ๆ ของเจ้าของข้อมูลส่วนบุคคล ตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล\n",
                         style: TextStyle(
@@ -138,45 +138,44 @@ class _AgreementState extends State<Agreement> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Container(
-              child: ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: Checkbox(
-                  value: _isChecked,
-                  onChanged: (value) {
-                    setState(() {
-                      _isChecked = value!;
-                    });
-                  },
-                  activeColor: Color(0xFF606BCB), // กำหนดสีม่วง
-                ),
-                title: const Text(
-                  "ฉันยอมรับนโยบายความเป็นส่วนตัวนี้",
-                  style: textnormal,
-                ),
+            const SizedBox(height: 20),
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              leading: Checkbox(
+                value: _isChecked,
+                onChanged: (value) {
+                  setState(() {
+                    _isChecked = value!;
+                  });
+                },
+                activeColor: const Color(0xFF606BCB), // กำหนดสีม่วง
+              ),
+              title: const Text(
+                "ฉันยอมรับนโยบายความเป็นส่วนตัวนี้",
+                style: textnormal,
               ),
             ),
             Container(
               alignment: Alignment.bottomCenter,
               child: ElevatedButton(
-                child: ButtonOperation(
-                  BTname: 'ถัดไป',
-                ),
-                onPressed: _isChecked ? () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            PersonalInformation()),
-                  );
-                } : null,
+                onPressed: _isChecked
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const PersonalInformation()),
+                        );
+                      }
+                    : null,
+                child: const ButtonOperation(BTname: 'ถัดไป'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: _isChecked ? Color(0xFF606BCB) : Colors.grey, // เลือกสีตามเงื่อนไข
+                  backgroundColor: _isChecked
+                      ? const Color(0xFF606BCB)
+                      : Colors.grey, // เลือกสีตามเงื่อนไข
                 ),
               ),
             ),
-
           ],
         ),
       ),

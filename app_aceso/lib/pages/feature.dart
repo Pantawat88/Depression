@@ -21,12 +21,12 @@ class _FeaturePageState extends State<FeaturePage> {
       if (index == 0) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
       } else if (index == 2) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProfilePage()),
+          MaterialPageRoute(builder: (context) => const ProfilePage()),
         );
       }
     }
@@ -35,7 +35,7 @@ class _FeaturePageState extends State<FeaturePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: const Center(
         child: Text('This is Feature Screen'),
       ),
       bottomNavigationBar: NavBar(

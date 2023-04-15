@@ -22,7 +22,7 @@ class _SetPasswordState extends State<SetPassword> {
         children: <Widget>[
           Container(
             alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 50,
               left: 20,
               right: 60,
@@ -37,7 +37,7 @@ class _SetPasswordState extends State<SetPassword> {
                     Navigator.pop(context);
                   },
                 ),
-                Expanded(
+                const Expanded(
                   child: Text(
                     'รหัสผ่าน',
                     style: textHeading,
@@ -47,14 +47,14 @@ class _SetPasswordState extends State<SetPassword> {
               ],
             ),
           ),
-          SizedBox(height: 20),
-          Icon(
+          const SizedBox(height: 20),
+          const Icon(
             Icons.lock_outline,
             size: 50,
             color: APrimaryColor,
           ),
-          Padding(
-            padding: const EdgeInsets.all(defaultPadding),
+          const Padding(
+            padding: EdgeInsets.all(defaultPadding),
             child: Text(
               'กำหนดรหัสผ่านของคุณ ด้วยอักขระ 6-18 ตัว สำหรับการใช้งานบน Aceso',
               style: textnormalLight,
@@ -63,17 +63,17 @@ class _SetPasswordState extends State<SetPassword> {
           ),
           Expanded(
             child: Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 left: defaultPadding,
                 right: defaultPadding,
               ),
               child: Form(
                 key: _formKey,
                 child: Column(
-                  children: [
-                    const TFFsetpassword(labeltext: 'รหัสผ่าน'),
+                  children: const [
+                    TFFsetpassword(labeltext: 'รหัสผ่าน'),
                     SizedBox(height: 15),
-                    const TFFsetpassword(labeltext: 'รหัสผ่านซ้ำอีกครั้ง'),
+                    TFFsetpassword(labeltext: 'รหัสผ่านซ้ำอีกครั้ง'),
                   ],
                 ),
               ),
@@ -81,15 +81,16 @@ class _SetPasswordState extends State<SetPassword> {
           ),
           Container(
             alignment: Alignment.bottomCenter,
-            margin: EdgeInsets.all(defaultPadding),
+            margin: const EdgeInsets.all(defaultPadding),
             child: ElevatedButton(
-              child: ButtonOperation(BTname: 'ถัดไป'),
+              child: const ButtonOperation(BTname: 'ถัดไป'),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => CreateAvatar()),
+                        builder: (BuildContext context) =>
+                            const CreateAvatar()),
                   );
                 }
               },

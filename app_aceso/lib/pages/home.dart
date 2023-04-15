@@ -23,12 +23,12 @@ class _HomePageState extends State<HomePage> {
       if (index == 1) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FeaturePage()),
+          MaterialPageRoute(builder: (context) => const FeaturePage()),
         );
       } else if (index == 2) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProfilePage()),
+          MaterialPageRoute(builder: (context) => const ProfilePage()),
         );
       }
     }
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: 400,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/background/bg_moto1.png'),
                         fit: BoxFit.cover,
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                               Container(
                                 width: 280,
                                 height: 40,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(20),
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                                     bottomRight: Radius.circular(18),
                                   ),
                                 ),
-                                child: Align(
+                                child: const Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
                                     '  ขอให้วันนี้เป็นวันที่ดีสำหรับเธอนะ...',
@@ -82,14 +82,14 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               //Text('hello'),
                               //ElevatedButton(onPressed: (){}, child: const Icon(Icons.question_mark_outlined)),
                               GestureDetector(
                                 onTap: () {
                                   //ยังไม่ได้สั่งให้มีป็อบอัพหรือเด้งไปหน้าไหน
                                 },
-                                child: CircleAvatar(
+                                child: const CircleAvatar(
                                   backgroundColor:
                                       APrimaryColor, // กำหนดสีพื้นหลังของวงกลม
                                   radius: 18.0, // กำหนดขนาดของวงกลม
@@ -99,12 +99,10 @@ class _HomePageState extends State<HomePage> {
                             ], // children of Row
                           ),
                         ),
-                        Container(
-                          child: Image(
-                            image: AssetImage('assets/avatar/mato/mato1.gif'),
-                            width: 265,
-                            height: 265,
-                          ),
+                        const Image(
+                          image: AssetImage('assets/avatar/mato/mato1.gif'),
+                          width: 265,
+                          height: 265,
                         ),
                       ],
                     ),
@@ -116,7 +114,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Row(
-                    children: [
+                    children: const <Widget>[
                       Text(
                         "อารมณ์ประจำวัน",
                         style: textHeading,
@@ -124,18 +122,16 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   //--------*-*--------*--*---- sizeboxข้างล่างแค่ใส่ test การ scroll เอาออกได้
-                  SizedBox(
-                    height: 50,
-                  ),
+                  const SizedBox(height: 50),
                 ],
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             //--------------------ส่วนของการทำแบบประเมิน
             Container(
               width: MediaQuery.of(context).size.width,
               height: 270,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: APrimaryveryLight,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(35),
@@ -144,16 +140,16 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Column(
                 children: [
-                  Image(
+                  const Image(
                     image: AssetImage('assets/form.png'),
                     width: 170,
                     height: 125,
                   ),
-                  Text(
+                  const Text(
                     'ประเมินความเสี่ยงโรคซึมเศร้า',
                     style: textHeading,
                   ),
-                  Text(
+                  const Text(
                     'หากคุณรู้สึกเศร้า กังวล คุณสามารถทำ\nแบบทดสอบของเราเพื่อประเมินผลในเบื้องต้นได้',
                     style: textsmallLight,
                     textAlign: TextAlign.center,
@@ -163,11 +159,11 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                          return initial_form();
+                          return const InitialForm();
                         }),
                       );
                     },
-                    child: SizedBox(
+                    child: const SizedBox(
                       width: 270,
                       height: 40,
                       child: Center(

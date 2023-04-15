@@ -18,7 +18,7 @@ class VerifyAccount extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 50,
               left: 20,
             ),
@@ -33,28 +33,28 @@ class VerifyAccount extends StatelessWidget {
           Expanded(
             child: Container(
               height: MediaQuery.of(context).size.height,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                   top: 10, left: defaultPadding, right: defaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'กรอกรหัสยืนยัน',
                     style: textHeading,
                   ),
-                  SizedBox(height: 10.0),
-                  Text(
+                  const SizedBox(height: 10.0),
+                  const Text(
                     'เราได้ส่งรหัส 6 หลัก ไปยังอีเมล : 63015xxx(ตัวแปร)',
                     style: textnormalLight,
                   ),
-                  SizedBox(height: 25.0),
+                  const SizedBox(height: 25.0),
                   Form(
                     key: _formKey,
                     child: const TFFpasswordPin(),
                   ),
-                  SizedBox(height: 25.0),
+                  const SizedBox(height: 25.0),
                   Row(
-                    children: [
+                    children: const [
                       Text(
                         'ยังไม่ได้รับรหัสยืนยัน? ',
                         style: textsmallLight,
@@ -74,15 +74,15 @@ class VerifyAccount extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.bottomCenter,
-            margin: EdgeInsets.all(defaultPadding),
+            margin: const EdgeInsets.all(defaultPadding),
             child: ElevatedButton(
-              child: ButtonOperation(BTname: 'ยืนยัน'),
+              child: const ButtonOperation(BTname: 'ยืนยัน'),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Agreement()),
+                        builder: (BuildContext context) => const Agreement()),
                   );
                 }
               },

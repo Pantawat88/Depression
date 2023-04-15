@@ -22,12 +22,12 @@ class _ProfilePageState extends State<ProfilePage> {
       if (index == 0) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
       } else if (index == 1) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FeaturePage()),
+          MaterialPageRoute(builder: (context) => const FeaturePage()),
         );
       }
     }
@@ -36,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ProfileScreen(),
+      body: const ProfileScreen(),
       bottomNavigationBar: NavBar(
         currentIndex: _currentIndex,
         onTap: _onTap,

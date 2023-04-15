@@ -33,18 +33,18 @@ class RegisterPage extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height: 15),
-                  Text(
+                  const SizedBox(height: 15),
+                  const Text(
                     'ลงทะเบียน',
                     style: textHeading,
                     textAlign: TextAlign.left,
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'กรอกอีเมลของสถาบัน kmitl เท่านั้น เพื่อใช้สำหรับลงทะเบียน',
                     style: textnormalLight,
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Form(
                     key: _formKey,
                     child: const TFFemail(),
@@ -52,21 +52,19 @@ class RegisterPage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              child: ElevatedButton(
-                child: ButtonOperation(
-                  BTname: 'ยืนยัน',
-                ),
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => VerifyAccount()),
-                    );
-                  }
-                },
+            ElevatedButton(
+              child: const ButtonOperation(
+                BTname: 'ยืนยัน',
               ),
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => VerifyAccount()),
+                  );
+                }
+              },
             ),
           ],
         ),

@@ -15,7 +15,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
   String selectedName = "มาโต้";
   String selectedStory =
       "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
-  Color backgroundColor = Color(0xff222222);
+  Color backgroundColor = const Color(0xff222222);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
           children: <Widget>[
             Container(
               alignment: Alignment.topLeft,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 20,
                 left: 20,
                 right: 60,
@@ -39,7 +39,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                       Navigator.pop(context);
                     },
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Text(
                       'สร้าง เพื่อนซี้',
                       style: textHeading,
@@ -49,7 +49,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                 ],
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -95,57 +95,57 @@ class _CreateAvatarState extends State<CreateAvatar> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
-                  Container(
+                  const SizedBox(height: 10),
+                  SizedBox(
                     height: 80,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          SizedBox(width: 35),
+                          const SizedBox(width: 35),
                           GestureDetector(
                             onTap: () {
                               setState(() {
                                 selectedName = "มาโต้";
                                 selectedStory =
                                     "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
-                                backgroundColor = Color(0xff222222);
+                                backgroundColor = const Color(0xff222222);
                               });
                             },
                             child: Image.asset('assets/avatar/png/mato.png'),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
                               setState(() {
                                 selectedName = "เนเน่";
                                 selectedStory =
                                     "ผีตัวน้อยที่มักจะทักทายกับคนที่\nเข้ามาใกล้อยู่เสมอ";
-                                backgroundColor = Color(0xffCFB2F3);
+                                backgroundColor = const Color(0xffCFB2F3);
                               });
                             },
                             child: Image.asset('assets/avatar/png/nene.png'),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
                               setState(() {
                                 selectedName = "หูหนู";
                                 selectedStory =
                                     "เห็ดตัวน้อยที่ชอบเที่ยวเล่นตามประสาเด็กน้อย\nชอบค้นหาสิ่งใหม่ ๆ ทำเสมอ อารมณ์ดี";
-                                backgroundColor = Color(0xffFFBCBC);
+                                backgroundColor = const Color(0xffFFBCBC);
                               });
                             },
                             child: Image.asset('assets/avatar/png/huhnu.png'),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
                               setState(() {
                                 selectedName = "เนโกะ";
                                 selectedStory =
                                     "แมวอ้วนที่ชอบออกกำลังกาย\nแต่ชอบกินเยอะอยู่ดี";
-                                backgroundColor = Color(0xffF4DF8E);
+                                backgroundColor = const Color(0xffF4DF8E);
                               });
                             },
                             child: Image.asset(
@@ -153,31 +153,31 @@ class _CreateAvatarState extends State<CreateAvatar> {
                               width: 120,
                             ),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
                               setState(() {
                                 selectedName = "ราเม็ง";
                                 selectedStory =
                                     "มังกรทารกที่พร้อมจะมอบความสดใส\nให้คุณเหมือนทารกแรกแย้ม";
-                                backgroundColor = Color(0xffCDF0EA);
+                                backgroundColor = const Color(0xffCDF0EA);
                               });
                             },
                             child: Image.asset('assets/avatar/png/ramen.png'),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
                               setState(() {
                                 selectedName = "โชน";
                                 selectedStory =
                                     "ใช้ชีวิตสโลว์ไลฟ์ในโลกมนุษย์ชอบทำงาน\nชอบเต้น มีเหตุผล อบอุ่นใจดี";
-                                backgroundColor = Color(0xffABC2E8);
+                                backgroundColor = const Color(0xffABC2E8);
                               });
                             },
                             child: Image.asset('assets/avatar/png/chon.png'),
                           ),
-                          SizedBox(width: 25),
+                          const SizedBox(width: 25),
                         ],
                       ),
                     ),
@@ -187,14 +187,15 @@ class _CreateAvatarState extends State<CreateAvatar> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              margin: EdgeInsets.all(defaultPadding),
+              margin: const EdgeInsets.all(defaultPadding),
               child: ElevatedButton(
-                child: ButtonOperation(BTname: 'ถัดไป'),
+                child: const ButtonOperation(BTname: 'ถัดไป'),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => SuccessRegister()),
+                        builder: (BuildContext context) =>
+                            const SuccessRegister()),
                   );
                 },
               ),

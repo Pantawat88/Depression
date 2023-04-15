@@ -14,27 +14,25 @@ class BackgroundForLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Stack(
-          children: <Widget>[
-            Positioned(
-              child: Image.asset(
-                topImage,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
-              ),
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            child: Image.asset(
+              topImage,
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.cover,
             ),
-            Positioned(
-              bottom: 0,
-              child: Image.asset(
-                bottomImage,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
-              ),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Image.asset(
+              bottomImage,
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.cover,
             ),
-            SafeArea(child: child),
-          ],
-        ),
+          ),
+          SafeArea(child: child),
+        ],
       ),
     );
   }
@@ -52,7 +50,7 @@ class Background extends StatelessWidget {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter, // ทิศทางจากบนลงล่าง
             end: Alignment.bottomCenter,

@@ -20,20 +20,21 @@ class TFFemail extends StatelessWidget {
       style: textKey,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryColor),
+              borderSide: const BorderSide(color: APrimaryColor),
               borderRadius: BorderRadius.circular(12.0)),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryLightColor, width: 2),
+              borderSide: const BorderSide(color: APrimaryLightColor, width: 2),
               borderRadius: BorderRadius.circular(12.0)),
           errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
+              borderSide: const BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
           focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
+              borderSide: const BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
           labelText: 'อีเมล',
           labelStyle: textformfield,
-          contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+          contentPadding:
+              const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
 }
@@ -59,24 +60,24 @@ class TFFpasswordPin extends StatelessWidget {
       obscureText: true,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryColor),
+              borderSide: const BorderSide(color: APrimaryColor),
               borderRadius: BorderRadius.circular(12.0)),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryLightColor, width: 2),
+              borderSide: const BorderSide(color: APrimaryLightColor, width: 2),
               borderRadius: BorderRadius.circular(12.0)),
           errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
+              borderSide: const BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
           focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
+              borderSide: const BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
           labelText: "รหัสผ่าน",
           labelStyle: textformfield,
-          contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+          contentPadding:
+              const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
 }
-
 
 class TFFpassword extends StatelessWidget {
   const TFFpassword({Key? key}) : super(key: key);
@@ -99,25 +100,24 @@ class TFFpassword extends StatelessWidget {
       obscureText: true,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryColor),
+              borderSide: const BorderSide(color: APrimaryColor),
               borderRadius: BorderRadius.circular(12.0)),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: APrimaryLightColor, width: 2),
+              borderSide: const BorderSide(color: APrimaryLightColor, width: 2),
               borderRadius: BorderRadius.circular(12.0)),
           errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
+              borderSide: const BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
           focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
+              borderSide: const BorderSide(color: Colors.red),
               borderRadius: BorderRadius.circular(12.0)),
           labelText: "รหัสผ่าน",
           labelStyle: textformfield,
-          contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+          contentPadding:
+              const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
 }
-
-
 
 class TFFsetpassword extends StatelessWidget {
   final String labeltext;
@@ -140,7 +140,7 @@ class TFFsetpassword extends StatelessWidget {
       style: textKey,
       obscureText: true,
       decoration: InputDecoration(
-          border: OutlineInputBorder(
+          border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)),
             borderSide: BorderSide.none,
           ),
@@ -151,11 +151,11 @@ class TFFsetpassword extends StatelessWidget {
           fillColor: APrimaryveryLight,
           labelText: labeltext,
           labelStyle: textformfield,
-          contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+          contentPadding:
+              const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
 }
-
 
 class TFFinformation extends StatelessWidget {
   final String labeltext;
@@ -164,8 +164,8 @@ class TFFinformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (Text) {
-        if (Text == null || Text.isEmpty) {
+      validator: (text) {
+        if (text == null || text.isEmpty) {
           return 'กรุณากรอก';
         }
         return null;
@@ -174,7 +174,7 @@ class TFFinformation extends StatelessWidget {
       cursorColor: APrimaryColor,
       style: textKey,
       decoration: InputDecoration(
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
           borderSide: BorderSide.none,
         ),
@@ -185,7 +185,8 @@ class TFFinformation extends StatelessWidget {
         fillColor: APrimaryveryLight,
         labelText: labeltext,
         labelStyle: textformfield,
-        contentPadding: EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0),
+        contentPadding:
+            const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0),
       ),
     );
   }

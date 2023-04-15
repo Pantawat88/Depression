@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Column(
-        children: <Widget>[Text('test')],
+        children: const <Widget>[Text('test')],
       )),
     );
   }

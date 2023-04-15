@@ -17,25 +17,25 @@ class WelcomeLogin extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           //appname
-          Image(
+          const Image(
             height: 80,
             width: 180,
             image: AssetImage('assets/appname.png'),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           //formLogin
           Form(
             key: _formKey,
             child: Column(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                  child: const TFFemail(),
+                  padding: EdgeInsets.symmetric(horizontal: 50.0),
+                  child: TFFemail(),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 50.0, vertical: 10.0),
-                  child: const TFFpassword(),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
+                  child: TFFpassword(),
                 ),
               ],
             ),
@@ -54,12 +54,12 @@ class WelcomeLogin extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => RegisterPage()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'ลงทะเบียน',
                     style: textsmallbold,
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: Text(
                     'ลืมรหัสผ่าน?',
                     style: textsmall,
@@ -69,7 +69,7 @@ class WelcomeLogin extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           //ปุ่มเข้าสู่ระบบ
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -79,7 +79,7 @@ class WelcomeLogin extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (BuildContext context) {
-                      return HomePage();
+                      return const HomePage();
                     }),
                   );
                 }
