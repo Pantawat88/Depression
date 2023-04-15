@@ -41,7 +41,7 @@ class ProfileScreen extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(nickname, style: textnormalWhite),
+                                Text(nickname, style: textnormalbigWhite),
                                 IconButton(
                                   iconSize: 30,
                                   icon: Icon(Icons.settings, color: Colors.white),
