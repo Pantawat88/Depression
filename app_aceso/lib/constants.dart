@@ -96,3 +96,16 @@ const TextStyle textKey = TextStyle(
   fontSize: 16.0,
   color: APrimaryColor,
 );
+
+
+const TextStyle textnormalbigWhite = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 25.0,
+  color: Colors.white,
+);
+
+const TextStyle textnormalsmallWhite = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 20.0,
+  color: Colors.white,
+);
