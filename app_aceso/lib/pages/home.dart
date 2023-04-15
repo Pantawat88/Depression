@@ -113,13 +113,26 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                      children: const <Widget>[
+                        const SizedBox(width: 20),
+                        const Image(
+                          image: AssetImage('assets/meter.png'),
+                          width: 35,
+                          height: 55,
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          "อารมณ์ประจำวัน",
+                          style: textHeading,
+                        ),
+                      ],
+                    ),
+                  ),
                   Row(
-                    children: const <Widget>[
-                      Text(
-                        "อารมณ์ประจำวัน",
-                        style: textHeading,
-                      ),
-                    ],
+
                   ),
                   //--------*-*--------*--*---- sizeboxข้างล่างแค่ใส่ test การ scroll เอาออกได้
                   const SizedBox(height: 50),
