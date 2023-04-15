@@ -127,7 +127,7 @@ class ProfileScreen extends StatelessWidget {
 
                       ///////////////////////////////////ส่วนสีขาว
                       Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.all(1.0),
                         child: Center(
                           child: Column(
                             children: [
@@ -143,26 +143,51 @@ class ProfileScreen extends StatelessWidget {
                                       child: Container(
                                         width: 265.0,
                                         height: 273.0,
-                                        padding: EdgeInsets.all(30.0),
+                                        //padding: EdgeInsets.all(30.0),
                                         child: Column(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Column(
+                                              children : [
+                                                Align(
+                                                  alignment: Alignment.topRight,
+                                                  child: Padding(
+                                                    padding: EdgeInsets.only(right: 16.0),
+                                                    child: IconButton(
+                                                      onPressed: () {
+                                                        Navigator.of(context).pop();
+                                                      },
+                                                      icon: Icon(
+                                                        Icons.close,
+                                                        color: Color(0xff646FD4),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+
+                                              ],
 
                                             )
-                                            ,Text(
-                                              'ฉันชอบประโยคนึงมากเลย ที่ว่า “ไม่ใช่ดวงดาวที่จะกุมโชคชะตาของเรา แต่อยู่ในตัวเราเอง”',
-                                              style: textnormal,
-                                            ),
-                                            SizedBox(height: 10.0),
-                                            Center(
-                                              child: Text(
-                                                '-ลิซ่า มันช์เชฟ',
-                                                style: textnormal,
+                                            , Container(
+                                              padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                    'ฉันชอบประโยคนึงมากเลย ที่ว่า “ไม่ใช่ดวงดาวที่จะกุมโชคชะตาของเรา แต่อยู่ในตัวเราเอง”',
+                                                    style: textnormal,
+                                                  ),
+                                                  SizedBox(height: 10.0),
+                                                  Center(
+                                                    child: Text(
+                                                      '-ลิซ่า มันช์เชฟ',
+                                                      style: textnormal,
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 20.0),
+                                                ],
                                               ),
                                             ),
-                                            SizedBox(height: 20.0),
 
                                           ],
                                         ),

@@ -133,11 +133,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Row(),
                   //--------*-*--------*--*---- sizeboxข้างล่างแค่ใส่ test การ scroll เอาออกได้
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
-            const SizedBox(height: 50),
+            //const SizedBox(height: 50),
             //--------------------ส่วนของการทำแบบประเมิน
             Container(
               width: MediaQuery.of(context).size.width,
@@ -195,6 +195,63 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _currentIndex,
         onTap: _onTap,
       ),
+    );
+  }
+
+  Widget _buildPopupDialog(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      //title: const Text('Popup example'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Align(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(
+                Icons.close,
+                color: Color(0xff646FD4),
+              ),
+            ),
+          ),
+
+          //-------------------------------ส่วนเนื้อหา-------------------------------
+          Container(
+            child: Column(
+              children: [
+                //-------------------แถวที่ 1------------------
+                Column(
+                  children: [],
+                ),
+                //------------------แถวที่ 1------------------
+                //------------------แถวที่ 2------------------
+                Column(),
+                //------------------แถวที่ 2------------------
+              ],
+            ),
+          ),
+          //-------------------------------ส่วนเนื้อหา-------------------------------
+
+          Text('Popup content'),
+          Text('Popup content'),
+          Text('Popup content'),
+        ],
+      ),
+
+      actions: <Widget>[
+        Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); //ไว้ออกหลังจากทำการบันทึกค่าแล้ว
+                },
+                child: Text('บันทึก', style: textnormalsmallWhite))),
+      ],
     );
   }
 }
