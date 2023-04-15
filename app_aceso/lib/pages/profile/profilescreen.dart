@@ -19,18 +19,21 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          width: 415,
+          //width: 415,
           height: 800,
           color: Colors.white,
           child: Stack(
             children: [
               Positioned(
-                width: 425,
-                height: 525,
+                //width: 425,
+                //height: 525,
                 left: 0,
                 top: 0,
                 child: Container(
-                  color: Color(0xFF646FD4),
+                    width: MediaQuery.of(context).size.width,
+                    height: 525,
+                    color: Color(0xFF646FD4),
+                    //color: Color.fromRGBO(100, 111, 212, 1.0),
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 0.0),
                     child: Column(
@@ -90,101 +93,105 @@ class ProfileScreen extends StatelessWidget {
               ),
 
               Positioned(
-                width: 425,
+                //width: 425,
                 height: 275,
                 left: 0,
                 top: 525,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 31, top: 34),
-                      child: Text(
-                        'เพื่อนซี้ของคุณ : น้องมาโต้',
-                        style: TextStyle(
-                          fontFamily: 'Prompt',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                          color: Color(0xFF646FD4),
-                          height: 1.5,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+
+                        padding: const EdgeInsets.only(left: 31, top: 34),
+                        child: Text(
+                          'เพื่อนซี้ของคุณ : น้องมาโต้',
+                          style: TextStyle(
+                            fontFamily: 'Prompt',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            color: Color(0xFF646FD4),
+                            height: 1.5,
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(30.0),
-                        child: Text(
-                          'ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ',
-                            style: textnormal,
-                        )
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.all(30.0),
+                          child: Text(
+                            'ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ',
+                              style: textnormal,
+                          )
+                      ),
 
 
-                    ///////////////////////////////////ส่วนสีขาว
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Center(
-                        child: Column(
-                          children: [
-                            ElevatedButton(onPressed: (){
-                              /////////////ป๊อบอัพ
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                    ),
-                                    child: Container(
-                                      width: 265.0,
-                                      height: 273.0,
-                                      padding: EdgeInsets.all(30.0),
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Column(
+                      ///////////////////////////////////ส่วนสีขาว
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Center(
+                          child: Column(
+                            children: [
+                              ElevatedButton(onPressed: (){
+                                /////////////ป๊อบอัพ
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return Dialog(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20.0),
+                                      ),
+                                      child: Container(
+                                        width: 265.0,
+                                        height: 273.0,
+                                        padding: EdgeInsets.all(30.0),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Column(
 
-                                          )
-                                          ,Text(
-                                            'ฉันชอบประโยคนึงมากเลย ที่ว่า “ไม่ใช่ดวงดาวที่จะกุมโชคชะตาของเรา แต่อยู่ในตัวเราเอง”',
-                                            style: textnormal,
-                                          ),
-                                          SizedBox(height: 10.0),
-                                          Center(
-                                            child: Text(
-                                              '-ลิซ่า มันช์เชฟ',
+                                            )
+                                            ,Text(
+                                              'ฉันชอบประโยคนึงมากเลย ที่ว่า “ไม่ใช่ดวงดาวที่จะกุมโชคชะตาของเรา แต่อยู่ในตัวเราเอง”',
                                               style: textnormal,
                                             ),
-                                          ),
-                                          SizedBox(height: 20.0),
+                                            SizedBox(height: 10.0),
+                                            Center(
+                                              child: Text(
+                                                '-ลิซ่า มันช์เชฟ',
+                                                style: textnormal,
+                                              ),
+                                            ),
+                                            SizedBox(height: 20.0),
 
-                                        ],
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              );
+                                    );
+                                  },
+                                );
 
 
-                              //////ป๊อบอัพ
-                            },
-                              child: SizedBox(
-                              width: 330,
-                              height: 40,
-                              child: Center(
-                                child: Text(
-                                  'สุ่มอ่านบันทึกของ น้องซาโต้',
-                                  style: textButton,
+                                //////ป๊อบอัพ
+                              },
+                                child: SizedBox(
+                                width: 330,
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    'สุ่มอ่านบันทึกของ น้องซาโต้',
+                                    style: textButton,
+                                  ),
                                 ),
-                              ),
-                            ), )
+                              ), )
 
-                          ]
+                            ]
+                          ),
                         ),
-                      ),
-                    ) ///////////////////////////////////ส่วนสีขาว
+                      ) ///////////////////////////////////ส่วนสีขาว
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
