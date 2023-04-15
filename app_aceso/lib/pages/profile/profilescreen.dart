@@ -32,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Container(
                   color: Color(0xFF646FD4),
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 0.0),
                     child: Column(
                       children: [
                         Column(
@@ -58,11 +58,12 @@ class ProfileScreen extends StatelessWidget {
                               children: [
                                 Center(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(top: 20.0),
+                                    padding: const EdgeInsets.only(top: 0.0),
                                     child: Image(
-                                      image: AssetImage('assets/avatar/png/mato.png'),
-                                      width: 250,
-                                      height: 300,
+                                      //image: AssetImage('assets/avatar/png/mato.png'),
+                                      image: AssetImage('assets/avatar/mato/mato1.gif'),
+                                      width: 300,
+                                      height: 350,
                                     ),
                                   ),
                                 ),
