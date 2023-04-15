@@ -41,7 +41,7 @@ dependencies:
 
 flutter_icons:
   android: true
-  image_path: "assets/iconapp.png"
+  image_path: "assets/Logo.png"
 
 dev_dependencies:
   flutter_test:

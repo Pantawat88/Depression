@@ -12,7 +12,7 @@ class CreateAvatar extends StatefulWidget {
 }
 
 class _CreateAvatarState extends State<CreateAvatar> {
-  String selectedName = "น้องมาโต้";
+  String selectedName = "มาโต้";
   String selectedStory =
       "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
   Color backgroundColor = Color(0xff222222);
@@ -33,7 +33,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: Iback,
                     color: APrimaryColor,
                     onPressed: () {
                       Navigator.pop(context);
@@ -63,20 +63,20 @@ class _CreateAvatarState extends State<CreateAvatar> {
                     ),
                     child: FittedBox(
                       fit: BoxFit.contain,
-                      child: selectedName == "น้องมาโต้"
+                      child: selectedName == "มาโต้"
                           ? Image.asset('assets/avatar/mato/mato1.gif')
-                          : selectedName == "น้องเนเน่"
+                          : selectedName == "เนเน่"
                               ? Image.asset('assets/avatar/nene/nene3.gif')
-                              : selectedName == "น้องหูหนู"
+                              : selectedName == "หูหนู"
                                   ? Image.asset(
                                       'assets/avatar/huhnu/huhnu1.gif')
-                                  : selectedName == "น้องเนโกะ"
+                                  : selectedName == "เนโกะ"
                                       ? Image.asset(
                                           'assets/avatar/neko/neko1.gif')
-                                      : selectedName == "น้องราเม็ง"
+                                      : selectedName == "ราเม็ง"
                                           ? Image.asset(
                                               'assets/avatar/ramen/ramen1.gif')
-                                          : selectedName == "น้องโชน"
+                                          : selectedName == "โชน"
                                               ? Image.asset(
                                                   'assets/avatar/chon/chon1.gif')
                                               : null,
@@ -106,7 +106,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedName = "น้องมาโต้";
+                                selectedName = "มาโต้";
                                 selectedStory =
                                     "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
                                 backgroundColor = Color(0xff222222);
@@ -118,7 +118,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedName = "น้องเนเน่";
+                                selectedName = "เนเน่";
                                 selectedStory =
                                     "ผีตัวน้อยที่มักจะทักทายกับคนที่\nเข้ามาใกล้อยู่เสมอ";
                                 backgroundColor = Color(0xffCFB2F3);
@@ -130,7 +130,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedName = "น้องหูหนู";
+                                selectedName = "หูหนู";
                                 selectedStory =
                                     "เห็ดตัวน้อยที่ชอบเที่ยวเล่นตามประสาเด็กน้อย\nชอบค้นหาสิ่งใหม่ ๆ ทำเสมอ อารมณ์ดี";
                                 backgroundColor = Color(0xffFFBCBC);
@@ -142,7 +142,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedName = "น้องเนโกะ";
+                                selectedName = "เนโกะ";
                                 selectedStory =
                                     "แมวอ้วนที่ชอบออกกำลังกาย\nแต่ชอบกินเยอะอยู่ดี";
                                 backgroundColor = Color(0xffF4DF8E);
@@ -157,7 +157,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedName = "น้องราเม็ง";
+                                selectedName = "ราเม็ง";
                                 selectedStory =
                                     "มังกรทารกที่พร้อมจะมอบความสดใส\nให้คุณเหมือนทารกแรกแย้ม";
                                 backgroundColor = Color(0xffCDF0EA);
@@ -169,7 +169,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedName = "น้องโชน";
+                                selectedName = "โชน";
                                 selectedStory =
                                     "ใช้ชีวิตสโลว์ไลฟ์ในโลกมนุษย์ชอบทำงาน\nชอบเต้น มีเหตุผล อบอุ่นใจดี";
                                 backgroundColor = Color(0xffABC2E8);
