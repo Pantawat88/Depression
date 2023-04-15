@@ -131,9 +131,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  Row(
-
-                  ),
+                  Row(),
                   //--------*-*--------*--*---- sizeboxข้างล่างแค่ใส่ test การ scroll เอาออกได้
                   const SizedBox(height: 50),
                 ],

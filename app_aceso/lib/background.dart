@@ -14,24 +14,30 @@ class BackgroundForLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      resizeToAvoidBottomInset: false,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Positioned(
+          SizedBox(
             child: Image.asset(
               topImage,
-              width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
             ),
           ),
-          Positioned(
-            bottom: 0,
+          Expanded(
+            child: SingleChildScrollView(
+              child: SafeArea(child: child),
+              // กำหนด padding ด้านล่างเท่ากับความสูงของคีย์บอร์ด
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+            ),
+          ),
+          SizedBox(
             child: Image.asset(
               bottomImage,
-              width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
             ),
           ),
-          SafeArea(child: child),
         ],
       ),
     );
@@ -47,6 +53,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.height,
