@@ -98,12 +98,12 @@ const TextStyle textKey = TextStyle(
 
 const TextStyle textnormalbigWhite = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 25.0,
+  fontSize: 24.0,
   color: Colors.white,
 );
 
 const TextStyle textnormalsmallWhite = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 20.0,
+  fontSize: 18.0,
   color: Colors.white,
 );

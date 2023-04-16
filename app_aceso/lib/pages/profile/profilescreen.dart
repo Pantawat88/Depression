@@ -3,7 +3,7 @@ import '../../constants.dart';
 import 'package:app_aceso/pages/profile/settingpage.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key});
+  const ProfileScreen({Key? key}) : super(key: key);
 
   final String nickname = 'Leng';
 
@@ -44,23 +44,25 @@ class ProfileScreen extends StatelessWidget {
                                 Text(nickname, style: textnormalbigWhite),
                                 IconButton(
                                   iconSize: 30,
-                                  icon:
-                                      Icon(Icons.settings, color: Colors.white),
+                                  icon: const Icon(Icons.settings,
+                                      color: Colors.white),
                                   onPressed: () {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => SettingPage()),
+                                          builder: (context) =>
+                                              const SettingPage()),
                                     );
                                   },
                                 ),
                               ],
                             ),
+                            const SizedBox(height: 10),
                             Column(
                               children: [
-                                Center(
+                                const Center(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(top: 0.0),
+                                    padding: EdgeInsets.only(top: 0.0),
                                     child: Image(
                                       //image: AssetImage('assets/avatar/png/mato.png'),
                                       image: AssetImage(
@@ -70,6 +72,7 @@ class ProfileScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                const SizedBox(height: 10),
                                 Center(
                                   child: Padding(
                                     padding: const EdgeInsets.all(10.0),
