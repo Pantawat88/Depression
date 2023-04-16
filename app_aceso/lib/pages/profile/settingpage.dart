@@ -1,3 +1,4 @@
+import 'package:app_aceso/pages/login.dart';
 import 'package:app_aceso/pages/profile.dart';
 import 'package:app_aceso/pages/profile/read_privacy_agreement.dart';
 import 'package:flutter/material.dart';
@@ -337,7 +338,14 @@ class SettingPage extends StatelessWidget {
                   width:  120,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
+                      //Navigator.of(context).pop();
+
+                      //ไว้มาทำตอนออกแล้วไปหน้า login
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WelcomeLogin()),
+                      );
+
                     },
                     child: const Text('ออกจากระบบ'),
                   ),
