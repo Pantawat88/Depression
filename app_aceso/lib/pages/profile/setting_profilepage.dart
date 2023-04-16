@@ -1,7 +1,4 @@
-import 'package:app_aceso/pages/login.dart';
-import 'package:app_aceso/pages/profile.dart';
 import 'package:app_aceso/pages/profile/edit_profile.dart';
-import 'package:app_aceso/pages/profile/read_privacy_agreement.dart';
 import 'package:app_aceso/pages/profile/settingpage.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
@@ -70,7 +67,7 @@ class SettingProfilepage extends StatelessWidget {
                               child: Row(
                                   children: <Widget>[
                                     SizedBox(width: 20,),
-                                    Text('อีเมล',style: textnormalbold,),
+                                    Text('อีเมล',style: textHeading,),
                                     SizedBox(width: 42,),
                                     Text(email, style: textnormalLight,),
                                   ],
@@ -104,8 +101,8 @@ class SettingProfilepage extends StatelessWidget {
                               children: <Widget>[
                                 SizedBox(height: 40,),
                                 SizedBox(width: 20,),
-                                Text('ชื่อ-สกุล',style: textnormalbold,),
-                                SizedBox(width: 20,),
+                                Text('ชื่อ-สกุล',style: textHeading,),
+                                SizedBox(width: 16,),
                                 Text(Fullname, style: textnormal,),
                               ],
                             ),
@@ -132,8 +129,8 @@ class SettingProfilepage extends StatelessWidget {
                                 children: <Widget>[
                                   SizedBox(height: 40,),
                                   SizedBox(width: 20,),
-                                  Text('ชื่อเล่น',style: textnormalbold,),
-                                  SizedBox(width: 33,),
+                                  Text('ชื่อเล่น',style: textHeading,),
+                                  SizedBox(width: 30,),
                                   Text(Nickname, style: textnormal,),
                                 ],
                               ),
@@ -160,7 +157,7 @@ class SettingProfilepage extends StatelessWidget {
                                 children: <Widget>[
                                   SizedBox(height: 40,),
                                   SizedBox(width: 20,),
-                                  Text('คณะ',style: textnormalbold,),
+                                  Text('คณะ',style: textHeading,),
                                   SizedBox(width: 45,),
                                   Text(Faculty, style: textnormal,),
                                 ],
@@ -188,8 +185,8 @@ class SettingProfilepage extends StatelessWidget {
                                 children: <Widget>[
                                   SizedBox(height: 40,),
                                   SizedBox(width: 20,),
-                                  Text('วันเกิด',style: textnormalbold,),
-                                  SizedBox(width: 33,),
+                                  Text('วันเกิด',style: textHeading,),
+                                  SizedBox(width: 26,),
                                   Text(Birthday, style: textnormal,),
                                 ],
                               ),
