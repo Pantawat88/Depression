@@ -13,7 +13,6 @@ const Iclear = Icon(
 const Iback = Icon(
   Icons.arrow_back_ios_rounded,
   size: 30,
-  color: APrimaryLightColor,
 ); //<
 const Iquestion_mark = Icon(
   Icons.question_mark_outlined,
@@ -96,7 +95,6 @@ const TextStyle textKey = TextStyle(
   fontSize: 16.0,
   color: APrimaryColor,
 );
-
 
 const TextStyle textnormalbigWhite = TextStyle(
   fontFamily: 'Prompt',

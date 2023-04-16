@@ -1,5 +1,5 @@
 import 'package:app_aceso/constants.dart';
-import 'package:app_aceso/pages/feature/forms/form_1.dart';
+import 'package:app_aceso/pages/feature/forms/question_screen.dart';
 import 'package:flutter/material.dart';
 
 class InitialForm extends StatefulWidget {
@@ -69,7 +69,8 @@ class _InitialFormState extends State<InitialForm> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Form1()),
+                    MaterialPageRoute(
+                        builder: (context) => const QuestionScreen()),
                   );
                 },
                 child: Container(
