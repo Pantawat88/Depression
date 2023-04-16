@@ -231,6 +231,13 @@ class SettingPage extends StatelessWidget {
                             Expanded(child: ElevatedButton(
                                 onPressed: () {
 
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return logout_accountPopupDialog(context);
+                                    },
+                                  );
+
                                 },
                                 child: SizedBox(
                                   width: 305,
@@ -277,4 +284,83 @@ class SettingPage extends StatelessWidget {
       ),
     );
   }
+
+  Widget logout_accountPopupDialog(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      content: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'คุณต้องการออกจากระบบใช่หรือไม่?',
+              style: textnormal,
+            ),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+
+        Expanded(child: Container(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 5),
+            child: Row(
+              children: <Widget>[
+
+                SizedBox(
+                  height: 37,
+                  width:  120,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('ไม่ใช่'),
+                    style: ElevatedButton.styleFrom(
+                      side: const BorderSide(color: APrimaryLightColor),
+                      primary: Colors.white,
+                      onPrimary: APrimaryColor,
+                      elevation: 0,
+                    ),
+                  ),
+                ),
+                //SizedBox(width: 80,),
+                Spacer(),
+                SizedBox(
+                  height: 37,
+                  width:  120,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('ออกจากระบบ'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+        )
+        )
+
+
+
+
+
+
+
+      ],
+    );
+  }
+
+
 }
+
+
+
