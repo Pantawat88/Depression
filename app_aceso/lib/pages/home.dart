@@ -131,7 +131,25 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  Row(),
+
+                  //--------------------------------ส่วนอิโมจิอารมณ์
+                  Row(
+                    children: <Widget>[
+                      TextButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return _buildPopupDialog(context);
+                            },
+                          );
+                        },
+                        child: Image.asset('assets/emoji/good.png', height: 50, width: 50),
+                      ),
+                    ],
+                  ),
+                  //--------------------------------ส่วนอิโมจิอารมณ์
+
                   //--------*-*--------*--*---- sizeboxข้างล่างแค่ใส่ test การ scroll เอาออกได้
                   const SizedBox(height: 30),
                 ],
