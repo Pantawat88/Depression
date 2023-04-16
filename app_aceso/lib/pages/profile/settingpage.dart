@@ -1,7 +1,7 @@
 import 'package:app_aceso/pages/profile.dart';
+import 'package:app_aceso/pages/profile/read_privacy_agreement.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
-import 'dart:math' as math;
 
 
 class SettingPage extends StatelessWidget {
@@ -56,8 +56,8 @@ class SettingPage extends StatelessWidget {
                       SizedBox(
                         child:Row(
                           children: <Widget>[
-                            Image.asset('assets/person.png', height: 40, width: 40),
-                            SizedBox(width: 20,),
+                            //Image.asset('assets/person.png', height: 40, width: 40),
+                            //SizedBox(width: 20,),
                             Expanded(
                               child: TextButton(
                               onPressed: () {
@@ -65,23 +65,9 @@ class SettingPage extends StatelessWidget {
                               },
                               child: Row(
                                 children: <Widget>[
+                                  Image.asset('assets/icon_settingpage/person-removebg-preview.png', height: 40, width: 40),
+                                  SizedBox(width: 20,),
                                   const Text('ข้อมูลส่วนตัว', style: textHeading,),
-
-                                  //--------------icon Iback กลับด้าน--------------
-                                  IconButton(
-                                    icon: Transform.rotate(
-                                      angle: math.pi,
-                                      child: Icon(Icons.arrow_back, color: APrimaryColor),
-                                    ),
-                                    onPressed: () {
-                                      // do something
-                                    },
-                                  ),
-
-
-
-                                  //--------------icon Iback กลับด้าน--------------
-
 
                                 ],
                               ),
@@ -90,8 +76,196 @@ class SettingPage extends StatelessWidget {
 
                           ],
                         ),
-                      )
+                      ),
                       //--------------------------------ข้อมูลส่วนตัว--------------------------------
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      Row(
+                      children: [
+                        Expanded(child: SizedBox(height: 0.5,width: 0.5,child: Container(color: Color(0xff9BA3EB),),)),
+                      ],
+                    ),
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      //--------------------------------เพื่อนซี้--------------------------------
+                      SizedBox(
+                        child:Row(
+                          children: <Widget>[
+                            //Image.asset('assets/person.png', height: 40, width: 40),
+                            //SizedBox(width: 20,),
+                            Expanded(
+                              child: TextButton(
+                                onPressed: () {
+
+                                },
+                                child: Row(
+                                  children: <Widget>[
+                                    Image.asset('assets/icon_settingpage/Friend-removebg-preview.png', height: 40, width: 40),
+                                    SizedBox(width: 20,),
+                                    const Text('เพื่อนซี้', style: textHeading,),
+
+                                  ],
+                                ),
+                              ),
+                            )
+
+                          ],
+                        ),
+                      ),
+                      //--------------------------------เพื่อนซี้--------------------------------
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      Row(
+                        children: [
+                          Expanded(child: SizedBox(height: 0.5,width: 0.5,child: Container(color: Color(0xff9BA3EB),),)),
+                        ],
+                      ),
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      //--------------------------------นโยบายความเป็นส่วนตัว--------------------------------
+                      SizedBox(
+                        child:Row(
+                          children: <Widget>[
+                            //Image.asset('assets/person.png', height: 40, width: 40),
+                            //SizedBox(width: 20,),
+                            Expanded(
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const ReadPrivacy()),
+                                  );
+                                },
+                                child: Row(
+                                  children: <Widget>[
+                                    Image.asset('assets/icon_settingpage/Question-removebg-preview.png', height: 40, width: 40),
+                                    SizedBox(width: 20,),
+                                    const Text('นโยบายความเป็นส่วนตัว', style: textHeading,),
+
+                                  ],
+                                ),
+                              ),
+                            )
+
+                          ],
+                        ),
+                      ),
+                      //--------------------------------นโยบายความเป็นส่วนตัว--------------------------------
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      Row(
+                        children: [
+                          Expanded(child: SizedBox(height: 0.5,width: 0.5,child: Container(color: Color(0xff9BA3EB),),)),
+                        ],
+                      ),
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      //--------------------------------รหัสผ่าน--------------------------------
+                      SizedBox(
+                        child:Row(
+                          children: <Widget>[
+                            //Image.asset('assets/person.png', height: 40, width: 40),
+                            //SizedBox(width: 20,),
+                            Expanded(
+                              child: TextButton(
+                                onPressed: () {
+
+                                },
+                                child: Row(
+                                  children: <Widget>[
+                                    Image.asset('assets/icon_settingpage/Security-removebg-preview.png', height: 40, width: 40),
+                                    SizedBox(width: 20,),
+                                    const Text('รหัสผ่าน', style: textHeading,),
+
+                                  ],
+                                ),
+                              ),
+                            )
+
+                          ],
+                        ),
+                      ),
+                      //--------------------------------รหัสผ่าน--------------------------------
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      Row(
+                        children: [
+                          Expanded(child: SizedBox(height: 0.5,width: 0.5,child: Container(color: Color(0xff9BA3EB),),)),
+                        ],
+                      ),
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      //--------------------------------ลบบัญชี--------------------------------
+                      SizedBox(
+                        child:Row(
+                          children: <Widget>[
+                            //Image.asset('assets/person.png', height: 40, width: 40),
+                            //SizedBox(width: 20,),
+                            Expanded(
+                              child: TextButton(
+                                onPressed: () {
+
+                                },
+                                child: Row(
+                                  children: <Widget>[
+                                    Image.asset('assets/icon_settingpage/trashcan-removebg-preview.png', height: 40, width: 40),
+                                    SizedBox(width: 20,),
+                                    const Text('ลบบัญชี', style: textHeading,),
+
+                                  ],
+                                ),
+                              ),
+                            )
+
+                          ],
+                        ),
+                      ),
+                      //--------------------------------ลบบัญชี--------------------------------
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      Row(
+                        children: [
+                          Expanded(child: SizedBox(height: 0.5,width: 0.5,child: Container(color: Color(0xff9BA3EB),),)),
+                        ],
+                      ),
+                      //--------------------------------เส้นแบ่ง--------------------------------
+                      SizedBox(height: 380,width: 1,),
+
+                      //--------------------------------ออกจากระบบ--------------------------------
+                      SizedBox(
+                        child:Row(
+                          children: <Widget>[
+                            //Image.asset('assets/person.png', height: 40, width: 40),
+                            //SizedBox(width: 20,),
+                            Expanded(child: ElevatedButton(
+                                onPressed: () {
+
+                                },
+                                child: SizedBox(
+                                  width: 305,
+                                  height: 40,
+                                  child: Center(
+                                    child: Text(
+                                      'ออกจากระบบ',
+                                      style: textButton,
+                                    ),
+                                  ),
+                                )
+                              ),
+                            ),
+
+                          ],
+                        ),
+                      ),
+
+                      //--------------------------------ออกจากระบบ--------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                     ],
