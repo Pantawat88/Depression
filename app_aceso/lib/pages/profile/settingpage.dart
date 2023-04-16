@@ -1,8 +1,10 @@
 import 'package:app_aceso/pages/login.dart';
 import 'package:app_aceso/pages/profile.dart';
 import 'package:app_aceso/pages/profile/read_privacy_agreement.dart';
+import 'package:app_aceso/pages/profile/setting_profilepage.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
+import '../widget/widget_button.dart';
 
 
 class SettingPage extends StatelessWidget {
@@ -62,6 +64,10 @@ class SettingPage extends StatelessWidget {
                             Expanded(
                               child: TextButton(
                               onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const SettingProfilepage()),
+                                );
 
                               },
                               child: Row(
@@ -229,29 +235,21 @@ class SettingPage extends StatelessWidget {
                           children: <Widget>[
                             //Image.asset('assets/person.png', height: 40, width: 40),
                             //SizedBox(width: 20,),
+
+
                             Expanded(child: ElevatedButton(
-                                onPressed: () {
-
-                                  showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return logout_accountPopupDialog(context);
-                                    },
-                                  );
-
-                                },
-                                child: SizedBox(
-                                  width: 305,
-                                  height: 40,
-                                  child: Center(
-                                    child: Text(
-                                      'ออกจากระบบ',
-                                      style: textButton,
-                                    ),
-                                  ),
-                                )
-                              ),
+                              child: const ButtonOperation(BTname: 'ออกจากระบบ'),
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return logout_accountPopupDialog(context);
+                                  },
+                                );
+                              },
                             ),
+                            ),
+
 
                           ],
                         ),
