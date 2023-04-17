@@ -1,11 +1,13 @@
 import 'package:app_aceso/pages/feature.dart';
 import 'package:app_aceso/pages/nav.dart';
 import 'package:app_aceso/pages/profile.dart';
-import 'package:app_aceso/pages/profile/edit_avatar.dart'; //เรียกใช้ค่าตัวแปร backgroundImg หากมีการเปลี่ยนแปลงของ Avatar
+//import 'package:app_aceso/pages/profile/edit_avatar.dart'; //เรียกใช้ค่าตัวแปร backgroundImg หากมีการเปลี่ยนแปลงของ Avatar
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import 'feature/forms/initial_form.dart';
-//import 'package:app_aceso/pages/register/create_avatar.dart'; //เรียกใช้การประกาศตัวแปร backgroundImg ในหน้านี้
+import 'package:app_aceso/pages/register/create_avatar.dart'; //เรียกใช้การประกาศตัวแปร backgroundImg ในหน้านี้
+//import 'package:app_aceso/pages/register/success_register.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
