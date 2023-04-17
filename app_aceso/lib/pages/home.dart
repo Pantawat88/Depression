@@ -1,6 +1,7 @@
 import 'package:app_aceso/pages/feature.dart';
 import 'package:app_aceso/pages/nav.dart';
 import 'package:app_aceso/pages/profile.dart';
+import 'package:app_aceso/pages/profile/edit_avatar.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import 'feature/forms/initial_form.dart';
@@ -46,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: 400,
+
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/background/bg_moto1.png'),
@@ -99,11 +101,54 @@ class _HomePageState extends State<HomePage> {
                             ], // children of Row
                           ),
                         ),
-                        const Image(
-                          image: AssetImage('assets/avatar/mato/mato1.gif'),
+
+
+
+                        //const Image(
+                        //  image: AssetImage('assets/avatar/mato/mato1.gif'),
+                        //  width: 265,
+                        //  height: 265,
+                        //),
+                        Container(
                           width: 265,
                           height: 265,
-                        ),
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 0.0),
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child:
+                                selectedName == "มาโต้"
+                                    ? Image.asset('assets/avatar/mato/mato1.gif')
+                                    : selectedName == "เนเน่"
+                                    ? Image.asset('assets/avatar/nene/nene3.gif')
+                                    : selectedName == "หูหนู"
+                                    ? Image.asset(
+                                    'assets/avatar/huhnu/huhnu1.gif')
+                                    : selectedName == "เนโกะ"
+                                    ? Image.asset(
+                                    'assets/avatar/neko/neko1.gif')
+                                    : selectedName == "ราเม็ง"
+                                    ? Image.asset(
+                                    'assets/avatar/ramen/ramen1.gif')
+                                    : selectedName == "โชน"
+                                    ? Image.asset(
+                                    'assets/avatar/chon/chon1.gif')
+                                    : null,
+                              ),
+
+
+
+                            ),
+                          ),
+
+                        )
+
+
+
+
+
+
                       ],
                     ),
                   ),
