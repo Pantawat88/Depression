@@ -322,9 +322,13 @@ class SettingPage extends StatelessWidget {
                   width:  120,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
+                      //ออกแล้วไปหน้า login
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WelcomeLogin()),
+                      );
                     },
-                    child: Text('ไม่ใช่'),
+                    child: Text('ออกจากระบบ่'),
                     style: ElevatedButton.styleFrom(
                       side: const BorderSide(color: APrimaryLightColor),
                       primary: Colors.white,
@@ -340,16 +344,9 @@ class SettingPage extends StatelessWidget {
                   width:  120,
                   child: ElevatedButton(
                     onPressed: () {
-                      //Navigator.of(context).pop();
-
-                      //ไว้มาทำตอนออกแล้วไปหน้า login
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => WelcomeLogin()),
-                      );
-
+                      Navigator.of(context).pop();
                     },
-                    child: const Text('ออกจากระบบ'),
+                    child: const Text('ไม่ใช่'),
                   ),
                 ),
               ],
