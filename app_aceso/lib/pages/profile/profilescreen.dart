@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import 'package:app_aceso/pages/profile/settingpage.dart';
-import 'package:app_aceso/pages/profile/edit_avatar.dart';
+//import 'package:app_aceso/pages/profile/edit_avatar.dart';
+import 'package:app_aceso/pages/register/create_avatar.dart';
 
 import 'dart:math';
 
