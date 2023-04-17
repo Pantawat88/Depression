@@ -4,6 +4,7 @@ const APrimaryColor = Color(0xff646FD4);
 const APrimaryLightColor = Color(0xff9BA3EB);
 const APrimaryveryLight = Color(0xffE8EAFF);
 const lightestColor = Color(0xffF3F3F9);
+const orangeColor = Color(0xffff8c13);
 
 const double defaultPadding = 35.0;
 
@@ -33,6 +34,19 @@ const TextStyle textHeading = TextStyle(
   fontWeight: FontWeight.bold,
   color: APrimaryColor,
 );
+
+
+////ฟ้อนสำหรับ หัวข้อเรื่องตัวหนา สีส้ม
+const TextStyle textHeadingOrange = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 19.0,
+  fontWeight: FontWeight.bold,
+  color: orangeColor,
+);
+
+
+
+
 ////ฟ้อนสำหรับ ข้อความธรรมดา
 const TextStyle textnormal = TextStyle(
   fontFamily: 'Prompt',
@@ -68,6 +82,18 @@ const TextStyle textsmallbold = TextStyle(
   fontWeight: FontWeight.bold,
   color: APrimaryColor,
 );
+
+////ฟ้อนสำหรับ ข้อความขนาดเล็กสีเข้มตัวหนาสีส้ม
+const TextStyle textsmallboldOrange = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 14.0,
+  fontWeight: FontWeight.bold,
+  color: orangeColor,
+);
+
+
+
+
 
 ////ฟ้อนสำหรับ ข้อความขนาดเล็กสีอ่อน
 const TextStyle textsmallLight = TextStyle(
@@ -108,3 +134,20 @@ const TextStyle textnormalsmallWhite = TextStyle(
   fontSize: 18.0,
   color: Colors.white,
 );
+
+
+//---------------------------------------ใช้ในหน้า success_register---------------------------------------
+
+////ฟ้อนสำหรับ ข้อความธรรมดาสีส้ม ใหญ่
+const TextStyle textnormalBigOrange = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 19,
+  color: orangeColor,
+);
+////ฟ้อนสำหรับ ข้อความธรรมดาสีปกติ ใหญ่
+const TextStyle textnormalBig = TextStyle(
+  fontFamily: 'Prompt',
+  fontSize: 19,
+  color: APrimaryColor,
+);
+//---------------------------------------ใช้ในหน้า success_register---------------------------------------
