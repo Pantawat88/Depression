@@ -5,7 +5,7 @@ import 'package:app_aceso/pages/profile/edit_avatar.dart'; //เรียกใ�
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import 'feature/forms/initial_form.dart';
-import 'package:app_aceso/pages/register/create_avatar.dart'; //เรียกใช้การประกาศตัวแปร backgroundImg ในหน้านี้
+//import 'package:app_aceso/pages/register/create_avatar.dart'; //เรียกใช้การประกาศตัวแปร backgroundImg ในหน้านี้
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,13 +35,14 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Stack(
+        Stack(
               children: [
                 Positioned(
                   child: Container(
@@ -52,6 +53,7 @@ class _HomePageState extends State<HomePage> {
                       image: DecorationImage(
 
                         //image: AssetImage('assets/background/bg_moto1.png'),
+
                         image: AssetImage('assets/background/$backgroundImg.png'),
 
                         fit: BoxFit.cover,
