@@ -11,6 +11,8 @@ class CreateAvatar extends StatefulWidget {
   State<CreateAvatar> createState() => _CreateAvatarState();
 }
 
+String backgroundImg = ''; //ไว้กำหนดพื้นหลังในหน้า home
+
 class _CreateAvatarState extends State<CreateAvatar> {
   String selectedName = "มาโต้";
   String selectedStory =
@@ -110,6 +112,8 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
                                 backgroundColor = const Color(0xff222222);
+                                backgroundImg = 'bg_moto1';
+
                               });
                             },
                             child: Image.asset('assets/avatar/png/mato.png'),
@@ -122,6 +126,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "ผีตัวน้อยที่มักจะทักทายกับคนที่\nเข้ามาใกล้อยู่เสมอ";
                                 backgroundColor = const Color(0xffCFB2F3);
+                                backgroundImg = 'bg_nene1';
                               });
                             },
                             child: Image.asset('assets/avatar/png/nene.png'),
@@ -134,6 +139,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "เห็ดตัวน้อยที่ชอบเที่ยวเล่นตามประสาเด็กน้อย\nชอบค้นหาสิ่งใหม่ ๆ ทำเสมอ อารมณ์ดี";
                                 backgroundColor = const Color(0xffFFBCBC);
+                                backgroundImg = 'bg_huhnu1';
                               });
                             },
                             child: Image.asset('assets/avatar/png/huhnu.png'),
@@ -146,6 +152,8 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "แมวอ้วนที่ชอบออกกำลังกาย\nแต่ชอบกินเยอะอยู่ดี";
                                 backgroundColor = const Color(0xffF4DF8E);
+                                backgroundImg = 'bg_neko1';
+
                               });
                             },
                             child: Image.asset(
@@ -161,6 +169,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "มังกรทารกที่พร้อมจะมอบความสดใส\nให้คุณเหมือนทารกแรกแย้ม";
                                 backgroundColor = const Color(0xffCDF0EA);
+                                backgroundImg = 'bg_ramen1';
                               });
                             },
                             child: Image.asset('assets/avatar/png/ramen.png'),
@@ -173,6 +182,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "ใช้ชีวิตสโลว์ไลฟ์ในโลกมนุษย์ชอบทำงาน\nชอบเต้น มีเหตุผล อบอุ่นใจดี";
                                 backgroundColor = const Color(0xffABC2E8);
+                                backgroundImg = 'bg_chon1';
                               });
                             },
                             child: Image.asset('assets/avatar/png/chon.png'),
