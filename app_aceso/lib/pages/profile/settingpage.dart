@@ -1,6 +1,7 @@
 import 'package:app_aceso/pages/login.dart';
 import 'package:app_aceso/pages/profile.dart';
 import 'package:app_aceso/pages/profile/delete_account.dart';
+import 'package:app_aceso/pages/profile/edit_avatar.dart';
 import 'package:app_aceso/pages/profile/read_privacy_agreement.dart';
 import 'package:app_aceso/pages/profile/setting_profilepage.dart';
 import 'package:flutter/material.dart';
@@ -103,6 +104,10 @@ class SettingPage extends StatelessWidget {
                               child: TextButton(
                                 onPressed: () {
 
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => EditAvatar()),
+                                  );
                                 },
                                 child: Row(
                                   children: <Widget>[
