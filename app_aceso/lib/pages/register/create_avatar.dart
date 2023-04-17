@@ -6,18 +6,19 @@ import 'success_register.dart';
 
 class CreateAvatar extends StatefulWidget {
   const CreateAvatar({Key? key}) : super(key: key);
-
   @override
   State<CreateAvatar> createState() => _CreateAvatarState();
 }
 
 String backgroundImg = ''; //ไว้กำหนดพื้นหลังในหน้า home
 
+String selectedName = "มาโต้";
+String selectedStory =
+    "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
+Color backgroundColor = const Color(0xff222222);
+
 class _CreateAvatarState extends State<CreateAvatar> {
-  String selectedName = "มาโต้";
-  String selectedStory =
-      "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
-  Color backgroundColor = const Color(0xff222222);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,7 +206,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                     context,
                     MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            const SuccessRegister()),
+                            SuccessRegister(selectedName: selectedName)),
                   );
                 },
               ),
