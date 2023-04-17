@@ -76,6 +76,13 @@ flutter:
     - assets/avatar/mato/
     - assets/emoji/
     - assets/icon_settingpage/
+    - assets/avatar/chon/
+    - assets/avatar/huhnu/
+    - assets/avatar/mato/
+    - assets/avatar/neko/
+    - assets/avatar/nene/
+    - assets/avatar/png/
+    - assets/avatar/ramen/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
