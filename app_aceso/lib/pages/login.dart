@@ -1,5 +1,6 @@
 import 'package:app_aceso/background.dart';
 import 'package:app_aceso/pages/home.dart';
+//import 'package:app_aceso/pages/register/create_avatar.dart';
 import 'package:app_aceso/pages/register/register.dart';
 import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
 import 'package:app_aceso/pages/widget/widget_button.dart';
@@ -8,6 +9,10 @@ import 'package:app_aceso/constants.dart';
 
 class WelcomeLogin extends StatelessWidget {
   WelcomeLogin({super.key});
+
+
+ // String backgroundImg = ''; //ไว้กำหนดพื้นหลังในหน้า home
+
 
   final _formKey = GlobalKey<FormState>();
   @override
@@ -76,7 +81,7 @@ class WelcomeLogin extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  Navigator.push(
+                      Navigator.push(
                     context,
                     MaterialPageRoute(builder: (BuildContext context) {
                       return const HomePage();
