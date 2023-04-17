@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const APrimaryColor = Color(0xff646FD4);
 const APrimaryLightColor = Color(0xff9BA3EB);
 const APrimaryveryLight = Color(0xffE8EAFF);
+const lightestColor = Color(0xffF3F3F9);
 
 const double defaultPadding = 35.0;
 
@@ -98,12 +99,12 @@ const TextStyle textKey = TextStyle(
 
 const TextStyle textnormalbigWhite = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 25.0,
+  fontSize: 24.0,
   color: Colors.white,
 );
 
 const TextStyle textnormalsmallWhite = TextStyle(
   fontFamily: 'Prompt',
-  fontSize: 20.0,
+  fontSize: 18.0,
   color: Colors.white,
 );
