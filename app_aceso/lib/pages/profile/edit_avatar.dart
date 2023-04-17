@@ -16,6 +16,9 @@ String selectedName = "มาโต้"; //ค่อยใช้คอมเม�
 String selectedStory =
     "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
 Color backgroundColor = const Color(0xff222222);
+//String backgroundImg = backgroundImg.isEmpty ? 'bg_moto1' : backgroundImg; ///
+String backgroundImg = 'bg_moto1';
+///
 class _EditAvatar extends State<EditAvatar> {
   //String selectedName = "";
   //String selectedStory =
