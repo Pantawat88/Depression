@@ -198,7 +198,7 @@ class _EditAvatar extends State<EditAvatar> {
                                 selectedStory =
                                 "เห็ดตัวน้อยที่ชอบเที่ยวเล่นตามประสาเด็กน้อย\nชอบค้นหาสิ่งใหม่ ๆ ทำเสมอ อารมณ์ดี";
                                 backgroundColor = const Color(0xffFFBCBC);
-                                backgroundImg = 'bg_huhnu1'; //ตั้งค่าพื้นหลังในหน้าเปลี่ยนเพื่อนซี้ เอาไปเป็น path ในการแสดง Img ในหน้า home.dart
+                                backgroundImg = 'bg_huhnu2'; //ตั้งค่าพื้นหลังในหน้าเปลี่ยนเพื่อนซี้ เอาไปเป็น path ในการแสดง Img ในหน้า home.dart
                               });
                             },
                             child: Image.asset('assets/avatar/png/huhnu.png'),

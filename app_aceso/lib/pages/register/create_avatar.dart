@@ -140,7 +140,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "เห็ดตัวน้อยที่ชอบเที่ยวเล่นตามประสาเด็กน้อย\nชอบค้นหาสิ่งใหม่ ๆ ทำเสมอ อารมณ์ดี";
                                 backgroundColor = const Color(0xffFFBCBC);
-                                backgroundImg = 'bg_huhnu1';
+                                backgroundImg = 'bg_huhnu2';
                               });
                             },
                             child: Image.asset('assets/avatar/png/huhnu.png'),
