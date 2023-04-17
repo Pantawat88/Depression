@@ -11,7 +11,7 @@ class EditAvatar extends StatefulWidget {
   State<EditAvatar> createState() => _EditAvatar();
 
 }
-String selectedName = "มาโต้";
+String selectedName = "มาโต้"; //ค่อยใช้คอมเม้นหลังดึงตัวแปรมาจาก create avatarpage
 String selectedStory =
     "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
 Color backgroundColor = const Color(0xff222222);
