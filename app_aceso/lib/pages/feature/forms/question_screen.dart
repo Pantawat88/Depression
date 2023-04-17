@@ -11,6 +11,16 @@ class QuestionScreen extends StatefulWidget {
   State<QuestionScreen> createState() => _QuestionScreenState();
 }
 
+String phq1 = '';
+String phq2 = '';
+String phq3 = '';
+String phq4 = '';
+String phq5 = '';
+String phq6 = '';
+String phq7 = '';
+String phq8 = '';
+String phq9 = '';
+
 class _QuestionScreenState extends State<QuestionScreen> {
   //define the datas
   List<Question> questionList = getQuestions();
@@ -119,9 +129,67 @@ class _QuestionScreenState extends State<QuestionScreen> {
           elevation: 0,
         ),
         onPressed: () {
+          ///------------------------เก็บค่าตัวแปร------------------------
+          String currentAnswer = answer.answerText;
+          if (currentQuestionIndex == 0) {
+            phq1 = currentAnswer;
+          } else if (currentQuestionIndex == 1) {
+            phq2 = currentAnswer;
+          } else if (currentQuestionIndex == 2) {
+            phq3 = currentAnswer;
+          } else if (currentQuestionIndex == 3) {
+            phq4 = currentAnswer;
+          } else if (currentQuestionIndex == 4) {
+            phq5 = currentAnswer;
+          } else if (currentQuestionIndex == 5) {
+            phq6 = currentAnswer;
+          } else if (currentQuestionIndex == 6) {
+            phq7 = currentAnswer;
+          } else if (currentQuestionIndex == 7) {
+            phq8 = currentAnswer;
+          } else if (currentQuestionIndex == 8) {
+            phq9 = currentAnswer;
+          }
+          ///------------------------เก็บค่าตัวแปร------------------------
+
+
+
+
+
+
+          print('************************************************************************');
+          print('---------------------------------------------');
+          print('---------------------------------------------');
+          print('อยู่ข้อที่ = $currentQuestionIndex');
+         print('-------------------------------------');
+         print('answer.toString() = ');
+         print(answer.answerText);
+          print('---------------------------------------------');
+          print('---------------------------------------------');
+
+
           setState(() {
             selectedAnswer = answer;
             currentQuestionIndex++;
+            print('---------------------------------------------');
+            print('---------------------------------------------');
+            print('ข้อต่อไปคือข้อที่ = $currentQuestionIndex');
+            print('-------------------------------------');
+            print('answer.toString() = ');
+            print(answer.answerText);
+            print('---------------------------------------------');
+            print('---------------------------------------------');
+            print('************************************************************************');
+            print('phq1 = $phq1');
+            print('phq2 = $phq2');
+            print('phq3 = $phq3');
+            print('phq4 = $phq4');
+            print('phq5 = $phq5');
+            print('phq6 = $phq6');
+            print('phq7 = $phq7');
+            print('phq8 = $phq8');
+            print('phq9 = $phq9');
+
           });
         },
       ),
