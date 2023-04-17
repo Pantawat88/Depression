@@ -1,3 +1,4 @@
+import 'package:app_aceso/pages/feature/featurescreen.dart';
 import 'package:app_aceso/pages/home.dart';
 import 'package:app_aceso/pages/nav.dart';
 import 'package:app_aceso/pages/profile.dart';
@@ -35,9 +36,7 @@ class _FeaturePageState extends State<FeaturePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text('This is Feature Screen'),
-      ),
+      body: const FeatureScreen(),
       bottomNavigationBar: NavBar(
         currentIndex: _currentIndex,
         onTap: _onTap,

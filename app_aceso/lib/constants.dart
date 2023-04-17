@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const APrimaryColor = Color(0xff646FD4);
 const APrimaryLightColor = Color(0xff9BA3EB);
 const APrimaryveryLight = Color(0xffE8EAFF);
+const lightestColor = Color(0xffF3F3F9);
 
 const double defaultPadding = 35.0;
 
