@@ -1,10 +1,11 @@
 import 'package:app_aceso/pages/feature.dart';
 import 'package:app_aceso/pages/nav.dart';
 import 'package:app_aceso/pages/profile.dart';
-import 'package:app_aceso/pages/profile/edit_avatar.dart';
+import 'package:app_aceso/pages/profile/edit_avatar.dart'; //เรียกใช้ค่าตัวแปร backgroundImg หากมีการเปลี่ยนแปลงของ Avatar
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import 'feature/forms/initial_form.dart';
+import 'package:app_aceso/pages/register/create_avatar.dart'; //เรียกใช้การประกาศตัวแปร backgroundImg ในหน้านี้
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,7 +16,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-
   void _onTap(int index) {
     if (_currentIndex != index) {
       setState(() {
@@ -48,12 +48,17 @@ class _HomePageState extends State<HomePage> {
                     width: MediaQuery.of(context).size.width,
                     height: 400,
 
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/background/bg_moto1.png'),
+
+                        //image: AssetImage('assets/background/bg_moto1.png'),
+                        image: AssetImage('assets/background/$backgroundImg.png'),
+
                         fit: BoxFit.cover,
+
                       ),
                     ),
+
                     child: Column(
                       children: [
                         Padding(
