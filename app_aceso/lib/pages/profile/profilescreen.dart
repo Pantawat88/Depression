@@ -49,7 +49,8 @@ class ProfileScreen extends StatelessWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 500,
-                  color: Color(0xFF646FD4),
+                  //color: Color(0xFF646FD4), // อันนี้ใช้ตอนสร้างเฉยๆ
+                  color:  backgroundColor, //ใช้กรณี แอพ เสร็จ มันจะเลือกพื้นหลังตามนั้น (ดึง backgroundColor มาจาก EditAvatar)
                   //color: Color.fromRGBO(100, 111, 212, 1.0),
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 0.0),
