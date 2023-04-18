@@ -4,6 +4,10 @@ const db = require('../config/db');
 const { Schema } = mongoose;
 
 const avatarSchema = new Schema({
+    'avatarID':{
+        type:String,
+        unique:true
+    },
     'avatarName':{
         type:String,
     },
