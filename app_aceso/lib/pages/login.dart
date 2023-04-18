@@ -33,12 +33,12 @@ class WelcomeLogin extends StatelessWidget {
               children: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 50.0),
-                  child: TFFemail(),
+                  child: TFFemailLogin(), //แก้จากTFFemail()
                 ),
                 Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
-                  child: TFFpassword(),
+                  child: TFFpasswordLogin(), //แก้จาก TFFpassword
                 ),
               ],
             ),
