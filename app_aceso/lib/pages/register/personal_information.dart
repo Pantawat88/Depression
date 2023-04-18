@@ -14,6 +14,14 @@ class PersonalInformation extends StatefulWidget {
   State<PersonalInformation> createState() => _AgreementState();
 }
 
+final TextEditingController FNameInformationController = TextEditingController();//ตัวแปรชื่อจริง หน้า กรอกข้อมูลส่วนตัว
+final TextEditingController LNameInformationController = TextEditingController();//ตัวแปรนามสกุล หน้า กรอกข้อมูลส่วนตัว
+final TextEditingController NNameInformationController = TextEditingController();//ตัวแปรชื่อเล่น หน้า กรอกข้อมูลส่วนตัว
+//dropdownValue ค่าคณะ ยังไม่ได้ดึงมาใช้
+
+
+
+
 class _AgreementState extends State<PersonalInformation> {
   final _formKey = GlobalKey<FormState>();
 
@@ -115,6 +123,7 @@ class _AgreementState extends State<PersonalInformation> {
                         }
                         return null;
                       },
+                      controller: FNameInformationController,
                       textInputAction: TextInputAction.next,
                       cursorColor: APrimaryColor,
                       style: textKey,
@@ -142,6 +151,7 @@ class _AgreementState extends State<PersonalInformation> {
                         }
                         return null;
                       },
+                      controller: LNameInformationController,
                       textInputAction: TextInputAction.next,
                       cursorColor: APrimaryColor,
                       style: textKey,
@@ -169,6 +179,7 @@ class _AgreementState extends State<PersonalInformation> {
                         }
                         return null;
                       },
+                      controller: NNameInformationController,
                       textInputAction: TextInputAction.next,
                       cursorColor: APrimaryColor,
                       style: textKey,
@@ -244,6 +255,11 @@ class _AgreementState extends State<PersonalInformation> {
                                                 dateTime = date;
                                                 _dateText =
                                                     '${date.day}-${date.month}-${date.year}';
+                                                print("dateTime = $dateTime");
+                                                print("dateTime = $_dateText");
+                                                print("date.day = ${date.day}");
+                                                print("date.month = ${date.month}");
+                                                print("date.year ${date.year}");
                                               });
                                             },
                                           ),
@@ -274,6 +290,15 @@ class _AgreementState extends State<PersonalInformation> {
               child: const ButtonOperation(BTname: 'ถัดไป'),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
+
+                  var fname = FNameInformationController.text;
+                  var lname = LNameInformationController.text;
+                  var nname = NNameInformationController.text;
+                  print("FNameInformationController = $fname");
+                  print("LNameInformationController = $lname");
+                  print("NNameInformationController = $nname");
+
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -303,6 +328,7 @@ class _AgreementState extends State<PersonalInformation> {
           onChanged: (newValue) {
             setState(() {
               dropdownValue = newValue;
+              print("คณะที่เลือก = $dropdownValue");
             });
           },
           items: listItem.map((valueItem) {
