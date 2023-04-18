@@ -147,7 +147,15 @@ class _EditPassword extends State<EditPassword> {
                     );
 
                     // รอเวลา 2 วินาทีแล้วค่อยเปลี่ยนหน้า
-                    Future.delayed(const Duration(seconds: 2), () {
+                    Future.delayed(const Duration(seconds: 1), () {
+                      print("----------------------------------------------------");
+
+                      print("CurrentPasswordController  = $CurrentPasswordController.text");
+                      print("NewPasswordController = $NewPasswordController.text");
+                      //String newPassword = NewPasswordController.text;
+                      //print("New Password: $newPassword");
+                      print("RepeatNewPasswordController = $RepeatNewPasswordController.text");
+
                       // ปิด Popup
                       Navigator.pop(context);
 ////------------------------------------------------------------------------
@@ -156,7 +164,10 @@ class _EditPassword extends State<EditPassword> {
                       CurrentPasswordController.text = '';
                       NewPasswordController.text = '';
                       RepeatNewPasswordController.text = '';
-
+                      print("CurrentPasswordController  = $CurrentPasswordController.text");
+                      print("NewPasswordController = $NewPasswordController.text.");
+                      print("RepeatNewPasswordController = $RepeatNewPasswordController.text");
+                      print("----------------------------------------------------");
 ////------------------------------------------------------------------------
                       // แสดง SnackBar เมื่อเปลี่ยนรหัสผ่านเรียบร้อยแล้ว
                       //ScaffoldMessenger.of(context).showSnackBar(

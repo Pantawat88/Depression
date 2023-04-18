@@ -41,8 +41,10 @@ class TFFemail extends StatelessWidget {
   }
 }
 
-class TFFpasswordPin extends StatelessWidget {
-  const TFFpasswordPin({Key? key}) : super(key: key);
+final TextEditingController PinVerifyController = TextEditingController();
+
+class TFFpasswordPinVerifyAccount extends StatelessWidget {
+  const TFFpasswordPinVerifyAccount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +56,14 @@ class TFFpasswordPin extends StatelessWidget {
         if (value.length < 6 || value.length > 6) {
           return 'รหัสผ่านต้องมีความยาวระหว่าง 6 ตัว';
         }
+        //----------------เช็คค่า_Pin----------------
+        String PinVerify = PinVerifyController.text;
+        print("PinVerify = $PinVerify");
+        //----------------เช็คค่า_Pin----------------
         return null;
       },
+      controller: PinVerifyController,
+      keyboardType: TextInputType.number,
       textInputAction: TextInputAction.next,
       cursorColor: APrimaryColor,
       style: textKey,
@@ -359,3 +367,122 @@ void validateAllFields() {
 ///
 ///
 ///------------------------------------------------ส่วนหน้าเปลี่ยนรหัสผ่าน------------------------------------------------
+
+
+
+
+
+
+///-----------------------------------------------ส่วนหน้า_login-----------------------------------------------
+///
+///
+///
+
+
+
+///-----------------------------------------------ช่องกรอกอีเมลของหน้า_login-----------------------------------------------
+
+final TextEditingController emailLoginController = TextEditingController();//ตัวแปรอีเมลหน้า login
+
+class TFFemailLogin extends StatelessWidget {
+  const TFFemailLogin({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'กรุณากรอกอีเมลก่อน';
+        }
+        return null;
+      },
+      controller:
+      emailLoginController, //เก็บค่ารหัสผ่านใหม่อีกครั้งตอนกรอก
+      keyboardType: TextInputType.emailAddress,
+      textInputAction: TextInputAction.next,
+      cursorColor: APrimaryColor,
+      style: textKey,
+      decoration: InputDecoration(
+          enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: APrimaryColor),
+              borderRadius: BorderRadius.circular(12.0)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: APrimaryLightColor, width: 2),
+              borderRadius: BorderRadius.circular(12.0)),
+          errorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red),
+              borderRadius: BorderRadius.circular(12.0)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red),
+              borderRadius: BorderRadius.circular(12.0)),
+          labelText: 'อีเมล',
+          labelStyle: textformfield,
+          contentPadding:
+          const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+    );
+  }
+}
+///-----------------------------------------------ช่องกรอกอีเมลของหน้า_login-----------------------------------------------
+
+
+///-----------------------------------------------ช่องกรอกรหัสผ่านของหน้า_login-----------------------------------------------
+
+final TextEditingController passwordLoginController = TextEditingController();//ตัวแปรอีเมลหน้า login
+
+
+class TFFpasswordLogin extends StatelessWidget {
+  const TFFpasswordLogin({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'กรุณากรอกรหัสผ่านก่อน';
+        }
+        if (value.length < 6 || value.length > 18) {
+          return 'รหัสผ่านต้องมีความยาวระหว่าง 6-18 ตัว';
+        }
+        return null;
+      },
+      controller:
+      passwordLoginController,
+      textInputAction: TextInputAction.next,
+      cursorColor: APrimaryColor,
+      style: textKey,
+      obscureText: true,
+      decoration: InputDecoration(
+          enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: APrimaryColor),
+              borderRadius: BorderRadius.circular(12.0)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: APrimaryLightColor, width: 2),
+              borderRadius: BorderRadius.circular(12.0)),
+          errorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red),
+              borderRadius: BorderRadius.circular(12.0)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red),
+              borderRadius: BorderRadius.circular(12.0)),
+          labelText: "รหัสผ่าน",
+          labelStyle: textformfield,
+          contentPadding:
+          const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+    );
+  }
+}
+
+
+///
+///
+///
+///-----------------------------------------------ช่องกรอกรหัสผ่านของหน้า_login-----------------------------------------------
+
+
+
+
+
+
+//emailLoginController ค่าอีเมลหน้า Login
+//passwordLoginController ค่ารหัสผ่านหน้า Login
+//PinVerifyController.text ค่ารหัสผ่านPIN หน้า Verify

@@ -11,9 +11,12 @@ class RegisterPage extends StatefulWidget {
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
+final TextEditingController emailRegisterController = TextEditingController();//ตัวแปรอีเมลหน้า ลงทะเบียน
 
 class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +61,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         }
                         return null;
                       },
+                      controller: emailRegisterController,
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
                       cursorColor: APrimaryColor,
