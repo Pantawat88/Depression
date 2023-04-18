@@ -8,7 +8,6 @@ import 'feature/forms/initial_form.dart';
 import 'package:app_aceso/pages/register/create_avatar.dart'; //เรียกใช้การประกาศตัวแปร backgroundImg ในหน้านี้
 //import 'package:app_aceso/pages/register/success_register.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -37,32 +36,28 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-        Stack(
+            Stack(
               children: [
                 Positioned(
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: 400,
-
                     decoration: BoxDecoration(
                       image: DecorationImage(
-
                         //image: AssetImage('assets/background/bg_moto1.png'),
 
-                        image: AssetImage('assets/background/$backgroundImg.png'),
+                        image:
+                            AssetImage('assets/background/$backgroundImg.png'),
 
                         fit: BoxFit.cover,
-
                       ),
                     ),
-
                     child: Column(
                       children: [
                         Padding(
@@ -111,8 +106,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
 
-
-
                         //const Image(
                         //  image: AssetImage('assets/avatar/mato/mato1.gif'),
                         //  width: 265,
@@ -126,38 +119,29 @@ class _HomePageState extends State<HomePage> {
                               padding: EdgeInsets.only(top: 0.0),
                               child: FittedBox(
                                 fit: BoxFit.contain,
-                                child:
-                                selectedName == "มาโต้"
-                                    ? Image.asset('assets/avatar/mato/mato1.gif')
+                                child: selectedName == "มาโต้"
+                                    ? Image.asset(
+                                        'assets/avatar/mato/mato1.gif')
                                     : selectedName == "เนเน่"
-                                    ? Image.asset('assets/avatar/nene/nene3.gif')
-                                    : selectedName == "หูหนู"
-                                    ? Image.asset(
-                                    'assets/avatar/huhnu/huhnu1.gif')
-                                    : selectedName == "เนโกะ"
-                                    ? Image.asset(
-                                    'assets/avatar/neko/neko1.gif')
-                                    : selectedName == "ราเม็ง"
-                                    ? Image.asset(
-                                    'assets/avatar/ramen/ramen1.gif')
-                                    : selectedName == "โชน"
-                                    ? Image.asset(
-                                    'assets/avatar/chon/chon1.gif')
-                                    : null,
+                                        ? Image.asset(
+                                            'assets/avatar/nene/nene3.gif')
+                                        : selectedName == "หูหนู"
+                                            ? Image.asset(
+                                                'assets/avatar/huhnu/huhnu1.gif')
+                                            : selectedName == "เนโกะ"
+                                                ? Image.asset(
+                                                    'assets/avatar/neko/neko1.gif')
+                                                : selectedName == "ราเม็ง"
+                                                    ? Image.asset(
+                                                        'assets/avatar/ramen/ramen1.gif')
+                                                    : selectedName == "โชน"
+                                                        ? Image.asset(
+                                                            'assets/avatar/chon/chon1.gif')
+                                                        : null,
                               ),
-
-
-
                             ),
                           ),
-
                         )
-
-
-
-
-
-
                       ],
                     ),
                   ),
@@ -198,7 +182,8 @@ class _HomePageState extends State<HomePage> {
                             },
                           );
                         },
-                        child: Image.asset('assets/emoji/good.png', height: 50, width: 50),
+                        child: Image.asset('assets/emoji/good.png',
+                            height: 50, width: 50),
                       ),
                     ],
                   ),

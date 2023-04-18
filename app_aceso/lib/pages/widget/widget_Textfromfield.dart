@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-
 import 'package:app_aceso/pages/profile/edit_password.dart';
-
-
 
 class TFFemail extends StatelessWidget {
   const TFFemail({Key? key}) : super(key: key);
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -199,7 +194,6 @@ class TFFinformation extends StatelessWidget {
   }
 }
 
-
 ///------------------------------------------------ส่วนหน้าเปลี่ยนรหัสผ่าน------------------------------------------------
 ///
 ///
@@ -211,7 +205,8 @@ final TextEditingController CurrentPasswordController = TextEditingController();
 
 class TFFCurrentPassword extends StatelessWidget {
   final String labeltext;
-  const TFFCurrentPassword({Key? key, required this.labeltext}) : super(key: key);
+  const TFFCurrentPassword({Key? key, required this.labeltext})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -244,12 +239,12 @@ class TFFCurrentPassword extends StatelessWidget {
           labelText: labeltext,
           labelStyle: textformfield,
           contentPadding:
-          const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+              const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
 }
-///------------------------------------------------ส่วนเปลี่ยนรหัสผ่านปัจจุบัน------------------------------------------------
 
+///------------------------------------------------ส่วนเปลี่ยนรหัสผ่านปัจจุบัน------------------------------------------------
 
 ///------------------------------------------------ส่วนเปลี่ยนรหัสผ่านใหม่------------------------------------------------
 
@@ -291,19 +286,21 @@ class TFFNewPassword extends StatelessWidget {
           labelText: labeltext,
           labelStyle: textformfield,
           contentPadding:
-          const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+              const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
 }
+
 ///------------------------------------------------ส่วนเปลี่ยนรหัสผ่านใหม่------------------------------------------------
 
-
 ///------------------------------------------------ส่วนเปลี่ยนรหัสผ่านใหม่อีกครั้ง------------------------------------------------
-final TextEditingController RepeatNewPasswordController = TextEditingController();
+final TextEditingController RepeatNewPasswordController =
+    TextEditingController();
 
 class TFFRepeatNewPassword extends StatelessWidget {
   final String labeltext;
-  const TFFRepeatNewPassword({Key? key, required this.labeltext}) : super(key: key);
+  const TFFRepeatNewPassword({Key? key, required this.labeltext})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -319,7 +316,8 @@ class TFFRepeatNewPassword extends StatelessWidget {
         }
         return null;
       },
-      controller: RepeatNewPasswordController, //เก็บค่ารหัสผ่านใหม่อีกครั้งตอนกรอก
+      controller:
+          RepeatNewPasswordController, //เก็บค่ารหัสผ่านใหม่อีกครั้งตอนกรอก
       textInputAction: TextInputAction.next,
       cursorColor: APrimaryColor,
       style: textnormalbold,
@@ -337,10 +335,11 @@ class TFFRepeatNewPassword extends StatelessWidget {
           labelText: labeltext,
           labelStyle: textformfield,
           contentPadding:
-          const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+              const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
     );
   }
 }
+
 ///------------------------------------------------ส่วนเปลี่ยนรหัสผ่านใหม่อีกครั้ง------------------------------------------------
 bool allFieldsAreValid = false;
 
@@ -351,7 +350,8 @@ void validateAllFields() {
   bool isRepeatNewPasswordValid = RepeatNewPasswordController.text.isNotEmpty;
   // add more validation checks for other fields if needed
 
-  allFieldsAreValid = isCurrentPasswordValid && isNewPasswordValid && isRepeatNewPasswordValid;
+  allFieldsAreValid =
+      isCurrentPasswordValid && isNewPasswordValid && isRepeatNewPasswordValid;
 }
 
 ///

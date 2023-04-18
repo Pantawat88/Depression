@@ -1,9 +1,7 @@
 import 'package:app_aceso/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../services/api.dart';
 import '../widget/widget_button.dart';
-import 'datacontroller.dart';
 import 'success_register.dart';
 
 class CreateAvatar extends StatefulWidget {
@@ -14,11 +12,12 @@ class CreateAvatar extends StatefulWidget {
 
 String backgroundImg = ''; //ไว้กำหนดพื้นหลังในหน้า home
 
+String selectedName = "มาโต้";
+String selectedStory =
+    "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
+Color backgroundColor = const Color(0xff222222);
+
 class _CreateAvatarState extends State<CreateAvatar> {
-  String selectedName = "มาโต้";
-  String selectedStory =
-      "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
-  Color backgroundColor = const Color(0xff222222);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,8 +113,6 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                     "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
                                 backgroundColor = const Color(0xff222222);
                                 backgroundImg = 'bg_moto1';
-                                dataController.avatarIDControll.text =
-                                    selectedName;
                               });
                             },
                             child: Image.asset('assets/avatar/png/mato.png'),
@@ -129,8 +126,6 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                     "ผีตัวน้อยที่มักจะทักทายกับคนที่\nเข้ามาใกล้อยู่เสมอ";
                                 backgroundColor = const Color(0xffCFB2F3);
                                 backgroundImg = 'bg_nene1';
-                                dataController.avatarIDControll.text =
-                                    selectedName;
                               });
                             },
                             child: Image.asset('assets/avatar/png/nene.png'),
@@ -143,7 +138,7 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                 selectedStory =
                                     "เห็ดตัวน้อยที่ชอบเที่ยวเล่นตามประสาเด็กน้อย\nชอบค้นหาสิ่งใหม่ ๆ ทำเสมอ อารมณ์ดี";
                                 backgroundColor = const Color(0xffFFBCBC);
-                                backgroundImg = 'bg_huhnu1';
+                                backgroundImg = 'bg_huhnu2';
                               });
                             },
                             child: Image.asset('assets/avatar/png/huhnu.png'),
@@ -157,8 +152,6 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                     "แมวอ้วนที่ชอบออกกำลังกาย\nแต่ชอบกินเยอะอยู่ดี";
                                 backgroundColor = const Color(0xffF4DF8E);
                                 backgroundImg = 'bg_neko1';
-                                dataController.avatarIDControll.text =
-                                    selectedName;
                               });
                             },
                             child: Image.asset(
@@ -175,8 +168,6 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                     "มังกรทารกที่พร้อมจะมอบความสดใส\nให้คุณเหมือนทารกแรกแย้ม";
                                 backgroundColor = const Color(0xffCDF0EA);
                                 backgroundImg = 'bg_ramen1';
-                                dataController.avatarIDControll.text =
-                                    selectedName;
                               });
                             },
                             child: Image.asset('assets/avatar/png/ramen.png'),
@@ -190,8 +181,6 @@ class _CreateAvatarState extends State<CreateAvatar> {
                                     "ใช้ชีวิตสโลว์ไลฟ์ในโลกมนุษย์ชอบทำงาน\nชอบเต้น มีเหตุผล อบอุ่นใจดี";
                                 backgroundColor = const Color(0xffABC2E8);
                                 backgroundImg = 'bg_chon1';
-                                dataController.avatarIDControll.text =
-                                    selectedName;
                               });
                             },
                             child: Image.asset('assets/avatar/png/chon.png'),
@@ -210,7 +199,6 @@ class _CreateAvatarState extends State<CreateAvatar> {
               child: ElevatedButton(
                 child: const ButtonOperation(BTname: 'ถัดไป'),
                 onPressed: () {
-                  dataController.addUser();
                   Navigator.push(
                     context,
                     MaterialPageRoute(

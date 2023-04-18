@@ -35,7 +35,6 @@ const TextStyle textHeading = TextStyle(
   color: APrimaryColor,
 );
 
-
 ////ฟ้อนสำหรับ หัวข้อเรื่องตัวหนา สีส้ม
 const TextStyle textHeadingOrange = TextStyle(
   fontFamily: 'Prompt',
@@ -43,9 +42,6 @@ const TextStyle textHeadingOrange = TextStyle(
   fontWeight: FontWeight.bold,
   color: orangeColor,
 );
-
-
-
 
 ////ฟ้อนสำหรับ ข้อความธรรมดา
 const TextStyle textnormal = TextStyle(
@@ -91,10 +87,6 @@ const TextStyle textsmallboldOrange = TextStyle(
   color: orangeColor,
 );
 
-
-
-
-
 ////ฟ้อนสำหรับ ข้อความขนาดเล็กสีอ่อน
 const TextStyle textsmallLight = TextStyle(
   fontFamily: 'Prompt',
@@ -134,7 +126,6 @@ const TextStyle textnormalsmallWhite = TextStyle(
   fontSize: 18.0,
   color: Colors.white,
 );
-
 
 //---------------------------------------ใช้ในหน้า success_register---------------------------------------
 
