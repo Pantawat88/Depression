@@ -50,7 +50,7 @@ class VerifyAccount extends StatelessWidget {
                   const SizedBox(height: 25.0),
                   Form(
                     key: _formKey,
-                    child: const TFFpasswordPin(),
+                    child: const TFFpasswordPinVerifyAccount(),
                   ),
                   const SizedBox(height: 25.0),
                   Row(
