@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../widget/widget_Textfromfield.dart';
 import '../widget/widget_button.dart';
+import 'datacontroller.dart';
 
 class SetPassword extends StatefulWidget {
   const SetPassword({super.key});
@@ -14,6 +15,8 @@ class SetPassword extends StatefulWidget {
 }
 
 class _SetPasswordState extends State<SetPassword> {
+  final DataController dataController = DataController();
+
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -70,10 +73,39 @@ class _SetPasswordState extends State<SetPassword> {
               child: Form(
                 key: _formKey,
                 child: Column(
-                  children: const [
+                  children: [
                     TFFsetpassword(labeltext: 'รหัสผ่าน'),
                     SizedBox(height: 15),
-                    TFFsetpassword(labeltext: 'รหัสผ่านซ้ำอีกครั้ง'),
+                    TextFormField(
+                      controller: dataController.userPasswordControll,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'กรุณากรอกรหัสผ่านก่อน';
+                        }
+                        if (value.length < 6 || value.length > 18) {
+                          return 'รหัสผ่านต้องมีความยาวระหว่าง 6-18 ตัว';
+                        }
+                        return null;
+                      },
+                      textInputAction: TextInputAction.next,
+                      cursorColor: APrimaryColor,
+                      style: textKey,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          border: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                            borderSide: BorderSide.none,
+                          ),
+                          errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.circular(12.0)),
+                          filled: true,
+                          fillColor: APrimaryveryLight,
+                          labelText: "รหัสผ่านซ้ำอีกครั้ง",
+                          labelStyle: textformfield,
+                          contentPadding: const EdgeInsets.only(
+                              top: 12.0, bottom: 12.0, left: 12.0)),
+                    ),
                   ],
                 ),
               ),

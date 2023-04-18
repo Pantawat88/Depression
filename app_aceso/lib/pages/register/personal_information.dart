@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../../background.dart';
 import '../../constants.dart';
-import '../widget/widget_Textfromfield.dart';
+
 import '../widget/widget_button.dart';
+import 'datacontroller.dart';
 
 class PersonalInformation extends StatefulWidget {
   const PersonalInformation({super.key});
@@ -15,6 +16,7 @@ class PersonalInformation extends StatefulWidget {
 }
 
 class _AgreementState extends State<PersonalInformation> {
+  final DataController dataController = DataController();
   final _formKey = GlobalKey<FormState>();
 
   String? dropdownValue;
@@ -107,11 +109,90 @@ class _AgreementState extends State<PersonalInformation> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    const TFFinformation(labeltext: 'ชื่อ'),
+                    ///////////////////
+                    TextFormField(
+                      controller: dataController.userFNameControll,
+                      validator: (text) {
+                        if (text == null || text.isEmpty) {
+                          return 'กรุณากรอก';
+                        }
+                        return null;
+                      },
+                      textInputAction: TextInputAction.next,
+                      cursorColor: APrimaryColor,
+                      style: textKey,
+                      decoration: InputDecoration(
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                          borderSide: BorderSide.none,
+                        ),
+                        errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(12.0)),
+                        filled: true,
+                        fillColor: APrimaryveryLight,
+                        labelText: "ชื่อ",
+                        labelStyle: textformfield,
+                        contentPadding: const EdgeInsets.only(
+                            top: 12.0, bottom: 12.0, left: 12.0),
+                      ),
+                    ),
                     const SizedBox(height: 15),
-                    const TFFinformation(labeltext: 'นามสกุล'),
+                    TextFormField(
+                      controller: dataController.userLNameControll,
+                      validator: (text) {
+                        if (text == null || text.isEmpty) {
+                          return 'กรุณากรอก';
+                        }
+                        return null;
+                      },
+                      textInputAction: TextInputAction.next,
+                      cursorColor: APrimaryColor,
+                      style: textKey,
+                      decoration: InputDecoration(
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                          borderSide: BorderSide.none,
+                        ),
+                        errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(12.0)),
+                        filled: true,
+                        fillColor: APrimaryveryLight,
+                        labelText: "นามสกุล",
+                        labelStyle: textformfield,
+                        contentPadding: const EdgeInsets.only(
+                            top: 12.0, bottom: 12.0, left: 12.0),
+                      ),
+                    ),
                     const SizedBox(height: 15),
-                    const TFFinformation(labeltext: 'ชื่อเล่น'),
+                    TextFormField(
+                      controller: dataController.userNickNameControll,
+                      validator: (text) {
+                        if (text == null || text.isEmpty) {
+                          return 'กรุณากรอก';
+                        }
+                        return null;
+                      },
+                      textInputAction: TextInputAction.next,
+                      cursorColor: APrimaryColor,
+                      style: textKey,
+                      decoration: InputDecoration(
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                          borderSide: BorderSide.none,
+                        ),
+                        errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(12.0)),
+                        filled: true,
+                        fillColor: APrimaryveryLight,
+                        labelText: "ชื่อเล่น",
+                        labelStyle: textformfield,
+                        contentPadding: const EdgeInsets.only(
+                            top: 12.0, bottom: 12.0, left: 12.0),
+                      ),
+                    ),
                     const SizedBox(height: 15),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 13),
@@ -168,6 +249,9 @@ class _AgreementState extends State<PersonalInformation> {
                                                 dateTime = date;
                                                 _dateText =
                                                     '${date.day}-${date.month}-${date.year}';
+                                                dataController
+                                                    .userBirthdayDateControll
+                                                    .text = _dateText;
                                               });
                                             },
                                           ),
@@ -226,7 +310,8 @@ class _AgreementState extends State<PersonalInformation> {
           style: textnormal,
           onChanged: (newValue) {
             setState(() {
-              dropdownValue = newValue!;
+              dataController.userFacultyControll.text = newValue!;
+              dropdownValue = newValue;
             });
           },
           items: listItem.map((valueItem) {

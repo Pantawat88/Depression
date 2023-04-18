@@ -1,13 +1,20 @@
 import 'package:app_aceso/background.dart';
 import 'package:app_aceso/pages/register/verify_account.dart';
-import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import '../widget/widget_button.dart';
+import 'datacontroller.dart';
 
-class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final DataController dataController = DataController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -47,7 +54,38 @@ class RegisterPage extends StatelessWidget {
                   const SizedBox(height: 25),
                   Form(
                     key: _formKey,
-                    child: const TFFemail(),
+                    child: TextFormField(
+                      controller: dataController.userEmailControll,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'กรุณากรอกอีเมลก่อน';
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
+                      cursorColor: APrimaryColor,
+                      style: textKey,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: APrimaryColor),
+                              borderRadius: BorderRadius.circular(12.0)),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: APrimaryLightColor, width: 2),
+                              borderRadius: BorderRadius.circular(12.0)),
+                          errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(12.0)),
+                          focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(12.0)),
+                          labelText: 'อีเมล',
+                          labelStyle: textformfield,
+                          contentPadding: const EdgeInsets.only(
+                              top: 12.0, bottom: 12.0, left: 12.0)),
+                    ),
                   ),
                 ],
               ),
