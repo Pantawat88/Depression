@@ -1,10 +1,13 @@
 import 'package:app_aceso/background.dart';
 import 'package:app_aceso/constants.dart';
 import 'package:app_aceso/pages/register/create_avatar.dart';
+import 'package:app_aceso/pages/register/register.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/widget_Textfromfield.dart';
 import '../widget/widget_button.dart';
+
+
 
 class SetPassword extends StatefulWidget {
   const SetPassword({super.key});
@@ -22,6 +25,30 @@ final TextEditingController passwordRepeatRegisterController = TextEditingContro
 
 class _SetPasswordState extends State<SetPassword> {
   final _formKey = GlobalKey<FormState>();
+
+  bool _isNotValidate = false;
+
+
+  void registerUser() async{
+    if(emailRegisterController.text.isNotEmpty && passwordRegisterController.text.isNotEmpty){
+      //ถ้าข้อมูลมีให้ทำ
+
+    }else{
+      //ถ้าไม่มีข้อมูล
+      setState(() {
+        _isNotValidate = true;
+      });
+
+    }
+  }
+
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Background(
@@ -121,6 +148,9 @@ class _SetPasswordState extends State<SetPassword> {
             child: ElevatedButton(
               child: const ButtonOperation(BTname: 'ถัดไป'),
               onPressed: () {
+
+                registerUser();
+
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(
                     context,
