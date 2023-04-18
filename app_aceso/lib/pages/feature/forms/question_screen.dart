@@ -46,13 +46,48 @@ class _QuestionScreenState extends State<QuestionScreen> {
               icon: Iback,
               color: APrimaryColor,
               onPressed: () {
-                Navigator.pop(context);
+
+
+                //Navigator.pop(context);
+                //---------------------------------ล้างค่าข้อมูล--------------------------------
+                phq1 = '';
+                phq2 = '';
+                phq3 = '';
+                phq4 = '';
+                phq5 = '';
+                phq6 = '';
+                phq7 = '';
+                phq8 = '';
+                phq9 = '';
+                int currentQuestionIndex = 0;
+                int score = 0;
+                //---------------------------------ล้างค่าข้อมูล--------------------------------
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => InitialForm()),
+                );
               },
             ),
             IconButton(
                 icon: Iclear,
                 color: APrimaryColor,
                 onPressed: () {
+                  //---------------------------------ล้างค่าข้อมูล--------------------------------
+                  phq1 = '';
+                  phq2 = '';
+                  phq3 = '';
+                  phq4 = '';
+                  phq5 = '';
+                  phq6 = '';
+                  phq7 = '';
+                  phq8 = '';
+                  phq9 = '';
+                  currentQuestionIndex = 0;
+                  score = 0;
+                  //---------------------------------ล้างค่าข้อมูล--------------------------------
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(

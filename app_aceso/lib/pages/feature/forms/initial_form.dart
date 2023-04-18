@@ -1,5 +1,6 @@
 import 'package:app_aceso/constants.dart';
 import 'package:app_aceso/pages/feature/forms/question_screen.dart';
+import 'package:app_aceso/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class InitialForm extends StatefulWidget {
@@ -28,7 +29,13 @@ class _InitialFormState extends State<InitialForm> {
                     icon: Iback,
                     color: APrimaryColor,
                     onPressed: () {
-                      Navigator.pop(context);
+
+                      //Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => HomePage()),
+                      );
                     },
                   ),
                   const Spacer(),
