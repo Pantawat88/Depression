@@ -59,8 +59,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 phq7 = '';
                 phq8 = '';
                 phq9 = '';
-                int currentQuestionIndex = 0;
-                int score = 0;
+                currentQuestionIndex = 0;
+                score = 0;
                 //---------------------------------ล้างค่าข้อมูล--------------------------------
 
                 Navigator.push(
