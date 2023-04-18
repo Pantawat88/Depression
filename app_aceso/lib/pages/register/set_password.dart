@@ -13,6 +13,13 @@ class SetPassword extends StatefulWidget {
   State<SetPassword> createState() => _SetPasswordState();
 }
 
+
+
+
+final TextEditingController passwordRepeatRegisterController = TextEditingController();//ตัวแปรรหัสผ่านรอบสอง หน้า SetPassword
+
+
+
 class _SetPasswordState extends State<SetPassword> {
   final _formKey = GlobalKey<FormState>();
   @override
@@ -83,6 +90,7 @@ class _SetPasswordState extends State<SetPassword> {
                         }
                         return null;
                       },
+                      controller: passwordRepeatRegisterController,
                       textInputAction: TextInputAction.next,
                       cursorColor: APrimaryColor,
                       style: textKey,
