@@ -58,11 +58,18 @@ class DeleteAccount extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: <Widget>[
-SizedBox(height: 250,),
-                          Text('การลบบัญชีจะเป็นการลบข้อมูลของคุณอย่างถาวร คุณแน่ใจหรือไม่ว่าต้องการดำเนินการต่อ?',style: textHeading,)
-
-
-
+                          SizedBox(
+                            child: Image.asset('assets/icon_settingpage/depressed-removebg-preview.png', height: 295, width: 295),
+                          ),
+SizedBox(height: 95,),
+                          Text('การลบบัญชีผู้ใช้นี้ ระบบจะทำการลบบัญชีและข้อมูลของคุณที่เคยบันทึกไว้ ออกจากระบบ Aceco ทั้งหมด และไม่สามารถกู้คืนได้อีก ยกตัวข้อมูลที่จะลบ ดังนี้\n'
+                            ,style: textnormal,),
+                          Row(
+                            children: [
+                              Text('- บัญชี\n - เพื่อนซี้\n - ประวัติการประเมิน\n - ไดอารี่อารมณ์\n - อื่นๆ'
+                                ,style: textnormal,),
+                            ],
+                          )
 
 
 

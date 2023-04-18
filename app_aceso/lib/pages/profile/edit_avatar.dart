@@ -12,14 +12,27 @@ class EditAvatar extends StatefulWidget {
   State<EditAvatar> createState() => _EditAvatar();
 
 }
-String selectedName = "มาโต้"; //ค่อยใช้คอมเม้นหลังดึงตัวแปรมาจาก create avatarpage
-String selectedStory =
-    "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
-Color backgroundColor = const Color(0xff222222);
-//String backgroundImg = backgroundImg.isEmpty ? 'bg_moto1' : backgroundImg; ///
-String backgroundImg = 'bg_moto1';
+//----------------------------------------------------------------------ไม่ใช้เพราะมันจะไม่ดึงค่ามาจากหน้าเลือก Avatar----------------------------------------------------------------------
+//String selectedName = "มาโต้"; //ค่อยใช้คอมเม้นหลังดึงตัวแปรมาจาก create avatarpage
+//String selectedStory =
+//    "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
+//Color backgroundColor = const Color(0xff222222);
+// //String backgroundImg = backgroundImg.isEmpty ? 'bg_moto1' : backgroundImg; ///
+//String backgroundImg = 'bg_moto1';
+//----------------------------------------------------------------------ไม่ใช้เพราะมันจะไม่ดึงค่ามาจากหน้าเลือก Avatar----------------------------------------------------------------------
+
+
+
 ///
 class _EditAvatar extends State<EditAvatar> {
+
+
+  String selectedName_demo = selectedName;
+  String selectedStory_demo = selectedStory;
+  Color backgroundColor_demo = backgroundColor;
+  String backgroundImg_demo = backgroundImg;
+
+
   //String selectedName = "";
   //String selectedStory =
   //    "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
@@ -44,6 +57,12 @@ class _EditAvatar extends State<EditAvatar> {
                     icon: Iback,
                     color: APrimaryColor,
                     onPressed: () {
+
+                      selectedName = selectedName_demo;
+                      selectedStory = selectedStory_demo;
+                      backgroundColor = backgroundColor_demo;
+                      backgroundImg = backgroundImg_demo;
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => SettingPage()),
@@ -118,7 +137,17 @@ class _EditAvatar extends State<EditAvatar> {
                           const SizedBox(width: 35),
                           GestureDetector(
                             onTap: () {
+                               //selectedName_demo = selectedName;
+                               //selectedStory_demo = selectedStory;
+                               //backgroundColor_demo = backgroundColor;
+                               //backgroundImg_demo = backgroundImg;
+
                               setState(() {
+                                selectedName_demo = selectedName;
+                                selectedStory_demo = selectedStory;
+                                backgroundColor_demo = backgroundColor;
+                                backgroundImg_demo = backgroundImg;
+
                                 selectedName = "มาโต้";
                                 selectedStory =
                                 "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
@@ -131,7 +160,17 @@ class _EditAvatar extends State<EditAvatar> {
                           const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
+                              //selectedName_demo = selectedName;
+                              //selectedStory_demo = selectedStory;
+                              //backgroundColor_demo = backgroundColor;
+                              //backgroundImg_demo = backgroundImg;
+
                               setState(() {
+                                selectedName_demo = selectedName;
+                                selectedStory_demo = selectedStory;
+                                backgroundColor_demo = backgroundColor;
+                                backgroundImg_demo = backgroundImg;
+
                                 selectedName = "เนเน่";
                                 selectedStory =
                                 "ผีตัวน้อยที่มักจะทักทายกับคนที่\nเข้ามาใกล้อยู่เสมอ";
@@ -144,12 +183,22 @@ class _EditAvatar extends State<EditAvatar> {
                           const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
+                              //selectedName_demo = selectedName;
+                              //selectedStory_demo = selectedStory;
+                              //backgroundColor_demo = backgroundColor;
+                              //backgroundImg_demo = backgroundImg;
+
                               setState(() {
+                                selectedName_demo = selectedName;
+                                selectedStory_demo = selectedStory;
+                                backgroundColor_demo = backgroundColor;
+                                backgroundImg_demo = backgroundImg;
+
                                 selectedName = "หูหนู";
                                 selectedStory =
                                 "เห็ดตัวน้อยที่ชอบเที่ยวเล่นตามประสาเด็กน้อย\nชอบค้นหาสิ่งใหม่ ๆ ทำเสมอ อารมณ์ดี";
                                 backgroundColor = const Color(0xffFFBCBC);
-                                backgroundImg = 'bg_huhnu1'; //ตั้งค่าพื้นหลังในหน้าเปลี่ยนเพื่อนซี้ เอาไปเป็น path ในการแสดง Img ในหน้า home.dart
+                                backgroundImg = 'bg_huhnu2'; //ตั้งค่าพื้นหลังในหน้าเปลี่ยนเพื่อนซี้ เอาไปเป็น path ในการแสดง Img ในหน้า home.dart
                               });
                             },
                             child: Image.asset('assets/avatar/png/huhnu.png'),
@@ -157,7 +206,17 @@ class _EditAvatar extends State<EditAvatar> {
                           const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
+                              //selectedName_demo = selectedName;
+                              //selectedStory_demo = selectedStory;
+                              //backgroundColor_demo = backgroundColor;
+                              //backgroundImg_demo = backgroundImg;
+
                               setState(() {
+                                selectedName_demo = selectedName;
+                                selectedStory_demo = selectedStory;
+                                backgroundColor_demo = backgroundColor;
+                                backgroundImg_demo = backgroundImg;
+
                                 selectedName = "เนโกะ";
                                 selectedStory =
                                 "แมวอ้วนที่ชอบออกกำลังกาย\nแต่ชอบกินเยอะอยู่ดี";
@@ -173,7 +232,17 @@ class _EditAvatar extends State<EditAvatar> {
                           const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
+                              //selectedName_demo = selectedName;
+                              //selectedStory_demo = selectedStory;
+                              //backgroundColor_demo = backgroundColor;
+                              //backgroundImg_demo = backgroundImg;
+
                               setState(() {
+                                selectedName_demo = selectedName;
+                                selectedStory_demo = selectedStory;
+                                backgroundColor_demo = backgroundColor;
+                                backgroundImg_demo = backgroundImg;
+
                                 selectedName = "ราเม็ง";
                                 selectedStory =
                                 "มังกรทารกที่พร้อมจะมอบความสดใส\nให้คุณเหมือนทารกแรกแย้ม";
@@ -186,7 +255,17 @@ class _EditAvatar extends State<EditAvatar> {
                           const SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {
+                              //selectedName_demo = selectedName;
+                              //selectedStory_demo = selectedStory;
+                              //backgroundColor_demo = backgroundColor;
+                              //backgroundImg_demo = backgroundImg;
+
                               setState(() {
+                                selectedName_demo = selectedName;
+                                selectedStory_demo = selectedStory;
+                                backgroundColor_demo = backgroundColor;
+                                backgroundImg_demo = backgroundImg;
+
                                 selectedName = "โชน";
                                 selectedStory =
                                 "ใช้ชีวิตสโลว์ไลฟ์ในโลกมนุษย์ชอบทำงาน\nชอบเต้น มีเหตุผล อบอุ่นใจดี";
@@ -240,6 +319,14 @@ class _EditAvatar extends State<EditAvatar> {
                                               right: 16.0),
                                           child: TextButton(
                                             onPressed: () {
+
+
+                                              selectedName = selectedName_demo;
+                                              selectedStory = selectedStory_demo;
+                                              backgroundColor = backgroundColor_demo;
+                                              backgroundImg = backgroundImg_demo;
+
+
                                               Navigator.of(context)
                                                   .pop();
                                             },
