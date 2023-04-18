@@ -488,7 +488,7 @@ class TFFpasswordLogin extends StatelessWidget {
 
 
 
-
+///-----------------------------------------------ช่องกรอกรหัสผ่าน_รอบแรก_ของหน้า_SetPassword-----------------------------------------------
 
 final TextEditingController passwordRegisterController = TextEditingController();//ตัวแปรรหัสผ่านรอบแรก หน้า SetPassword
 
@@ -532,6 +532,7 @@ class TFFsetpasswordRegister extends StatelessWidget {
   }
 }
 
+///-----------------------------------------------ช่องกรอกรหัสผ่าน_รอบแรก_ของหน้า_SetPassword-----------------------------------------------
 
 
 //emailLoginController ค่าอีเมลหน้า Login
