@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import '../widget/widget_button.dart';
-import 'datacontroller.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -14,8 +13,6 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final DataController dataController = DataController();
-
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -55,7 +52,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   Form(
                     key: _formKey,
                     child: TextFormField(
-                      controller: dataController.userEmailControll,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'กรุณากรอกอีเมลก่อน';

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../widget/widget_Textfromfield.dart';
 import '../widget/widget_button.dart';
-import 'datacontroller.dart';
 
 class SetPassword extends StatefulWidget {
   const SetPassword({super.key});
@@ -15,8 +14,6 @@ class SetPassword extends StatefulWidget {
 }
 
 class _SetPasswordState extends State<SetPassword> {
-  final DataController dataController = DataController();
-
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -77,7 +74,6 @@ class _SetPasswordState extends State<SetPassword> {
                     TFFsetpassword(labeltext: 'รหัสผ่าน'),
                     SizedBox(height: 15),
                     TextFormField(
-                      controller: dataController.userPasswordControll,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'กรุณากรอกรหัสผ่านก่อน';

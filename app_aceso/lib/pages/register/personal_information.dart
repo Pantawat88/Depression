@@ -6,7 +6,6 @@ import '../../background.dart';
 import '../../constants.dart';
 
 import '../widget/widget_button.dart';
-import 'datacontroller.dart';
 
 class PersonalInformation extends StatefulWidget {
   const PersonalInformation({super.key});
@@ -16,7 +15,6 @@ class PersonalInformation extends StatefulWidget {
 }
 
 class _AgreementState extends State<PersonalInformation> {
-  final DataController dataController = DataController();
   final _formKey = GlobalKey<FormState>();
 
   String? dropdownValue;
@@ -111,7 +109,6 @@ class _AgreementState extends State<PersonalInformation> {
                   children: [
                     ///////////////////
                     TextFormField(
-                      controller: dataController.userFNameControll,
                       validator: (text) {
                         if (text == null || text.isEmpty) {
                           return 'กรุณากรอก';
@@ -139,7 +136,6 @@ class _AgreementState extends State<PersonalInformation> {
                     ),
                     const SizedBox(height: 15),
                     TextFormField(
-                      controller: dataController.userLNameControll,
                       validator: (text) {
                         if (text == null || text.isEmpty) {
                           return 'กรุณากรอก';
@@ -167,7 +163,6 @@ class _AgreementState extends State<PersonalInformation> {
                     ),
                     const SizedBox(height: 15),
                     TextFormField(
-                      controller: dataController.userNickNameControll,
                       validator: (text) {
                         if (text == null || text.isEmpty) {
                           return 'กรุณากรอก';
@@ -249,9 +244,6 @@ class _AgreementState extends State<PersonalInformation> {
                                                 dateTime = date;
                                                 _dateText =
                                                     '${date.day}-${date.month}-${date.year}';
-                                                dataController
-                                                    .userBirthdayDateControll
-                                                    .text = _dateText;
                                               });
                                             },
                                           ),
@@ -310,7 +302,6 @@ class _AgreementState extends State<PersonalInformation> {
           style: textnormal,
           onChanged: (newValue) {
             setState(() {
-              dataController.userFacultyControll.text = newValue!;
               dropdownValue = newValue;
             });
           },
