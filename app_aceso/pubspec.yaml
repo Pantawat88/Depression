@@ -39,6 +39,7 @@ dependencies:
   flutter_cupertino_date_picker_fork: ^1.0.7
   http: ^0.13.5
   mailer: ^6.0.1
+  email_validator: ^2.1.17
 
 flutter_icons:
   android: true
