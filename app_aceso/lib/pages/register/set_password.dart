@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:app_aceso/background.dart';
 import 'package:app_aceso/constants.dart';
 import 'package:app_aceso/pages/register/create_avatar.dart';
@@ -7,6 +9,16 @@ import 'package:flutter/material.dart';
 import '../widget/widget_Textfromfield.dart';
 import '../widget/widget_button.dart';
 
+import 'package:http/http.dart' as http;
+import 'package:app_aceso/config.dart';
+
+
+import 'package:convert/convert.dart';
+
+import 'package:jwt_decoder/jwt_decoder.dart';
+
+
+
 class SetPassword extends StatefulWidget {
   const SetPassword({super.key});
 
@@ -14,26 +26,53 @@ class SetPassword extends StatefulWidget {
   State<SetPassword> createState() => _SetPasswordState();
 }
 
-final TextEditingController passwordRepeatRegisterController =
-    TextEditingController(); //ตัวแปรรหัสผ่านรอบสอง หน้า SetPassword
+
+
+
+final TextEditingController passwordRepeatRegisterController = TextEditingController();//ตัวแปรรหัสผ่านรอบสอง หน้า SetPassword
+
 
 class _SetPasswordState extends State<SetPassword> {
   final _formKey = GlobalKey<FormState>();
 
   bool _isNotValidate = false;
 
-  // void registerUser() async{
-  //   if(emailRegisterController.text.isNotEmpty && passwordRegisterController.text.isNotEmpty){
-  //     //ถ้าข้อมูลมีให้ทำ
 
-  //   }else{
-  //     //ถ้าไม่มีข้อมูล
-  //     setState(() {
-  //       _isNotValidate = true;
-  //     });
 
-  //   }
-  // }
+  void registerUser() async{
+    if(emailRegisterController.text.isNotEmpty && passwordRegisterController.text.isNotEmpty){
+      //ถ้าข้อมูลมีให้ทำ
+      //var a =emailRegisterController.text;
+      //var b =passwordRegisterController.text;
+
+      String a =emailRegisterController.text;
+      String b =passwordRegisterController.text;
+//เนื้อหาการลงทะเบียน
+      var regBody ={
+        "email":a,
+        "password":b
+      };
+      var response = await http.post(Uri.parse(resgistration),
+        headers: {"Content-Type":"application/json"},
+        body: jsonEncode(regBody) //แปลงอีเมลและรหัสผ่านเป็น json
+      );
+      //มาตรวจสอบว่าใช้งานได้ไหม
+      print(response);
+      print('a = $a');
+      print('b = $b');
+    }else{
+      //ถ้าไม่มีข้อมูล
+      setState(() {
+        _isNotValidate = true;
+      });
+
+    }
+
+
+
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +130,7 @@ class _SetPasswordState extends State<SetPassword> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    TFFsetpassword(labeltext: 'รหัสผ่าน'),
+                    TFFsetpasswordRegister(labeltext: 'รหัสผ่าน'),
                     SizedBox(height: 15),
                     TextFormField(
                       validator: (value) {
@@ -133,10 +172,13 @@ class _SetPasswordState extends State<SetPassword> {
             margin: const EdgeInsets.all(defaultPadding),
             child: ElevatedButton(
               child: const ButtonOperation(BTname: 'ถัดไป'),
-              onPressed: () {
+              onPressed: ()  {
+
+
                 //registerUser();
 
                 if (_formKey.currentState!.validate()) {
+                  registerUser();
                   Navigator.push(
                     context,
                     MaterialPageRoute(

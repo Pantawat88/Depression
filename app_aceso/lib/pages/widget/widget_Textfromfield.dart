@@ -500,7 +500,7 @@ class TFFsetpasswordRegister extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
+        validator: (value) {
         if (value == null || value.isEmpty) {
           return 'กรุณากรอกรหัสผ่านก่อน';
         }
