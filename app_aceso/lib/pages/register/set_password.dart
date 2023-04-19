@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import '../widget/widget_Textfromfield.dart';
 import '../widget/widget_button.dart';
 
-
-
 class SetPassword extends StatefulWidget {
   const SetPassword({super.key});
 
@@ -16,38 +14,26 @@ class SetPassword extends StatefulWidget {
   State<SetPassword> createState() => _SetPasswordState();
 }
 
-
-
-
-final TextEditingController passwordRepeatRegisterController = TextEditingController();//ตัวแปรรหัสผ่านรอบสอง หน้า SetPassword
-
-
+final TextEditingController passwordRepeatRegisterController =
+    TextEditingController(); //ตัวแปรรหัสผ่านรอบสอง หน้า SetPassword
 
 class _SetPasswordState extends State<SetPassword> {
   final _formKey = GlobalKey<FormState>();
 
   bool _isNotValidate = false;
 
+  // void registerUser() async{
+  //   if(emailRegisterController.text.isNotEmpty && passwordRegisterController.text.isNotEmpty){
+  //     //ถ้าข้อมูลมีให้ทำ
 
-  void registerUser() async{
-    if(emailRegisterController.text.isNotEmpty && passwordRegisterController.text.isNotEmpty){
-      //ถ้าข้อมูลมีให้ทำ
+  //   }else{
+  //     //ถ้าไม่มีข้อมูล
+  //     setState(() {
+  //       _isNotValidate = true;
+  //     });
 
-    }else{
-      //ถ้าไม่มีข้อมูล
-      setState(() {
-        _isNotValidate = true;
-      });
-
-    }
-  }
-
-
-
-
-
-
-
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -148,8 +134,7 @@ class _SetPasswordState extends State<SetPassword> {
             child: ElevatedButton(
               child: const ButtonOperation(BTname: 'ถัดไป'),
               onPressed: () {
-
-                registerUser();
+                //registerUser();
 
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(

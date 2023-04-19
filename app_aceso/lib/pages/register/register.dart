@@ -26,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final smtpServer = gmail("acesohelp@gmail.com", "xvpvpilosxjtrrbe");
     final verificationCode = generateRandomCode();
     final message = Message()
-      ..from = Address("acesohelp@gmail.com", "admin")
+      ..from = Address("acesohelp@gmail.com", "Aceso")
       ..recipients.add(recipientEmail)
       ..subject = "Email verification code"
       ..text = verificationCode; // สร้างรหัสสุ่มในฟังก์ชันนี้
