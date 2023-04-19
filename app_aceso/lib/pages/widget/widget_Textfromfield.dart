@@ -483,6 +483,58 @@ class TFFpasswordLogin extends StatelessWidget {
 
 
 
+
+
+
+
+
+///-----------------------------------------------ช่องกรอกรหัสผ่าน_รอบแรก_ของหน้า_SetPassword-----------------------------------------------
+
+final TextEditingController passwordRegisterController = TextEditingController();//ตัวแปรรหัสผ่านรอบแรก หน้า SetPassword
+
+
+class TFFsetpasswordRegister extends StatelessWidget {
+  final String labeltext;
+  const TFFsetpasswordRegister({Key? key, required this.labeltext}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'กรุณากรอกรหัสผ่านก่อน';
+        }
+        if (value.length < 6 || value.length > 18) {
+          return 'รหัสผ่านต้องมีความยาวระหว่าง 6-18 ตัว';
+        }
+        return null;
+      },
+      controller: passwordRegisterController,
+      textInputAction: TextInputAction.next,
+      cursorColor: APrimaryColor,
+      style: textKey,
+      obscureText: true,
+      decoration: InputDecoration(
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(12.0)),
+          filled: true,
+          fillColor: APrimaryveryLight,
+          labelText: labeltext,
+          labelStyle: textformfield,
+          contentPadding:
+          const EdgeInsets.only(top: 12.0, bottom: 12.0, left: 12.0)),
+    );
+  }
+}
+
+///-----------------------------------------------ช่องกรอกรหัสผ่าน_รอบแรก_ของหน้า_SetPassword-----------------------------------------------
+
+
 //emailLoginController ค่าอีเมลหน้า Login
 //passwordLoginController ค่ารหัสผ่านหน้า Login
 //PinVerifyController.text ค่ารหัสผ่านPIN หน้า Verify
