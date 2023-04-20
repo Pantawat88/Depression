@@ -1,3 +1,4 @@
+import 'package:app_aceso/pages/feature/forms/result_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../background.dart';
@@ -209,7 +210,14 @@ class _ConfirmAnswerState extends State<ConfirmAnswer> {
                       elevation: 0,
                       minimumSize: const Size(300, 45),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const ResultScreen(); //
+                        }),
+                      );
+                    },
                   ),
                   const SizedBox(height: 12),
                   ElevatedButton(
