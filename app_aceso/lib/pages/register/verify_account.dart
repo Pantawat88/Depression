@@ -1,21 +1,41 @@
 import 'package:app_aceso/background.dart';
 import 'package:app_aceso/pages/register/privacy_agreement.dart';
+import 'package:app_aceso/pages/widget/widget_Textfromfield.dart';
 import 'package:app_aceso/pages/widget/widget_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-class VerifyAccount extends StatefulWidget {
+
+//------------ไม่ใช้ เนื่องจากเปลี่ยนจาก StatelessWidget เป็น StatefulWidget
+//
+//
+//class VerifyAccount extends StatelessWidget {
+//  VerifyAccount({super.key});
+
+//final _formKey = GlobalKey<FormState>();
+//
+//
+//------------ไม่ใช้ เนื่องจากเปลี่ยนจาก StatelessWidget เป็น StatefulWidget
+
+
+  class VerifyAccount extends StatefulWidget {
   final String? verificationCode;
   final String? email;
 
   const VerifyAccount(
-      {Key? key, required this.verificationCode, required this.email})
+  {Key? key, required this.verificationCode, required this.email})
       : super(key: key);
 
   @override
   State<VerifyAccount> createState() => _VerifyAccountState();
-}
+  }
+
+
+
+
+
+
 
 class _VerifyAccountState extends State<VerifyAccount> {
   final _formKey = GlobalKey<FormState>();
@@ -26,6 +46,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
     verificationCodeController.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +80,17 @@ class _VerifyAccountState extends State<VerifyAccount> {
                     style: textHeading,
                   ),
                   const SizedBox(height: 10.0),
-                  Text(
+                  Text(//ห้ามใช้ const ตรงนี้ ไม่งั้นจะรันไม่ได้
+                    //'เราได้ส่งรหัส 6 หลัก ไปยังอีเมล : 63015xxx(ตัวแปร)',
                     'เราได้ส่งรหัส 6 หลัก ไปยังอีเมล : ${widget.email}',
                     style: textnormalLight,
                   ),
                   const SizedBox(height: 25.0),
                   Form(
                     key: _formKey,
+                    //child: const TFFpasswordPinVerifyAccount(),
+
+                    //---------------------------ส่วนที่เพิ่มเข้ามาในการสีอีเมล-----------------
                     child: TextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -87,7 +112,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide:
-                                  const BorderSide(color: APrimaryColor),
+                              const BorderSide(color: APrimaryColor),
                               borderRadius: BorderRadius.circular(12.0)),
                           focusedBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
@@ -104,6 +129,10 @@ class _VerifyAccountState extends State<VerifyAccount> {
                           contentPadding: const EdgeInsets.only(
                               top: 12.0, bottom: 12.0, left: 12.0)),
                     ),
+
+                    //---------------------------ส่วนที่เพิ่มเข้ามาในการสีอีเมล-----------------
+
+
                   ),
                   const SizedBox(height: 25.0),
                   Row(

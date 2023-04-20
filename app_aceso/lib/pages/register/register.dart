@@ -5,10 +5,24 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 import '../widget/widget_button.dart';
 
+
+
+
+
+
 import 'package:email_validator/email_validator.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';
 import 'dart:math';
+
+
+
+
+
+
+
+final emailController = TextEditingController(); //มาประกาศใช้ข้างนอก เพราะมันไปหน้าอื่นได้ง่ายกว่า
+
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -16,17 +30,23 @@ class RegisterPage extends StatefulWidget {
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
+//final TextEditingController emailRegisterController = TextEditingController();//ตัวแปรอีเมลหน้า ลงทะเบียน
 
 class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
+
+//----------------------ส่วนที่จัดการส่งอีเมล-------------------------------
+//
+//
+
+ // final emailController = TextEditingController();  //ส่วนนี้ปิดไม่ใช้ของฝ้ายเพราะมันดึงตัวแปรไปหน้าอื่นลำบาก ไม่งั้นต้องส่งค่าจากแต่ละหน้าไปอีก
   String? verificationCode;
 
   void sendEmail(String recipientEmail) async {
     final smtpServer = gmail("acesohelp@gmail.com", "xvpvpilosxjtrrbe");
     final verificationCode = generateRandomCode();
     final message = Message()
-      ..from = Address("acesohelp@gmail.com", "Aceso")
+      ..from = Address("acesohelp@gmail.com", "admin")
       ..recipients.add(recipientEmail)
       ..subject = "Email verification code"
       ..text = verificationCode; // สร้างรหัสสุ่มในฟังก์ชันนี้
@@ -48,11 +68,42 @@ class _RegisterPageState extends State<RegisterPage> {
     }
   }
 
+  //----------------------ส่วนแรนดอม_pin_6_digi--------------------
+
+  String generateRandomCode() {
+    final random = Random();
+    final codeLength = 6;
+    final codeUnits = List.generate(
+      codeLength,
+          (index) {
+        final randomNumber = random.nextInt(10);
+        return randomNumber.toString();
+      },
+    );
+
+    final code = codeUnits.join();
+    return code;
+  }
+
+  //----------------------ส่วนแรนดอม_pin_6_digi--------------------
+
+
   @override
   void dispose() {
     emailController.dispose();
     super.dispose();
   }
+
+
+
+  //
+  //
+  //----------------------ส่วนที่จัดการส่งอีเมล-------------------------------
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -94,11 +145,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'กรุณากรอกอีเมลก่อน';
-                        } else if (!EmailValidator.validate(value)) {
+                        }else if (!EmailValidator.validate(value)) {
                           return "Invalid email format";
                         }
                         return null;
                       },
+                      //controller: emailRegisterController,
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
@@ -135,6 +187,16 @@ class _RegisterPageState extends State<RegisterPage> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   sendEmail(emailController.text);
+
+                  //----------------ปิดส่วนนี้เมื่อมีการส่งค่าอีเมลเสร็จแล้วค่อยไปหน้าต่อไป-------------
+                  //Navigator.push(
+                  //  context,
+                  //  MaterialPageRoute(
+                  //      builder: (BuildContext context) => VerifyAccount()),
+                  //);
+                  //----------------ปิดส่วนนี้เมื่อมีการส่งค่าอีเมลเสร็จแล้วค่อยไปหน้าต่อไป-------------
+
+
                 }
               },
             ),
@@ -142,20 +204,5 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
     );
-  }
-
-  String generateRandomCode() {
-    final random = Random();
-    final codeLength = 6;
-    final codeUnits = List.generate(
-      codeLength,
-      (index) {
-        final randomNumber = random.nextInt(10);
-        return randomNumber.toString();
-      },
-    );
-
-    final code = codeUnits.join();
-    return code;
   }
 }

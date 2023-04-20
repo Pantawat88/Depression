@@ -43,6 +43,7 @@ dependencies:
   http:
   jwt_decoder:
   flutter_slidable:
+  email_validator: ^2.1.17
 
 flutter_icons:
   android: true

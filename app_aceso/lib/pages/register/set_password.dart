@@ -18,6 +18,13 @@ import 'package:convert/convert.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 
 
+import 'package:app_aceso/pages/register/register.dart';
+import '';
+
+
+
+
+
 
 class SetPassword extends StatefulWidget {
   const SetPassword({super.key});
@@ -38,14 +45,16 @@ class _SetPasswordState extends State<SetPassword> {
   bool _isNotValidate = false;
 
 
+  //---------อันเก่าใช้ emailRegisterController---------
+  //---------อันใหม่ใช้ emailController-----------------
 
   void registerUser() async{
-    if(emailRegisterController.text.isNotEmpty && passwordRegisterController.text.isNotEmpty){
+    if(emailController.text.isNotEmpty && passwordRegisterController.text.isNotEmpty){
       //ถ้าข้อมูลมีให้ทำ
       //var a =emailRegisterController.text;
       //var b =passwordRegisterController.text;
 
-      String a =emailRegisterController.text;
+      String a =emailController.text;
       String b =passwordRegisterController.text;
 //เนื้อหาการลงทะเบียน
       var regBody ={
