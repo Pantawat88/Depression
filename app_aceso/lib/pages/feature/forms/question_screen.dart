@@ -161,7 +161,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ),
         onPressed: () {
           ///------------------------เก็บค่าตัวแปร------------------------
-          List<String> phqList = [];
+          List<String> phqList = [
+            phq1,
+            phq2,
+            phq3,
+            phq4,
+            phq5,
+            phq6,
+            phq7,
+            phq8,
+            phq9,
+          ];
 
           if (currentQuestionIndex == 0) {
             phq1 = answer.answerText;
@@ -182,25 +192,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
           } else if (currentQuestionIndex == 8) {
             phq9 = answer.answerText;
           }
-          phqList.addAll([
-            phq1,
-            phq2,
-            phq3,
-            phq4,
-            phq5,
-            phq6,
-            phq7,
-            phq8,
-            phq9,
-            answer.answerText
-          ]);
+
+          if (currentQuestionIndex < questionList.length - 1) {
+            phqList[currentQuestionIndex] = answer.answerText;
+          }
 
           setState(() {
             selectedAnswer = answer;
             currentQuestionIndex++;
 
             bool isLastQuestion = false;
-            if (currentQuestionIndex == questionList.length) {
+            if (currentQuestionIndex == questionList.length - 1) {
               isLastQuestion = true;
             }
 
