@@ -8,14 +8,48 @@ import 'feature/forms/initial_form.dart';
 import 'package:app_aceso/pages/register/create_avatar.dart'; //เรียกใช้การประกาศตัวแปร backgroundImg ในหน้านี้
 //import 'package:app_aceso/pages/register/success_register.dart';
 
+
+import 'package:jwt_decoder/jwt_decoder.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final token;
+  const HomePage({@required this.token,Key? key}) : super(key: key);
+
+  //const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  var myToken;
+
+
+  //late SharedPreferences prefs;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Map<String,dynamic> jwtDecodedToken = JwtDecoder.decode(widget.token);
+    email = jwtDecodedToken['email'];
+    print(widget.token);
+    myToken = widget.token;
+    print("MyToken_home = $myToken");
+    print("jwtDecodedToken_home = $jwtDecodedToken");
+    //prefs.setString('token', myToken);
+  }
+
+
+
+
+
+  late String email;
+
   int _currentIndex = 0;
   void _onTap(int index) {
     if (_currentIndex != index) {
@@ -51,9 +85,10 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         //image: AssetImage('assets/background/bg_moto1.png'),
-
                         image:
                             AssetImage('assets/background/$backgroundImg.png'),
+
+
 
                         fit: BoxFit.cover,
                       ),
@@ -154,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Row(
-                      children: const <Widget>[
+                      children: <Widget>[
                         const SizedBox(width: 20),
                         const Image(
                           image: AssetImage('assets/meter.png'),
@@ -166,6 +201,7 @@ class _HomePageState extends State<HomePage> {
                           "อารมณ์ประจำวัน",
                           style: textHeading,
                         ),
+                        Text("email = $email"),
                       ],
                     ),
                   ),
