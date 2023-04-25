@@ -1,6 +1,19 @@
 import 'dart:html';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+import '../pages/feature/forms/question_screen.dart';
+
+// String phq1 = "ไม่มีเลย";
+// String phq2 = "เป็นบางวัน 1-7 วัน";
+// String phq3 = "เป็นบางวัน 1-7 วัน";
+// String phq4 = "ไม่มีเลย";
+// String phq5 = "เป็นบางวัน 1-7 วัน";
+// String phq6 = "เป็นบ่อย > 7 วัน";
+// String phq7 = "ไม่มีเลย";
+// String phq8 = "เป็นทุกวัน";
+// String phq9 = "ไม่มีเลย";
 
 class PHQ9ResultChecker {
   String phq1;
@@ -25,7 +38,26 @@ class PHQ9ResultChecker {
     required this.phq9,
   });
 
-  String? checkResult() {
+// class name extends StatefulWidget {
+//   const name({super.key});
+
+//   @override
+//   State<name> createState() => _nameState();
+// }
+
+// class _nameState extends State<name> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         child: Column(
+//       children: [
+//         Text(checkResult()),
+//       ],
+//     ));
+//   }
+// }
+
+  checkResult() {
     if (phq7 == "เป็นบางวัน 1-7 วัน") {
       if (phq1 == "เป็นทุกวัน") {
         if (phq3 == "เป็นทุกวัน") {

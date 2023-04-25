@@ -3,15 +3,40 @@ import 'package:app_aceso/pages/home.dart';
 import 'package:flutter/material.dart';
 
 import '../../../background.dart';
+import '../../ml.dart';
 
 class ResultScreen extends StatefulWidget {
-  const ResultScreen({super.key});
+  final List<String> phqList2;
+
+  const ResultScreen({Key? key, required this.phqList2}) : super(key: key);
 
   @override
   State<ResultScreen> createState() => _ResultScreenState();
 }
 
 class _ResultScreenState extends State<ResultScreen> {
+  List<String> phqList2 = [];
+
+  late String _result;
+
+  @override
+  void initState() {
+    super.initState();
+    phqList2 = widget.phqList2;
+    final PHQ9ResultChecker _resultChecker = PHQ9ResultChecker(
+      phq1: phqList2[0],
+      phq2: phqList2[1],
+      phq3: phqList2[2],
+      phq4: phqList2[3],
+      phq5: phqList2[4],
+      phq6: phqList2[5],
+      phq7: phqList2[6],
+      phq8: phqList2[7],
+      phq9: phqList2[8],
+    );
+    _result = _resultChecker.checkResult()!;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Background(
@@ -33,8 +58,8 @@ class _ResultScreenState extends State<ResultScreen> {
               color: orangeColor,
             ),
           ),
-          const Text(
-            "ระดับน้อยมาก",
+          Text(
+            _result,
             style: TextStyle(
               fontFamily: 'Prompt',
               fontSize: 24.0,

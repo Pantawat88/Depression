@@ -1,3 +1,4 @@
+import 'package:app_aceso/pages/feature.dart';
 import 'package:app_aceso/pages/feature/forms/initial_form.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,11 @@ class _AssessmentFormState extends State<AssessmentForm> {
                     icon: Iback,
                     color: APrimaryColor,
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FeaturePage()),
+                      );
                     },
                   ),
                   const Expanded(
