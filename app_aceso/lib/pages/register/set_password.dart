@@ -69,6 +69,14 @@ class _SetPasswordState extends State<SetPassword> {
       print(response);
       print('a = $a');
       print('b = $b');
+
+      var jsonResponse = jsonDecode(response.body);
+
+      print(jsonResponse['status']);
+
+
+
+
     }else{
       //ถ้าไม่มีข้อมูล
       setState(() {
