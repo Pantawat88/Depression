@@ -4,7 +4,6 @@ import 'package:app_aceso/pages/feature/forms/phq9_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
-import '../../ml.dart';
 
 class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key});
@@ -213,25 +212,25 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 ),
               );
             }
-            print('---------------------------------------------');
-            print('---------------------------------------------');
-            print('ข้อต่อไปคือข้อที่ = $currentQuestionIndex');
-            print('-------------------------------------');
-            print('answer.toString() = ');
-            print(answer.answerText);
-            print('---------------------------------------------');
-            print('---------------------------------------------');
-            print(
-                '************************************************************************');
-            print('phq1 = $phq1');
-            print('phq2 = $phq2');
-            print('phq3 = $phq3');
-            print('phq4 = $phq4');
-            print('phq5 = $phq5');
-            print('phq6 = $phq6');
-            print('phq7 = $phq7');
-            print('phq8 = $phq8');
-            print('phq9 = $phq9');
+            // print('---------------------------------------------');
+            // print('---------------------------------------------');
+            // print('ข้อต่อไปคือข้อที่ = $currentQuestionIndex');
+            // print('-------------------------------------');
+            // print('answer.toString() = ');
+            // print(answer.answerText);
+            // print('---------------------------------------------');
+            // print('---------------------------------------------');
+            // print(
+            //     '************************************************************************');
+            // print('phq1 = $phq1');
+            // print('phq2 = $phq2');
+            // print('phq3 = $phq3');
+            // print('phq4 = $phq4');
+            // print('phq5 = $phq5');
+            // print('phq6 = $phq6');
+            // print('phq7 = $phq7');
+            // print('phq8 = $phq8');
+            // print('phq9 = $phq9');
           });
         },
       ),

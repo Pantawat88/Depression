@@ -3,7 +3,7 @@ import 'package:app_aceso/pages/home.dart';
 import 'package:flutter/material.dart';
 
 import '../../../background.dart';
-import '../../ml.dart';
+import 'package:app_aceso/pages/ml.dart';
 
 class ResultScreen extends StatefulWidget {
   final List<String> phqList2;
