@@ -75,7 +75,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => const HomePage(),
+                      builder: (BuildContext context) =>  HomePage(),
                     ),
                   );
                 },

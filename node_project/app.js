@@ -8,6 +8,8 @@ const body_parser = require('body-parser');
 
 //ของใหม่
 const userRouter = require('./routers/user.router');
+//ของใหม่2
+const HistoryRouter = require('./routers/history.router');
 
 
 
@@ -19,6 +21,9 @@ app.use(body_parser.json());
 
 //ของใหม่
 app.use('/', userRouter);
+//ของใหม่2
+app.use('/', HistoryRouter);
+
 
 
 //ของเดิม

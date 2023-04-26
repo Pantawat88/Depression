@@ -1,9 +1,7 @@
-final url = 'http://10.37.9.238:3000/';
+final url = 'http://192.168.1.104:3000/';
 //final url = 'http://localhost:3000/';
 
 final resgistration = url + "registration";
 
 
-final login = url + 'login';
-
-
+final login = url + "login";

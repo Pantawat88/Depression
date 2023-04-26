@@ -16,7 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   final token;
-  const HomePage({@required this.token,Key? key}) : super(key: key);
+  HomePage({@required this.token,Key? key}) : super(key: key);
 
   //const HomePage({super.key});
 
@@ -30,6 +30,9 @@ class _HomePageState extends State<HomePage> {
 
   //late SharedPreferences prefs;
 
+
+
+  late String email;
 
   @override
   void initState() {
@@ -47,9 +50,6 @@ class _HomePageState extends State<HomePage> {
 
 
 
-
-  late String email;
-
   int _currentIndex = 0;
   void _onTap(int index) {
     if (_currentIndex != index) {
@@ -59,12 +59,12 @@ class _HomePageState extends State<HomePage> {
       if (index == 1) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const FeaturePage()),
+          MaterialPageRoute(builder: (context) => FeaturePage()),
         );
       } else if (index == 2) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ProfilePage()),
+          MaterialPageRoute(builder: (context) => ProfilePage()),
         );
       }
     }

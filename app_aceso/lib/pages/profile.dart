@@ -26,12 +26,12 @@ class _ProfilePageState extends State<ProfilePage> {
       if (index == 0) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage()),
         );
       } else if (index == 1) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const FeaturePage()),
+          MaterialPageRoute(builder: (context) => FeaturePage()),
         );
       }
     }

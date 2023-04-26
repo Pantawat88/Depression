@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 //mongodb+srv://admin1:1234@cluster0.vtbhvka.mongodb.net/aceco?retryWrites=true&w=majority
 
 const connection = mongoose.createConnection('mongodb+srv://admin1:1234@cluster0.vtbhvka.mongodb.net/aceco?retryWrites=true&w=majority').on('open', ()=>{
+//const connection = mongoose.createConnection('mongodb+srv://admin1:1234@cluster0.vtbhvka.mongodb.net/history?retryWrites=true&w=majority').on('open', ()=>{
     console.log("MongoDb connected");
 }).on('error',()=>{
     console.log("MongoDb connected error");
