@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../background.dart';
 import '../../../constants.dart';
+import 'package:app_aceso/pages/feature/forms/question_screen.dart';
 
 class ConfirmAnswer extends StatefulWidget {
   //final List<String> phqList;
@@ -236,7 +237,12 @@ class _ConfirmAnswerState extends State<ConfirmAnswer> {
                       minimumSize: const Size(300, 45),
                     ),
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuestionScreen(),
+                        ),
+                      );
                     },
                   ),
                 ],

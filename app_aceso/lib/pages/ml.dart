@@ -1201,6 +1201,105 @@ class PHQ9ResultChecker {
         }
       }
     }
-    return 'ไม่พบความเสี่ยงโรคซึมเศร้า';
+    int num = 0;
+    if (phq1 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq1 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq1 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq1 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq2 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq2 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq2 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq2 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq3 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq3 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq3 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq3 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq4 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq4 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq4 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq4 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq5 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq5 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq5 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq5 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq6 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq6 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq6 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq6 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq7 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq7 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq7 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq7 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq8 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq8 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq8 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq8 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (phq9 == "ไม่มีเลย") {
+      num = num + 0;
+    } else if (phq9 == "เป็นบางวัน 1-7 วัน") {
+      num = num + 1;
+    } else if (phq9 == "เป็นบ่อย > 7 วัน") {
+      num = num + 2;
+    } else if (phq9 == "เป็นทุกวัน") {
+      num = num + 3;
+    }
+
+    if (num <= 7) {
+      return "มีความเสี่ยงระดับน้อยมาก";
+    } else if (num >= 7 && num <= 12) {
+      return "มีความเสี่ยงระดับน้อย}";
+    } else if (num >= 13 && num <= 18) {
+      return "มีความเสี่ยงระดับปานกลาง";
+    } else if (num >= 19) {
+      return "มีความเสี่ยงระดับรุนแรง";
+    }
   }
 }

@@ -26,7 +26,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
   //define the datas
   List<Question> questionList = getQuestions();
   int currentQuestionIndex = 0;
-  int score = 0;
   Answer? selectedAnswer;
 
   @override
@@ -47,21 +46,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
               icon: Iback,
               color: APrimaryColor,
               onPressed: () {
-                //Navigator.pop(context);
-                //---------------------------------ล้างค่าข้อมูล--------------------------------
-                phq1 = '';
-                phq2 = '';
-                phq3 = '';
-                phq4 = '';
-                phq5 = '';
-                phq6 = '';
-                phq7 = '';
-                phq8 = '';
-                phq9 = '';
-                currentQuestionIndex = 0;
-                score = 0;
-                //---------------------------------ล้างค่าข้อมูล--------------------------------
-
                 Navigator.pop(context);
               },
             ),
@@ -80,7 +64,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   phq8 = '';
                   phq9 = '';
                   currentQuestionIndex = 0;
-                  score = 0;
                   //---------------------------------ล้างค่าข้อมูล--------------------------------
 
                   Navigator.push(
@@ -160,6 +143,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
           elevation: 0,
         ),
         onPressed: () {
+          bool isLastQuestion = false;
+
           ///------------------------เก็บค่าตัวแปร------------------------
           List<String> phqList = [
             phq1,
@@ -195,18 +180,25 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
           if (currentQuestionIndex < questionList.length - 1) {
             phqList[currentQuestionIndex] = answer.answerText;
+          } else if (currentQuestionIndex == questionList.length - 1) {
+            phq9 = answer.answerText;
+            phqList[currentQuestionIndex] = answer.answerText;
+            isLastQuestion = true;
           }
 
           setState(() {
             selectedAnswer = answer;
             currentQuestionIndex++;
 
-            bool isLastQuestion = false;
-            if (currentQuestionIndex == questionList.length - 1) {
-              isLastQuestion = true;
-            }
-
             if (isLastQuestion) {
+              if (currentQuestionIndex == questionList.length - 1) {
+                isLastQuestion = true;
+              } else if (currentQuestionIndex == questionList.length) {
+                // ตรวจสอบถ้าถึงคำถามสุดท้ายแล้วให้เก็บค่า phq9
+                phq9 = answer.answerText;
+                isLastQuestion = true;
+              }
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -214,25 +206,26 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 ),
               );
             }
-            // print('---------------------------------------------');
-            // print('---------------------------------------------');
-            // print('ข้อต่อไปคือข้อที่ = $currentQuestionIndex');
-            // print('-------------------------------------');
-            // print('answer.toString() = ');
-            // print(answer.answerText);
-            // print('---------------------------------------------');
-            // print('---------------------------------------------');
-            // print(
-            //     '************************************************************************');
-            // print('phq1 = $phq1');
-            // print('phq2 = $phq2');
-            // print('phq3 = $phq3');
-            // print('phq4 = $phq4');
-            // print('phq5 = $phq5');
-            // print('phq6 = $phq6');
-            // print('phq7 = $phq7');
-            // print('phq8 = $phq8');
-            // print('phq9 = $phq9');
+            print('---------------------------------------------');
+            print('---------------------------------------------');
+            print('ข้อต่อไปคือข้อที่ = $currentQuestionIndex');
+            print('-------------------------------------');
+            print('answer.toString() = ');
+            print(answer.answerText);
+            print('---------------------------------------------');
+            print('---------------------------------------------');
+            print(
+                '************************************************************************');
+            print('phq1 = $phq1');
+            print('phq2 = $phq2');
+            print('phq3 = $phq3');
+            print('phq4 = $phq4');
+            print('phq5 = $phq5');
+            print('phq6 = $phq6');
+            print('phq7 = $phq7');
+            print('phq8 = $phq8');
+            print('phq9 = $phq9');
+            print('phq9 = $phqList');
           });
         },
       ),
