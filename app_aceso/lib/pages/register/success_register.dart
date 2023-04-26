@@ -134,7 +134,7 @@ class _SuccessRegister extends State<SuccessRegister> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => const HomePage()),
+                        builder: (BuildContext context) => HomePage()),
                   );
                 },
               ),

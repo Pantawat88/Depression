@@ -5,16 +5,32 @@ import 'package:app_aceso/pages/profile.dart';
 import 'package:flutter/material.dart';
 
 class FeaturePage extends StatefulWidget {
-  const FeaturePage({Key? key}) : super(key: key);
+  FeaturePage({Key? key}) : super(key: key);
 
   @override
   State<FeaturePage> createState() => _FeaturePageState();
 }
 
 class _FeaturePageState extends State<FeaturePage> {
-  int _currentIndex = 1;
 
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
+
+  //SharedPreferences prefs = await SharedPreferences.getInstance();
+  //runApp(FeaturePage(token: prefs.getString('token'),));
+  //var myToken = prefs.getString('token')
+
+
+
+  int _currentIndex = 1;
   void _onTap(int index) {
+
+
     if (_currentIndex != index) {
       setState(() {
         _currentIndex = index;
@@ -22,12 +38,12 @@ class _FeaturePageState extends State<FeaturePage> {
       if (index == 0) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage()),
         );
       } else if (index == 2) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ProfilePage()),
+          MaterialPageRoute(builder: (context) => ProfilePage()),
         );
       }
     }
@@ -36,10 +52,10 @@ class _FeaturePageState extends State<FeaturePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const FeatureScreen(),
+      body: FeatureScreen(),
       bottomNavigationBar: NavBar(
         currentIndex: _currentIndex,
-        onTap: _onTap,
+        onTap: _onTap
       ),
     );
   }

@@ -13,12 +13,78 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../config.dart';
 
-class WelcomeLogin extends StatelessWidget {
-  //WelcomeLogin({super.key});
-  bool _isNotValidate = false;
-  //late SharedPreferences prefs;
 
-  // String backgroundImg = ''; //ไว้กำหนดพื้นหลังในหน้า home
+
+class WelcomeLogin2 extends StatefulWidget {
+  const WelcomeLogin2({Key? key}) : super(key: key);
+  //const WelcomeLogin2({super.key});
+  @override
+  State<WelcomeLogin2> createState() => _WelcomeLogin2State();
+}
+
+class _WelcomeLogin2State extends State<WelcomeLogin2> {
+
+  late SharedPreferences prefs;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initSharedPref();
+  }
+
+
+  void initSharedPref() async{
+    prefs = await SharedPreferences.getInstance();
+}
+
+
+  void loginUser() async{
+
+    if(emailLoginController.text.isNotEmpty && passwordLoginController.text.isNotEmpty){
+
+      String email_login = emailLoginController.text;
+      String pass_login = passwordLoginController.text;
+      //เนื้อหาการลงทะเบียน
+
+      var reqBody ={
+        "email":email_login,
+        "password":pass_login
+      };
+
+      var response = await http.post(Uri.parse(login),
+          headers: {"Content-Type":"application/json"},
+          body: jsonEncode(reqBody) //แปลงอีเมลและรหัสผ่านเป็น json
+      );
+
+      var jsonResponse = jsonDecode(response.body);
+      if(jsonResponse['status']){
+        var myToken = jsonResponse['token'];
+        print("My TOKEN = $myToken");
+        prefs.setString('token', myToken);
+
+        //Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {return const HomePage();}),);
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage(token: myToken,)));
+
+      }else{
+        print('Something went wrong');
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   final _formKey = GlobalKey<FormState>();
   @override
@@ -45,7 +111,7 @@ class WelcomeLogin extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
+                  EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
                   child: TFFpasswordLogin(), //แก้จาก TFFpassword
                 ),
               ],
@@ -55,7 +121,7 @@ class WelcomeLogin extends StatelessWidget {
           //ลงทะเบียนและลืมรหัสผ่าน
           Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 5.0),
+            const EdgeInsets.symmetric(horizontal: 50.0, vertical: 5.0),
             child: Row(
               children: <Widget>[
                 GestureDetector(
@@ -86,17 +152,16 @@ class WelcomeLogin extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: ElevatedButton(
               onPressed: () {
-                
+
                 if (_formKey.currentState!.validate()) {
-                  
+
                   loginUser();
-                  
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (BuildContext context) {
-                      return  HomePage();
-                    }),
-                  );
+
+
+
+
+
+
                 }
               },
               child: const ButtonOperation(
@@ -109,35 +174,4 @@ class WelcomeLogin extends StatelessWidget {
     );
   }
 
-  void loginUser() async{
-
-    if(emailLoginController.text.isNotEmpty && passwordLoginController.text.isNotEmpty){
-
-      String email_login = emailLoginController.text;
-      String pass_login = passwordLoginController.text;
-      //เนื้อหาการลงทะเบียน
-
-      var reqBody ={
-        "email":email_login,
-        "password":pass_login
-      };
-
-      var response = await http.post(Uri.parse(login),
-          headers: {"Content-Type":"application/json"},
-          body: jsonEncode(reqBody) //แปลงอีเมลและรหัสผ่านเป็น json
-      );
-
-      var jsonResponse = jsonDecode(response.body);
-      if(jsonResponse['status']){
-
-      }else{
-        print('Something went wrong');
-        
-      }
-
-
-    }
-
-
-  }
 }

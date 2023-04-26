@@ -10,7 +10,7 @@ class CreateAvatar extends StatefulWidget {
   State<CreateAvatar> createState() => _CreateAvatarState();
 }
 
-String backgroundImg = ''; //ไว้กำหนดพื้นหลังในหน้า home
+String backgroundImg = 'bg_moto1'; //ไว้กำหนดพื้นหลังในหน้า home
 
 String selectedName = "มาโต้";
 String selectedStory =
