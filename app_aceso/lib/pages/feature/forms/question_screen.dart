@@ -1,3 +1,4 @@
+import 'package:app_aceso/pages/feature/forms/confirm_answer.dart';
 import 'package:app_aceso/pages/feature/forms/initial_form.dart';
 import 'package:app_aceso/pages/feature/forms/phq9_model.dart';
 import 'package:flutter/material.dart';
@@ -46,8 +47,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
               icon: Iback,
               color: APrimaryColor,
               onPressed: () {
-
-
                 //Navigator.pop(context);
                 //---------------------------------ล้างค่าข้อมูล--------------------------------
                 phq1 = '';
@@ -63,11 +62,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 score = 0;
                 //---------------------------------ล้างค่าข้อมูล--------------------------------
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => InitialForm()),
-                );
+                Navigator.pop(context);
               },
             ),
             IconButton(
@@ -103,6 +98,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               _currentWidget(),
               _questionWidget(),
               _answerList(),
+              //_nextButton()
             ],
           ),
         ),
@@ -165,67 +161,78 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ),
         onPressed: () {
           ///------------------------เก็บค่าตัวแปร------------------------
-          String currentAnswer = answer.answerText;
+          List<String> phqList = [
+            phq1,
+            phq2,
+            phq3,
+            phq4,
+            phq5,
+            phq6,
+            phq7,
+            phq8,
+            phq9,
+          ];
+
           if (currentQuestionIndex == 0) {
-            phq1 = currentAnswer;
+            phq1 = answer.answerText;
           } else if (currentQuestionIndex == 1) {
-            phq2 = currentAnswer;
+            phq2 = answer.answerText;
           } else if (currentQuestionIndex == 2) {
-            phq3 = currentAnswer;
+            phq3 = answer.answerText;
           } else if (currentQuestionIndex == 3) {
-            phq4 = currentAnswer;
+            phq4 = answer.answerText;
           } else if (currentQuestionIndex == 4) {
-            phq5 = currentAnswer;
+            phq5 = answer.answerText;
           } else if (currentQuestionIndex == 5) {
-            phq6 = currentAnswer;
+            phq6 = answer.answerText;
           } else if (currentQuestionIndex == 6) {
-            phq7 = currentAnswer;
+            phq7 = answer.answerText;
           } else if (currentQuestionIndex == 7) {
-            phq8 = currentAnswer;
+            phq8 = answer.answerText;
           } else if (currentQuestionIndex == 8) {
-            phq9 = currentAnswer;
+            phq9 = answer.answerText;
           }
-          ///------------------------เก็บค่าตัวแปร------------------------
 
-
-
-
-
-          print('************************************************************************');
-          print('---------------------------------------------');
-          print('---------------------------------------------');
-          print('อยู่ข้อที่ = $currentQuestionIndex');
-         print('-------------------------------------');
-         print('answer.toString() = ');
-         print(answer.answerText);
-          print('---------------------------------------------');
-          print('---------------------------------------------');
-
+          if (currentQuestionIndex < questionList.length - 1) {
+            phqList[currentQuestionIndex] = answer.answerText;
+          }
 
           setState(() {
             selectedAnswer = answer;
             currentQuestionIndex++;
-            print('---------------------------------------------');
-            print('---------------------------------------------');
-            print('ข้อต่อไปคือข้อที่ = $currentQuestionIndex');
-            print('-------------------------------------');
-            print('answer.toString() = ');
-            print(answer.answerText);
-            print('---------------------------------------------');
-            print('---------------------------------------------');
-            print('************************************************************************');
-            print('phq1 = $phq1');
-            print('phq2 = $phq2');
-            print('phq3 = $phq3');
-            print('phq4 = $phq4');
-            print('phq5 = $phq5');
-            print('phq6 = $phq6');
-            print('phq7 = $phq7');
-            print('phq8 = $phq8');
-            print('phq9 = $phq9');
 
+            bool isLastQuestion = false;
+            if (currentQuestionIndex == questionList.length - 1) {
+              isLastQuestion = true;
+            }
 
-
+            if (isLastQuestion) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ConfirmAnswer(phqList: phqList),
+                ),
+              );
+            }
+            // print('---------------------------------------------');
+            // print('---------------------------------------------');
+            // print('ข้อต่อไปคือข้อที่ = $currentQuestionIndex');
+            // print('-------------------------------------');
+            // print('answer.toString() = ');
+            // print(answer.answerText);
+            // print('---------------------------------------------');
+            // print('---------------------------------------------');
+            // print(
+            //     '************************************************************************');
+            // print('phq1 = $phq1');
+            // print('phq2 = $phq2');
+            // print('phq3 = $phq3');
+            // print('phq4 = $phq4');
+            // print('phq5 = $phq5');
+            // print('phq6 = $phq6');
+            // print('phq7 = $phq7');
+            // print('phq8 = $phq8');
+            // print('phq9 = $phq9');
           });
         },
       ),

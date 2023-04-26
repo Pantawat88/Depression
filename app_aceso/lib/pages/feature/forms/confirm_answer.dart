@@ -1,10 +1,15 @@
+import 'package:app_aceso/pages/feature/forms/result_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../background.dart';
 import '../../../constants.dart';
 
 class ConfirmAnswer extends StatefulWidget {
-  const ConfirmAnswer({super.key});
+  //final List<String> phqList;
+  //final String phq1;
+  final List<String> phqList;
+
+  const ConfirmAnswer({Key? key, required this.phqList}) : super(key: key);
 
   @override
   State<ConfirmAnswer> createState() => _ConfirmAnswerState();
@@ -12,6 +17,14 @@ class ConfirmAnswer extends StatefulWidget {
 
 class _ConfirmAnswerState extends State<ConfirmAnswer> {
   String Nickname = 'เล้ง';
+
+  List<String> phqList2 = [];
+
+  @override
+  void initState() {
+    super.initState();
+    phqList2 = widget.phqList;
+  }
 
   List<String> question = [
     'เบื่อ ไม่สนใจอยากทำอะไร',
@@ -23,17 +36,6 @@ class _ConfirmAnswerState extends State<ConfirmAnswer> {
     'สมาธิไม่ดีเวลาทำอะไร เช่น ดูโทรทัศน์ ฟังวิทยุ หรือทำงานที่ต้องใช้ความตั้งใจ',
     'พูดช้า ทำอะไรช้าลง จนคนอื่นสังเกตเห็นได้ หรือกระสับกระส่ายไม่สามารถอยู่นิ่งได้เหมือนที่เคยเป็น',
     'คิดทำร้ายตนเอง หรือคิดว่า ถ้าตายๆไปเสียคงจะดี',
-  ];
-  List<String> answer = [
-    'คำตอบ1',
-    'คำตอบ2',
-    'คำตอบ3',
-    'คำตอบ4',
-    'คำตอบ5',
-    'คำตอบ6',
-    'คำตอบ7',
-    'คำตอบ8',
-    'คำตอบ9',
   ];
 
   @override
@@ -129,7 +131,7 @@ class _ConfirmAnswerState extends State<ConfirmAnswer> {
                                                 ),
                                               ),
                                               Text(
-                                                answer[index],
+                                                phqList2[index],
                                                 style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontFamily: 'Prompt',
@@ -194,23 +196,29 @@ class _ConfirmAnswerState extends State<ConfirmAnswer> {
               child: Column(
                 children: [
                   ElevatedButton(
-                    child: Text(
-                      "ยืนยัน",
-                      style: TextStyle(
-                        fontFamily: 'Prompt',
-                        fontSize: 18.0,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                      child: Text(
+                        "ยืนยัน",
+                        style: TextStyle(
+                          fontFamily: 'Prompt',
+                          fontSize: 18.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: APrimaryLightColor,
-                      onPrimary: APrimaryColor,
-                      elevation: 0,
-                      minimumSize: const Size(300, 45),
-                    ),
-                    onPressed: () {},
-                  ),
+                      style: ElevatedButton.styleFrom(
+                        primary: APrimaryLightColor,
+                        onPrimary: APrimaryColor,
+                        elevation: 0,
+                        minimumSize: const Size(300, 45),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ResultScreen(phqList2: phqList2)),
+                        );
+                      }),
                   const SizedBox(height: 12),
                   ElevatedButton(
                     child: Text(
