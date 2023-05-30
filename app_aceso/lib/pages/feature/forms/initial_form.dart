@@ -1,5 +1,4 @@
 import 'package:app_aceso/constants.dart';
-import 'package:app_aceso/pages/feature/assessment_formpage.dart';
 import 'package:app_aceso/pages/feature/forms/question_screen.dart';
 import 'package:app_aceso/pages/home.dart';
 import 'package:flutter/material.dart';
@@ -30,12 +29,12 @@ class _InitialFormState extends State<InitialForm> {
                     icon: Iback,
                     color: APrimaryColor,
                     onPressed: () {
+
                       //Navigator.pop(context);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                const AssessmentForm()),
+                            builder: (BuildContext context) => HomePage()),
                       );
                     },
                   ),
@@ -65,7 +64,7 @@ class _InitialFormState extends State<InitialForm> {
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 70),
             child: Text(
               'ทำแบบประเมินความเสี่ยงโรคซึมเศร้า\nกันเถอะ เลือกคำตอบที่ตรงตามความรู้สึก\n'
-              'และเราจะอยู่ข้างๆ เล้ง เสมอ',
+              'และเราจะอยู่ข้างๆ Leng เสมอ',
               style: textnormalLight,
               textAlign: TextAlign.center,
             ),

@@ -8,20 +8,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:jwt_decoder/jwt_decoder.dart';
 
-//void main() => runApp(const MyApp());
-
-
-void main () async{
-  WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  runApp(MyApp(token: prefs.getString('token'),));
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  final token;
-  //const MyApp({super.key});
   const MyApp({
-    @required this.token,
     Key? key,
 }):super(key: key);
 
@@ -38,7 +28,7 @@ class MyApp extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8))),
         ),
       ),
-        home: WelcomeLogin2()
+      home:WelcomeLogin2()
       //home: (JwtDecoder.isExpired(token) == false)?HomePage(token: token):WelcomeLogin2()
     );
   }

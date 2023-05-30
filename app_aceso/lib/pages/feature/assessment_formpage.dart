@@ -13,7 +13,7 @@ class AssessmentForm extends StatefulWidget {
 
 class _AssessmentFormState extends State<AssessmentForm> {
   int _selectedIndex = 0;
-  int currentnum = 2;
+  int currentnum = 0;
 
   void _onButtonPressed(int index) {
     setState(() {

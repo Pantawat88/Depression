@@ -14,8 +14,8 @@ class SettingProfilepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String email = '63015123@kmitl.ac.th';
-    final String Fullname = 'พันธวัช ตันอนุกูล';
-    final String Nickname = 'เล้ง';
+    final String Fullname = 'Pantawat Thunanukul';
+    final String Nickname = 'Leng';
     final String Faculty = 'วิศวกรรมศาสตร์';
     final String Birthday = '18 เมษายน 2000';
     return Scaffold(
@@ -204,7 +204,7 @@ class SettingProfilepage extends StatelessWidget {
                         ],
                       ),
                       //--------------------------------เส้นแบ่ง--------------------------------
-                      SizedBox(height: 420,width: 1,),
+                      SizedBox(height: 320,width: 1,),
 
                       //--------------------------------ออกจากระบบ--------------------------------
                       SizedBox(

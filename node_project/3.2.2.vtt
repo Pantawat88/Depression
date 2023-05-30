@@ -1,0 +1,689 @@
+WEBVTT
+
+1
+00:00:14.730 --> 00:00:19.935
+Modern software systems rarely operate in a completely isolated environment.
+
+2
+00:00:19.935 --> 00:00:23.543
+Large businesses often require different systems to communicate with each other
+
+3
+00:00:23.543 --> 00:00:27.765
+because information is shared between different departments for day to day operations.
+
+4
+00:00:27.765 --> 00:00:30.010
+For example, employees and managers may use
+
+5
+00:00:30.010 --> 00:00:32.485
+one system for filling in an approving time sheets,
+
+6
+00:00:32.485 --> 00:00:34.720
+while the payroll and accounting department may use
+
+7
+00:00:34.720 --> 00:00:38.060
+a different system to process the time sheets and pay employees.
+
+8
+00:00:38.060 --> 00:00:39.355
+As a software developer,
+
+9
+00:00:39.355 --> 00:00:42.670
+you need to be able to create a software architecture that is capable of
+
+10
+00:00:42.670 --> 00:00:46.650
+sharing information between separate components. So, how would you do it?
+
+11
+00:00:46.650 --> 00:00:49.620
+Let's take a look at the different issues that need to be addressed.
+
+12
+00:00:49.620 --> 00:00:51.685
+The first issue is that the state of a component
+
+13
+00:00:51.685 --> 00:00:54.275
+is only temporary while the component is running.
+
+14
+00:00:54.275 --> 00:00:56.890
+This means that any objects created and any amount of
+
+15
+00:00:56.890 --> 00:01:00.370
+data processing will be lost the moment you stop running the component.
+
+16
+00:01:00.370 --> 00:01:02.880
+So, how do we ensure our data is not lost?
+
+17
+00:01:02.880 --> 00:01:05.830
+One way is by saving the information to keep in a file.
+
+18
+00:01:05.830 --> 00:01:07.075
+That addresses is an issue,
+
+19
+00:01:07.075 --> 00:01:08.890
+but introduces another one.
+
+20
+00:01:08.890 --> 00:01:12.040
+Files are not the best way to transfer data between components.
+
+21
+00:01:12.040 --> 00:01:13.825
+We would need to worry about the file format
+
+22
+00:01:13.825 --> 00:01:16.410
+and distributing the file to all the components.
+
+23
+00:01:16.410 --> 00:01:20.210
+Furthermore, components may not need all the data that is stored in the files.
+
+24
+00:01:20.210 --> 00:01:22.750
+Thus, the second issue that we need to address is the need to
+
+25
+00:01:22.750 --> 00:01:26.200
+communicate the state of our data between multiple components.
+
+26
+00:01:26.200 --> 00:01:29.180
+Is there a solution that will help us solve both of these issues?
+
+27
+00:01:29.180 --> 00:01:31.039
+Luckily, there is a solution.
+
+28
+00:01:31.039 --> 00:01:33.400
+A data centric software architecture will not only
+
+29
+00:01:33.400 --> 00:01:36.355
+allow you to store and share data between multiple components,
+
+30
+00:01:36.355 --> 00:01:38.500
+but it helps increase the maintainability,
+
+31
+00:01:38.500 --> 00:01:41.440
+re-usability and scalability of the system.
+
+32
+00:01:41.440 --> 00:01:44.380
+This can be achieved by integrating a method of shared data storage,
+
+33
+00:01:44.380 --> 00:01:48.413
+such as a database into our overall system design.
+
+34
+00:01:48.413 --> 00:01:52.895
+At the core of a data centric architecture are two types of components.
+
+35
+00:01:52.895 --> 00:01:55.135
+Central data is the component used to store
+
+36
+00:01:55.135 --> 00:01:58.025
+and serve data across all components that connect to it,
+
+37
+00:01:58.025 --> 00:02:02.980
+and data accessors are the components that connect to the central data component.
+
+38
+00:02:02.980 --> 00:02:04.870
+The data accessors make queries and
+
+39
+00:02:04.870 --> 00:02:08.265
+transactions against the information stored in the database.
+
+40
+00:02:08.265 --> 00:02:13.040
+A high level view of this architectural design is fairly simple and easy to understand.
+
+41
+00:02:13.040 --> 00:02:15.430
+The data accessors are separated from one
+
+42
+00:02:15.430 --> 00:02:18.695
+another and communicate only to the central data component.
+
+43
+00:02:18.695 --> 00:02:21.520
+The central data facilitates data sharing by saving
+
+44
+00:02:21.520 --> 00:02:23.440
+the desired information from the current state of
+
+45
+00:02:23.440 --> 00:02:26.480
+the system and serving data as requested.
+
+46
+00:02:26.480 --> 00:02:29.200
+But if all the data is centralized in one location,
+
+47
+00:02:29.200 --> 00:02:32.504
+how does a data access or retrieve the correct information?
+
+48
+00:02:32.504 --> 00:02:34.257
+To understand how this works,
+
+49
+00:02:34.257 --> 00:02:37.769
+we will need to take a look at each component.
+
+50
+00:02:37.769 --> 00:02:41.575
+Often, the central data is stored in a database.
+
+51
+00:02:41.575 --> 00:02:43.900
+Databases are a complex topic,
+
+52
+00:02:43.900 --> 00:02:46.345
+which would take an entire course to discuss in depth.
+
+53
+00:02:46.345 --> 00:02:48.820
+So, we will look at a brief introduction to give you
+
+54
+00:02:48.820 --> 00:02:51.640
+a sense of how they fit into this architectural style.
+
+55
+00:02:51.640 --> 00:02:56.080
+A database is commonly used to store data because it ensures several data qualities.
+
+56
+00:02:56.080 --> 00:03:00.468
+The two key ones for a data centric architecture are data integrity,
+
+57
+00:03:00.468 --> 00:03:04.625
+a database will ensure the data is accurate and consistent over its lifespan.
+
+58
+00:03:04.625 --> 00:03:09.775
+This is important if you want to have reliable data, and data persistence.
+
+59
+00:03:09.775 --> 00:03:11.890
+A database will make sure that data will continue to
+
+60
+00:03:11.890 --> 00:03:14.740
+live on after a process has been terminated.
+
+61
+00:03:14.740 --> 00:03:16.930
+This means you can use a database to save all of
+
+62
+00:03:16.930 --> 00:03:19.550
+your data from any number of components).
+
+63
+00:03:19.550 --> 00:03:21.340
+The way the data is stored, presented,
+
+64
+00:03:21.340 --> 00:03:24.920
+and read in a database is different than the way it's done in Java.
+
+65
+00:03:24.920 --> 00:03:27.610
+We've discussed how abstract data types represented with
+
+66
+00:03:27.610 --> 00:03:30.910
+classes are used in object-oriented programming to represent,
+
+67
+00:03:30.910 --> 00:03:32.740
+modify, and save state.
+
+68
+00:03:32.740 --> 00:03:36.930
+One way a database can store information is by using tables.
+
+69
+00:03:36.930 --> 00:03:40.590
+Relational databases are a type of database that uses tables.
+
+70
+00:03:40.590 --> 00:03:42.820
+Each table represents an abstraction.
+
+71
+00:03:42.820 --> 00:03:46.270
+An employee table would represent all employees, for example,
+
+72
+00:03:46.270 --> 00:03:48.940
+with each column representing the employee attributes
+
+73
+00:03:48.940 --> 00:03:52.075
+and each row being a unique individual employee.
+
+74
+00:03:52.075 --> 00:03:57.100
+Relational databases use SQL or Structured Query Language to let you query or
+
+75
+00:03:57.100 --> 00:03:59.860
+ask the database for information and lets you perform
+
+76
+00:03:59.860 --> 00:04:03.115
+transactions or tell a database to do something.
+
+77
+00:04:03.115 --> 00:04:05.530
+The ability to query and perform transaction allows
+
+78
+00:04:05.530 --> 00:04:08.920
+a database to share information between data accessors.
+
+79
+00:04:08.920 --> 00:04:12.460
+Management and optimization of queries and transactions can be
+
+80
+00:04:12.460 --> 00:04:16.390
+automated by a database management system or DBMS,
+
+81
+00:04:16.390 --> 00:04:19.270
+so that integrating a database into your system is simplified.
+
+82
+00:04:19.270 --> 00:04:22.167
+In a data centric architectural design,
+
+83
+00:04:22.167 --> 00:04:24.105
+the central data is passive.
+
+84
+00:04:24.105 --> 00:04:26.110
+The database is generally not involved in
+
+85
+00:04:26.110 --> 00:04:29.410
+heavy data processing or large amounts of business logic.
+
+86
+00:04:29.410 --> 00:04:33.408
+The central data is primarily concerned with storing and serving the information.
+
+87
+00:04:33.408 --> 00:04:39.935
+A data accessor is essentially any component that connects to the database,
+
+88
+00:04:39.935 --> 00:04:42.410
+which is characterized by its abilities to:
+
+89
+00:04:42.410 --> 00:04:46.265
+share a set of data while being able to operate independently.
+
+90
+00:04:46.265 --> 00:04:49.340
+Communicate with the database through database queries and
+
+91
+00:04:49.340 --> 00:04:51.710
+transactions that accessors do not
+
+92
+00:04:51.710 --> 00:04:54.230
+need to interact directly with each other and therefore,
+
+93
+00:04:54.230 --> 00:04:56.165
+do not need to know about each other.
+
+94
+00:04:56.165 --> 00:04:59.683
+Query the database to obtain shared system information.
+
+95
+00:04:59.683 --> 00:05:03.236
+This is used to get data in order to perform computations.
+
+96
+00:05:03.236 --> 00:05:07.760
+And save the new state of the system back into the database using transactions.
+
+97
+00:05:07.760 --> 00:05:12.165
+Data is stored back into the database once the data accessor has finished its processing.
+
+98
+00:05:12.165 --> 00:05:16.910
+A data accessor contains all the business rules required to perform its functions.
+
+99
+00:05:16.910 --> 00:05:19.280
+This means that this software architecture enables you to
+
+100
+00:05:19.280 --> 00:05:23.045
+separate concerns into different specialized data accessors.
+
+101
+00:05:23.045 --> 00:05:25.945
+Also, use of the data accessors can be controlled.
+
+102
+00:05:25.945 --> 00:05:29.850
+So, an end-user only has permission for the ones they need on a day to day basis.
+
+103
+00:05:29.850 --> 00:05:37.280
+The data centric architecture has several advantages over a basic object-oriented system.
+
+104
+00:05:37.280 --> 00:05:39.870
+This is due to the integration of a centralized database,
+
+105
+00:05:39.870 --> 00:05:44.425
+which helps to facilitate data storage and sharing between data accessors.
+
+106
+00:05:44.425 --> 00:05:47.745
+This architectural design is capable of supporting data integrity,
+
+107
+00:05:47.745 --> 00:05:50.990
+data backup, and data restoration through a database.
+
+108
+00:05:50.990 --> 00:05:53.790
+These features can help with issues like massive data loss,
+
+109
+00:05:53.790 --> 00:05:56.380
+data corruption, and data migration.
+
+110
+00:05:56.380 --> 00:05:58.380
+A centralized database also reduces
+
+111
+00:05:58.380 --> 00:06:01.640
+the overhead for data transfer between your data accessors.
+
+112
+00:06:01.640 --> 00:06:05.055
+Since, this architecture uses a database as a means of data sharing,
+
+113
+00:06:05.055 --> 00:06:08.785
+each data accessor does not need to be concerned with talking to another.
+
+114
+00:06:08.785 --> 00:06:12.540
+They all use the database as a way of indirectly communicating with each other.
+
+115
+00:06:12.540 --> 00:06:15.150
+Having functionally independent data accessors
+
+116
+00:06:15.150 --> 00:06:17.925
+also means that your system can easily be scaled up.
+
+117
+00:06:17.925 --> 00:06:19.365
+You can easily build and integrate
+
+118
+00:06:19.365 --> 00:06:22.440
+additional functions without having to worry about affecting the others,
+
+119
+00:06:22.440 --> 00:06:26.230
+because the data accessors don't communicate directly with one another.
+
+120
+00:06:26.230 --> 00:06:28.110
+The central data component tends to live on
+
+121
+00:06:28.110 --> 00:06:32.530
+a separate server machine with sufficient disk storage dedicated to the database.
+
+122
+00:06:32.530 --> 00:06:35.040
+This enables you to have a centralized data repository,
+
+123
+00:06:35.040 --> 00:06:39.280
+which makes it easier to manage all of your systems information.
+
+124
+00:06:39.280 --> 00:06:43.810
+Of course, nothing is perfect and the data centric architecture is no exception.
+
+125
+00:06:43.810 --> 00:06:47.350
+There are disadvantages that are introduced by integrating a database.
+
+126
+00:06:47.350 --> 00:06:49.630
+Since, you will be using a centralized database,
+
+127
+00:06:49.630 --> 00:06:53.110
+the system becomes heavily reliant on the central data component.
+
+128
+00:06:53.110 --> 00:06:54.850
+If the data server goes off line,
+
+129
+00:06:54.850 --> 00:06:57.325
+becomes unusable or contains corrupted data,
+
+130
+00:06:57.325 --> 00:06:59.620
+your entire system will be affected.
+
+131
+00:06:59.620 --> 00:07:00.850
+There are safeguards put in place,
+
+132
+00:07:00.850 --> 00:07:04.930
+such as data redundancies to replicate your data onto separate hard disks.
+
+133
+00:07:04.930 --> 00:07:07.585
+However, the physical infrastructure can be expensive,
+
+134
+00:07:07.585 --> 00:07:11.780
+and it can be difficult and costly to get your system back up and running again.
+
+135
+00:07:11.780 --> 00:07:13.990
+Having a central database also means that
+
+136
+00:07:13.990 --> 00:07:18.050
+all your data accessors are dependent on what gets stored in the database.
+
+137
+00:07:18.050 --> 00:07:21.340
+If you're adding a data accessor to use a preexisting database,
+
+138
+00:07:21.340 --> 00:07:24.290
+then you will need to build around the existing data schema.
+
+139
+00:07:24.290 --> 00:07:27.175
+Since, you can only retrieve and store data defined in the schema,
+
+140
+00:07:27.175 --> 00:07:29.662
+anything that isn't stored must be derived.
+
+141
+00:07:29.662 --> 00:07:31.660
+In addition, if the database does not have
+
+142
+00:07:31.660 --> 00:07:34.465
+a matching table or column for a particular set of data,
+
+143
+00:07:34.465 --> 00:07:37.745
+you cannot use the database to save that specific data set.
+
+144
+00:07:37.745 --> 00:07:42.505
+Another disadvantage is that it is difficult to change the existing data schema.
+
+145
+00:07:42.505 --> 00:07:44.875
+Database changes can be hard to implement,
+
+146
+00:07:44.875 --> 00:07:47.860
+especially if there's a massive amount of data stored.
+
+147
+00:07:47.860 --> 00:07:50.950
+Data schema changes will also affect your data accessors.
+
+148
+00:07:50.950 --> 00:07:53.650
+So, you must be mindful of which data accessors need to be
+
+149
+00:07:53.650 --> 00:07:58.120
+changed in order for it to comply to the changes in the database.
+
+150
+00:07:58.120 --> 00:08:00.760
+Despite having these disadvantages,
+
+151
+00:08:00.760 --> 00:08:03.640
+many companies use a data centric design because it allows them to
+
+152
+00:08:03.640 --> 00:08:07.420
+share vast amounts of data between various departments and offices.
+
+153
+00:08:07.420 --> 00:08:10.180
+The data centric software architecture allows you to
+
+154
+00:08:10.180 --> 00:08:14.200
+store and manage large amounts of data into a central data component.
+
+155
+00:08:14.200 --> 00:08:15.880
+This increases your system stability,
+
+156
+00:08:15.880 --> 00:08:19.030
+performance, re-usability, and maintainability.
+
+157
+00:08:19.030 --> 00:08:21.460
+Separate the functionality of your data accessors,
+
+158
+00:08:21.460 --> 00:08:24.880
+which makes it easier for you to maintain and scale your entire system,
+
+159
+00:08:24.880 --> 00:08:27.310
+and facilitate data sharing between
+
+160
+00:08:27.310 --> 00:08:30.250
+data accessors through database queries and transactions.
+
+161
+00:08:30.250 --> 00:08:33.670
+A data centric architectural design is very popular,
+
+162
+00:08:33.670 --> 00:08:36.235
+because of how easy it is to implement and maintain,
+
+163
+00:08:36.235 --> 00:08:38.830
+and due to its highly scalable nature.
+
+164
+00:08:38.830 --> 00:08:41.515
+There is also a multitude of database products on the market,
+
+165
+00:08:41.515 --> 00:08:43.823
+which means you can pick the one that fits your needs.
+
+166
+00:08:43.823 --> 00:08:46.900
+However, it is still important to evaluate your system to
+
+167
+00:08:46.900 --> 00:08:50.560
+determine if this architectural design is the correct one to use.
+
+168
+00:08:50.560 --> 00:08:53.305
+There are always trade-offs when making these design decisions.
+
+169
+00:08:53.305 --> 00:08:56.135
+Do your end-users need to share a set of data?
+
+170
+00:08:56.135 --> 00:08:57.970
+How large is your user base?
+
+171
+00:08:57.970 --> 00:08:59.950
+These types of questions need to be asked in
+
+172
+00:08:59.950 --> 00:09:03.660
+order to select the appropriate software architecture.

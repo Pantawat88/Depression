@@ -42,6 +42,7 @@ class _WelcomeLogin2State extends State<WelcomeLogin2> {
 
   void loginUser() async{
 
+
     if(emailLoginController.text.isNotEmpty && passwordLoginController.text.isNotEmpty){
 
       String email_login = emailLoginController.text;
@@ -52,6 +53,7 @@ class _WelcomeLogin2State extends State<WelcomeLogin2> {
         "email":email_login,
         "password":pass_login
       };
+
 
       var response = await http.post(Uri.parse(login),
           headers: {"Content-Type":"application/json"},
@@ -64,15 +66,21 @@ class _WelcomeLogin2State extends State<WelcomeLogin2> {
         print("My TOKEN = $myToken");
         prefs.setString('token', myToken);
 
+
+        //_showLoadingIndicator();
         //Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {return const HomePage();}),);
-        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage(token: myToken,)));
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
+
+
+
+
+
 
       }else{
         print('Something went wrong');
       }
     }
   }
-
 
 
 

@@ -1295,7 +1295,7 @@ class PHQ9ResultChecker {
     if (num <= 7) {
       return "มีความเสี่ยงระดับน้อยมาก";
     } else if (num >= 7 && num <= 12) {
-      return "มีความเสี่ยงระดับน้อย}";
+      return "มีความเสี่ยงระดับน้อย";
     } else if (num >= 13 && num <= 18) {
       return "มีความเสี่ยงระดับปานกลาง";
     } else if (num >= 19) {

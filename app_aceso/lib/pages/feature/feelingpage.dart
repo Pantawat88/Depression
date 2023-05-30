@@ -58,7 +58,7 @@ class _FeelingPageState extends State<FeelingPage> {
             Container(
               alignment: Alignment.topLeft,
               margin: EdgeInsets.only(top: 10, left: 30, bottom: 15),
-              child: Text("รอเพิ่มภายหลัง"),
+              child: Text(""),
             ),
 //////////-------------------------------------------------------- ส่วนของการแสดงการบันทึกอารมณ์ของวันนี้
 

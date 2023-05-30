@@ -1,9 +1,11 @@
+import 'package:app_aceso/background.dart';
 import 'package:app_aceso/pages/home.dart';
 //import 'package:app_aceso/pages/profile/edit_avatar.dart';
 //import 'package:app_aceso/pages/profile/edit_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:app_aceso/constants.dart';
 import '../widget/widget_button.dart';
+import 'package:app_aceso/pages/register/personal_information.dart';
 
 import 'package:app_aceso/pages/register/create_avatar.dart';
 
@@ -16,8 +18,10 @@ class SuccessRegister extends StatefulWidget {
   State<SuccessRegister> createState() => _SuccessRegister();
 }
 
+String Regis = 'ลงทะเบียนสำเร็จ';
+
 class _SuccessRegister extends State<SuccessRegister> {
-  String Nickname = 'เล้ง';
+  String Nickname = 'Leng';
 
   @override
   Widget build(BuildContext context) {
@@ -100,25 +104,19 @@ class _SuccessRegister extends State<SuccessRegister> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      // SizedBox(
-                      //   height: 100,
-                      //   width: 300,
-                      // ),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            const TextSpan(
-                              text: 'ยินดีต้อนรับ ',
-                              style: textnormalBig,
-                            ),
-                            TextSpan(
-                              text: Nickname,
-                              style: textnormalBigOrange,
-                            ),
-                          ],
-                        ),
+                      SizedBox(
+                        height: 100,
+                        width: 300,
                       ),
-                      const Text(
+                      Text(
+                        'ยินดีต้อนรับ',
+                        style: textnormalBig,
+                      ),
+                      Text(
+                        '$Nickname',
+                        style: textnormalBigOrange,
+                      ),
+                      Text(
                         'เข้าสู่ Aceso มาเช็คสุขภาพใจ\nไปพร้อมกับมาโต้กันเถอะ',
                         style: textnormalBig,
                         textAlign: TextAlign.center,
@@ -138,7 +136,7 @@ class _SuccessRegister extends State<SuccessRegister> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => HomePage()),
+                        builder: (BuildContext context) => const HomePage()),
                   );
                 },
               ),

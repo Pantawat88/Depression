@@ -6,34 +6,51 @@ import 'package:app_aceso/pages/register/create_avatar.dart';
 
 import 'dart:math';
 
-
+import 'package:app_aceso/pages/register/personal_information.dart';
 
 List<String> diarymato = [ "วันนี้เป็นวันที่สุดท้ายของการทดลองดูดาวอย่างยิ่งใหญ่ของเรา",
 "วันนี้เราได้พบกับดาวหนึ่งที่มีสภาพแวดล้อมที่เหมาะสมกับการมีชีวิต เราอยู่บนดาวนั้นเป็นเวลาสามวัน ",
 "ออกเดินทางไปหาดาวดวงนั้นกัน ตื่นเต้นไม่ไหวแล้ว"];
 
-List<String> diarynene = [ "น้องเนเน่ทักทายคนในทุก ๆ ครั้งที่คนเดินผ่านมาใกล้", "น้องเนชอบเล่าเรื่องราวของตนเองให้คนอื่นฟัง", "บางทีฉันก็ลืมตัวมาเป็นผีน้อยนะ "];
+List<String> diarynene = [ "น้องเนเน่ทักทายคนในทุก ๆ ครั้งที่คนเดินผ่านมาใกล้", "น้องเนชอบเล่าเรื่องราวของตนเองให้คนอื่นฟัง", "บางทีฉันก็ลืมตัวมาเป็นผีน้อยนะ ","จะดูประวัติของฉันหรอ หื้ม?"];
 
-List<String> diaryhuhnu = [ "วันนี้หูหนูได้ไปเที่ยวที่สวนสนุก ซึ่งเป็นสถานที่ที่เขายังไม่เคยไปมาก่อน", "หูหนูชอบค้นหาสิ่งใหม่ๆและสิ่งนี้ทำให้เขารู้สึกตื่นเต้นและสนุกสนานมากๆ", "แม้ว่าหูหนูจะเป็นเห็ดตัวน้อยแต่เขาก็ชอบเที่ยวเล่นเหมือนเด็กน้อยอื่นๆ"];
+List<String> diaryhuhnu = [ "วันนี้หูหนูได้ไปเที่ยวที่สวนสนุก ซึ่งเป็นสถานที่ที่เขายังไม่เคยไปมาก่อน", "หูหนูชอบค้นหาสิ่งใหม่ๆและสิ่งนี้ทำให้เขารู้สึกตื่นเต้นและสนุกสนานมากๆ", "แม้ว่าหูหนูจะเป็นเห็ดตัวน้อยแต่เขาก็ชอบเที่ยวเล่นเหมือนเด็กน้อยอื่นๆ","จะดูประวัติของฉันหรอ หื้ม?"];
 
-List<String> diaryneko = [ "ฉันกำลังนอนอยู่ในโซฟา ฉันดูเหมือนจะไม่สนใจการออกกำลังกาย แต่พอได้ยินเสียงเรียกว่า วอร์มร่างกาย เขาก็กระโดดขึ้นมาและเริ่มทำกิจกรรมกันเลย", "ฉันเริ่มต้นด้วยการเดินบนลู่วิ่ง แต่หลังจากไม่กี่นาที ฉันก็หายใจเหนื่อยหอบแหะๆ ไม่ไหวแล้วว", "หิวชาบูปลาจัง อยากกินอีกจังเลยยย"];
+List<String> diaryneko = [ "ฉันกำลังนอนอยู่ในโซฟา ฉันดูเหมือนจะไม่สนใจการออกกำลังกาย แต่พอได้ยินเสียงเรียกว่า วอร์มร่างกาย เขาก็กระโดดขึ้นมาและเริ่มทำกิจกรรมกันเลย", "ฉันเริ่มต้นด้วยการเดินบนลู่วิ่ง แต่หลังจากไม่กี่นาที ฉันก็หายใจเหนื่อยหอบแหะๆ ไม่ไหวแล้วว", "หิวชาบูปลาจัง อยากกินอีกจังเลยยย","จะดูประวัติของฉันหรอ หื้ม?"];
 
-List<String> diaryramen = [ "ฉันอยู่ที่สวนสาธารณะ และฉันกำลังเล่นอยู่ในลานหญ้ากับเด็กหนุ่มหน้าใสอีกคนหนึ่ง เหมือนจะชื่อโชนอะไรสักอย่าง", "ทักษะการบินของฉันน่าทึ่งมากนะจะบอกให้ ไม่อยากโม้เลย", "บินไปเล่นที่ไหนดีนะ ลองบินไปเรื่อยๆแล้วกัน", "มีคนชอบบอกว่าฉันชื่อเหมือนอาหารบางอย่างด้วยละ"];
+List<String> diaryramen = [ "ฉันอยู่ที่สวนสาธารณะ และฉันกำลังเล่นอยู่ในลานหญ้ากับเด็กหนุ่มหน้าใสอีกคนหนึ่ง เหมือนจะชื่อโชนอะไรสักอย่าง", "ทักษะการบินของฉันน่าทึ่งมากนะจะบอกให้ ไม่อยากโม้เลย", "บินไปเล่นที่ไหนดีนะ ลองบินไปเรื่อยๆแล้วกัน", "มีคนชอบบอกว่าฉันชื่อเหมือนอาหารบางอย่างด้วยละ","จะดูประวัติของฉันหรอ หื้ม?"];
 
-List<String> diarychon = [ "ฉันเป็นสิ่งมีชีวิตต่างดาวที่ตัดสินใจมาอาศัยอยู่ในโลกมนุษย์ เพื่อตระหนักถึงวิถีชีวิตและวัฒนธรรมของมนุษย์", "ฉันชื่นชอบทำงานและชอบเต้น ฉันมีความรู้สึกอบอุ่นใจต่อผู้อื่น", "หิวจัง กินอะไรดีนะมื้อนี้"];
+List<String> diarychon = [ "ฉันเป็นสิ่งมีชีวิตต่างดาวที่ตัดสินใจมาอาศัยอยู่ในโลกมนุษย์ เพื่อตระหนักถึงวิถีชีวิตและวัฒนธรรมของมนุษย์", "ฉันชื่นชอบทำงานและชอบเต้น ฉันมีความรู้สึกอบอุ่นใจต่อผู้อื่น", "หิวจัง กินอะไรดีนะมื้อนี้","จะดูประวัติของฉันหรอ หื้ม?"];
+
+
+
+
 
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  ProfileScreen({Key? key}) : super(key: key);
+
+
+  //final String nickname = 'Leng';
+   //String nickname = '${NNameInformationController.text}';
+  //final String fullname = 'พันธวัช ตันอนุกูล';
+   //String fullname = '${FNameInformationController.text} ${LNameInformationController.text}';
+  //final String faculty = 'วิศวกรรมศาสตร์';
+   //String faculty = name_f;
+
+  //String nickname = '${NNameInformationController.text}';
+  //String fullname = '${FNameInformationController.text} ${LNameInformationController.text}';
+  //String faculty = name_f;
+
 
   final String nickname = 'Leng';
-
-  final String fullname = 'พันธวัช ตันอนุกูล';
-
+  final String fullname = 'Pantawat Thunanukul';
   final String faculty = 'วิศวกรรมศาสตร์';
+
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -64,6 +81,7 @@ class ProfileScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(nickname, style: textnormalbigWhite),
+
                                 IconButton(
                                   iconSize: 30,
                                   icon: const Icon(Icons.settings,
@@ -277,5 +295,22 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void checkername(){
+
+  if({NNameInformationController.text} == Null){
+  final String nickname = 'Leng';
+  final String fullname = 'พันธวัช ตันอนุกูล';
+  final String faculty = 'วิศวกรรมศาสตร์';
+  }else{
+  //final String nickname = 'Leng';
+  String nickname = '${NNameInformationController.text}';
+  //final String fullname = 'พันธวัช ตันอนุกูล';
+  String fullname = '${FNameInformationController.text} ${LNameInformationController.text}';
+  //final String faculty = 'วิศวกรรมศาสตร์';
+  String faculty = name_f;
+  }
+
   }
 }

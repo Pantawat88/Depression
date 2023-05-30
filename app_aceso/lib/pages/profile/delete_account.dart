@@ -66,7 +66,7 @@ SizedBox(height: 95,),
                             ,style: textnormal,),
                           Row(
                             children: [
-                              Text('- บัญชี\n - เพื่อนซี้\n - ประวัติการประเมิน\n - ไดอารี่อารมณ์\n - อื่นๆ'
+                              Text(' - บัญชี\n - เพื่อนซี้\n - ประวัติการประเมิน\n - ไดอารี่อารมณ์\n - อื่นๆ'
                                 ,style: textnormal,),
                             ],
                           )

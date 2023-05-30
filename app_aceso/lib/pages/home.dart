@@ -15,37 +15,47 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 class HomePage extends StatefulWidget {
-  final token;
-  HomePage({@required this.token,Key? key}) : super(key: key);
-
+  //final token;
+  //const HomePage({@required this.token,Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
   //const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
+
+var day1 = '';
+var day2 = '';
+var day3 = '';
+var day4 = '';
+var day5 = '';
+var day6 = '';
+
+
+
 class _HomePageState extends State<HomePage> {
-  var myToken;
+  //var myToken;
 
 
   //late SharedPreferences prefs;
 
 
 
-  late String email;
+  //late String email;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Map<String,dynamic> jwtDecodedToken = JwtDecoder.decode(widget.token);
-    email = jwtDecodedToken['email'];
-    print(widget.token);
-    myToken = widget.token;
-    print("MyToken_home = $myToken");
-    print("jwtDecodedToken_home = $jwtDecodedToken");
-    //prefs.setString('token', myToken);
-  }
+  //@override
+  //void initState() {
+  //  // TODO: implement initState
+  //  super.initState();
+  //  Map<String,dynamic> jwtDecodedToken = JwtDecoder.decode(widget.token);
+  //  email = jwtDecodedToken['email'];
+  //  print(widget.token);
+  //  myToken = widget.token;
+  //  print("MyToken_home = $myToken");
+  //  print("jwtDecodedToken_home = $jwtDecodedToken");
+  //  //prefs.setString('token', myToken);
+  //}
 
 
 
@@ -59,12 +69,12 @@ class _HomePageState extends State<HomePage> {
       if (index == 1) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FeaturePage()),
+          MaterialPageRoute(builder: (context) => const FeaturePage()),
         );
       } else if (index == 2) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProfilePage()),
+          MaterialPageRoute(builder: (context) => const ProfilePage()),
         );
       }
     }
@@ -72,6 +82,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now(); // ดึงค่าวันที่ปัจจุบัน
+    String formattedDate = '${now.day}/${now.month}/${now.year}';
+
+    //    List<DateTime> dates = List.generate(6, (index) => DateTime.now().subtract(Duration(days: index))); // ดึงค่าวัน 6 วันล่าสุด
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -201,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                           "อารมณ์ประจำวัน",
                           style: textHeading,
                         ),
-                        Text("email = $email"),
+                        //Text("email = $email"),
                       ],
                     ),
                   ),
@@ -209,6 +223,7 @@ class _HomePageState extends State<HomePage> {
                   //--------------------------------ส่วนอิโมจิอารมณ์
                   Row(
                     children: <Widget>[
+                      SizedBox(width: 10,),
                       TextButton(
                         onPressed: () {
                           showDialog(
@@ -219,10 +234,92 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         child: Image.asset('assets/emoji/good.png',
-                            height: 50, width: 50),
+                            height: 40, width: 40),
                       ),
+                      TextButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return _buildPopupDialog(context);
+                            },
+                          );
+                        },
+                        child: Image.asset('assets/emoji/happy.png',
+                            height: 40, width: 40),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return _buildPopupDialog(context);
+                            },
+                          );
+                        },
+                        child: Image.asset('assets/emoji/sad.png',
+                            height: 40, width: 40),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return _buildPopupDialog(context);
+                            },
+                          );
+                        },
+                        child: Image.asset('assets/emoji/stressed.png',
+                            height: 40, width: 40),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return _buildPopupDialog(context);
+                            },
+                          );
+                        },
+                        child: Image.asset('assets/emoji/stressed.png',
+                            height: 40, width: 40),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return _buildPopupDialog(context);
+                            },
+                          );
+                        },
+                        child: Image.asset('assets/emoji/stressed.png',
+                            height: 40, width: 40),
+                      ),
+
+
+
                     ],
                   ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      SizedBox(width: 37,),
+                      Expanded(child: Text("${now.subtract(Duration(days: 5)).day}", style: TextStyle(color: Color(0xff646FD4), fontWeight: FontWeight.bold))),
+                      Expanded(child: Text("${now.subtract(Duration(days: 4)).day}", style: TextStyle(color: Color(0xff646FD4), fontWeight: FontWeight.bold))),
+                      SizedBox(width: 3,),
+                      Expanded(child: Text("${now.subtract(Duration(days: 3)).day}", style: TextStyle(color: Color(0xff646FD4), fontWeight: FontWeight.bold))),
+                      SizedBox(width: 5,),
+                      Expanded(child: Text("${now.subtract(Duration(days: 2)).day}", style: TextStyle(color: Color(0xff646FD4), fontWeight: FontWeight.bold))),
+                      SizedBox(width: 5,),
+                      Expanded(child: Text("${now.subtract(Duration(days: 1)).day}", style: TextStyle(color: Color(0xff646FD4), fontWeight: FontWeight.bold))),
+                      SizedBox(width: 3,),
+                      Expanded(child: Text("วันนี้", style: TextStyle(color: Color(0xff646FD4), fontWeight: FontWeight.bold))),
+                    ],
+                  ),
+
+
                   //--------------------------------ส่วนอิโมจิอารมณ์
 
                   //--------*-*--------*--*---- sizeboxข้างล่างแค่ใส่ test การ scroll เอาออกได้
@@ -331,9 +428,94 @@ class _HomePageState extends State<HomePage> {
           ),
           //-------------------------------ส่วนเนื้อหา-------------------------------
 
-          Text('Popup content'),
-          Text('Popup content'),
-          Text('Popup content'),
+          //Text('Popup content'),
+          //Text('Popup content'),
+          //Text('Popup content'),
+
+
+          Row(children: <Widget>[
+            TextButton(
+              onPressed: () {
+                day1 = 1 as String;
+                Navigator.of(context).pop();
+              },
+              child: Image.asset('assets/emoji/good.png',
+                  height: 100, width: 100),
+            ),
+            TextButton(
+              onPressed: () {
+                day1 = 2 as String;
+                Navigator.of(context).pop();
+              },
+              child: Image.asset('assets/emoji/happy.png',
+                  height: 100, width: 100),
+            ),
+
+          ],),
+          Row(children: <Widget>[
+            TextButton(
+              onPressed: () {
+                day1 = 1 as String;
+                Navigator.of(context).pop();
+              },
+              child: Image.asset('assets/emoji/relaxed.png',
+                  height: 100, width: 100),
+            ),
+            TextButton(
+              onPressed: () {
+                day1 = 2 as String;
+                Navigator.of(context).pop();
+              },
+              child: Image.asset('assets/emoji/indifferent.png',
+                  height: 100, width: 100),
+            ),
+
+          ],),
+
+          Row(children: <Widget>[
+            TextButton(
+              onPressed: () {
+                day1 = 1 as String;
+                Navigator.of(context).pop();
+              },
+              child: Image.asset('assets/emoji/stressed.png',
+                  height: 100, width: 100),
+            ),
+            TextButton(
+              onPressed: () {
+                day1 = 2 as String;
+                Navigator.of(context).pop();
+              },
+              child: Image.asset('assets/emoji/sad.png',
+                  height: 100, width: 100),
+            ),
+
+          ],),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         ],
       ),
 

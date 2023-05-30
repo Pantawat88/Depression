@@ -12,25 +12,25 @@ class FeatureScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        color: lightestColor,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 35, vertical: 35),
-              child: Text(
-                'กิจกรรม',
-                style: textHeading,
-              ),
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: lightestColor,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 35),
+                  child: Text(
+                    'กิจกรรม',
+                    style: textHeading,
+                  ),
+                ),
+                _boxMenuform(context),
+                const SizedBox(height: 20),
+                _boxMenufeeling(context),
+              ],
             ),
-            _boxMenuform(context),
-            const SizedBox(height: 20),
-            _boxMenufeeling(context),
-          ],
-        ),
-      )),
+          )),
     );
   }
 
@@ -49,7 +49,7 @@ class FeatureScreen extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 35),
             padding:
-                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
+            const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
             height: 110,
             decoration: BoxDecoration(
               color: APrimaryveryLight,
@@ -100,7 +100,7 @@ class FeatureScreen extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 35),
             padding:
-                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
+            const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
             height: 110,
             decoration: BoxDecoration(
               color: APrimaryveryLight,

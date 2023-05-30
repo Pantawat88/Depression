@@ -12,7 +12,7 @@ class CreateAvatar extends StatefulWidget {
 
 String backgroundImg = 'bg_moto1'; //ไว้กำหนดพื้นหลังในหน้า home
 
-String selectedName = 'มาโต้';
+String selectedName = "มาโต้";
 String selectedStory =
     "ผู้ที่ชื่นชอบท่องอวกาศเป็นชีวิตจิตใจ\nเขามักมองหาสิ่งใหม่ ๆ ในอวกาศอยู่เสมอ";
 Color backgroundColor = const Color(0xff222222);

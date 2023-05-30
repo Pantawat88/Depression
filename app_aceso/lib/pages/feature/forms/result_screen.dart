@@ -42,56 +42,56 @@ class _ResultScreenState extends State<ResultScreen> {
     return Background(
       child: SafeArea(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Image(
-            image: AssetImage("assets/result1.png"),
-            width: 280,
-          ),
-          const SizedBox(height: 70),
-          const Text(
-            "มีความเสี่ยง",
-            style: TextStyle(
-              fontFamily: 'Prompt',
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
-              color: orangeColor,
-            ),
-          ),
-          Text(
-            _result,
-            style: TextStyle(
-              fontFamily: 'Prompt',
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-              color: APrimaryColor,
-            ),
-          ),
-          const SizedBox(height: 70),
-          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) =>  HomePage(),
-                    ),
-                  );
-                },
-                child: const Image(
-                  image: AssetImage("assets/backhome.png"),
-                  width: 80,
+              const Image(
+                image: AssetImage("assets/result1.png"),
+                width: 280,
+              ),
+              const SizedBox(height: 70),
+              const Text(
+                "มีความเสี่ยง",
+                style: TextStyle(
+                  fontFamily: 'Prompt',
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                  color: orangeColor,
                 ),
               ),
-              const Text(
-                "กลับหน้าหลัก",
-                style: textsmallLight,
+              Text(
+                _result,
+                style: TextStyle(
+                  fontFamily: 'Prompt',
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: APrimaryColor,
+                ),
+              ),
+              const SizedBox(height: 70),
+              Column(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>  HomePage(),
+                        ),
+                      );
+                    },
+                    child: const Image(
+                      image: AssetImage("assets/backhome.png"),
+                      width: 80,
+                    ),
+                  ),
+                  const Text(
+                    "กลับหน้าหลัก",
+                    style: textsmallLight,
+                  ),
+                ],
               ),
             ],
-          ),
-        ],
-      )),
+          )),
     );
   }
 }

@@ -19,7 +19,7 @@ final TextEditingController LNameInformationController = TextEditingController()
 final TextEditingController NNameInformationController = TextEditingController();//ตัวแปรชื่อเล่น หน้า กรอกข้อมูลส่วนตัว
 //dropdownValue ค่าคณะ ยังไม่ได้ดึงมาใช้
 
-
+var name_f;
 
 
 class _AgreementState extends State<PersonalInformation> {
@@ -297,6 +297,7 @@ class _AgreementState extends State<PersonalInformation> {
                   print("FNameInformationController = $fname");
                   print("LNameInformationController = $lname");
                   print("NNameInformationController = $nname");
+                  name_f = dropdownValue;
 
 
                   Navigator.push(
